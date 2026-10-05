@@ -3,6 +3,7 @@ import HeroCinematic from "@/components/HeroCinematic";
 import SEOHead from "@/components/SEOHead";
 import ScrollProgress from "@/components/ScrollProgress";
 import MinimalNavigation from "@/components/MinimalNavigation";
+import QuizHost from "@/components/QuizHost";
 
 const ScrollRevealText = lazy(() => import("@/components/ScrollRevealText"));
 const SynluaDivider = lazy(() => import("@/components/SynluaDivider"));
@@ -54,6 +55,7 @@ const LandingPage = () => {
 
       <ScrollProgress />
       <MinimalNavigation />
+      <QuizHost />
 
       <section id="home" className="relative">
         <HeroCinematic />

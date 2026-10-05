@@ -1,10 +1,11 @@
+import { openQuiz } from "@/lib/quiz";
 import { motion } from "framer-motion";
 import SpotlightCard from "@/components/ui/spotlight-card";
 import GlowButton from "@/components/ui/glow-button";
 import { Target, Video, TrendingUp, Sparkles, LineChart, ArrowRight } from "lucide-react";
 
 const scrollToForm = () => {
-  document.getElementById("diagnostico")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  openQuiz();
 };
 
 const cards = [

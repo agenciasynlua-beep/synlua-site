@@ -1,3 +1,4 @@
+import { openQuiz } from "@/lib/quiz";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import {
@@ -37,7 +38,7 @@ const faqs = [
 ];
 
 const scrollToForm = () =>
-  document.getElementById("diagnostico")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  openQuiz();
 
 const FaqSection = () => {
   return (

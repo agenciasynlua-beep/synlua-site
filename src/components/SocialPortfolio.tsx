@@ -1,3 +1,4 @@
+import { openQuiz } from "@/lib/quiz";
 import SectionLabel from "@/components/SectionLabel";
 import { useDragScroll } from "@/hooks/use-drag-scroll";
 import { Hand } from "lucide-react";
@@ -141,7 +142,7 @@ const SocialPortfolio = ({ subtitle, light = false }: { subtitle?: string; light
       <div className="mt-10 sm:mt-14 flex justify-center">
         <button
           type="button"
-          onClick={() => document.getElementById("diagnostico")?.scrollIntoView({ behavior: "smooth", block: "start" })}
+          onClick={() => openQuiz()}
           className={`inline-flex items-center gap-2 text-sm rounded-full px-5 py-2.5 transition-all duration-300 ${
             light
               ? "text-[#1a1a2e] border border-[#e0e0e8] bg-white hover:border-[#6366F1]/50"

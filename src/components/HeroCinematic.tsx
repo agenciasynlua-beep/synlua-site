@@ -1,3 +1,4 @@
+import { openQuiz } from "@/lib/quiz";
 import { ArrowRight, Zap, Star } from "lucide-react";
 import GlowButton from "@/components/ui/glow-button";
 import HeroShowcase from "@/components/HeroShowcase";
@@ -8,7 +9,7 @@ import c3 from "@/assets/clients/parnassah.webp";
 const avatars = [c1, c2, c3];
 
 const scrollToForm = () => {
-  document.getElementById("diagnostico")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  openQuiz();
 };
 
 const HeroCinematic = () => {

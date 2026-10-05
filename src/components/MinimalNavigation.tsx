@@ -1,3 +1,4 @@
+import { openQuiz } from "@/lib/quiz";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
@@ -59,6 +60,10 @@ const MinimalNavigation = () => {
   const handleNavClick = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     setIsMenuOpen(false);
+    if (id === "diagnostico") {
+      openQuiz();
+      return;
+    }
     scrollTo(id);
   };
 

@@ -63,26 +63,30 @@ const validateEmail = (email: string) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email
 const STORAGE_KEY = "synlua_quiz_draft";
 
 const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
-  const [step, setStep] = useState(1);
+  // Rascunho da mesma visita (etapa + id do lead parcial): lido já no estado inicial,
+  // para o modal abrir direto na etapa certa, sem piscar a etapa 1.
+  const draft = useMemo(() => {
+    if (typeof window === "undefined") return null;
+    try {
+      const raw = sessionStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    } catch {
+      return null;
+    }
+  }, []);
+
+  const [step, setStep] = useState(
+    typeof draft?.step === "number" && draft.step >= 1 && draft.step <= TOTAL ? draft.step : 1
+  );
   const [dir, setDir] = useState(1);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [done, setDone] = useState(false);
-  const [leadId, setLeadId] = useState<string | null>(null);
+  const [leadId, setLeadId] = useState<string | null>(draft?.leadId ?? null);
   const [otherOpen, setOtherOpen] = useState(false);
 
   const [data, setData] = useState<QuizData>(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const raw = sessionStorage.getItem(STORAGE_KEY);
-        if (raw) {
-          const parsed = JSON.parse(raw);
-          if (parsed?.data) return parsed.data as QuizData;
-        }
-      } catch {
-        /* ignore */
-      }
-    }
+    if (draft?.data) return draft.data as QuizData;
     return {
       name: "",
       phone: "",
@@ -94,20 +98,6 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
       agreed: "",
     };
   });
-
-  // Retoma o rascunho da mesma visita (etapa + id do lead parcial)
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    try {
-      const raw = sessionStorage.getItem(STORAGE_KEY);
-      if (!raw) return;
-      const parsed = JSON.parse(raw);
-      if (parsed?.leadId) setLeadId(parsed.leadId);
-      if (typeof parsed?.step === "number" && parsed.step >= 1 && parsed.step <= TOTAL) setStep(parsed.step);
-    } catch {
-      /* ignore */
-    }
-  }, []);
 
   useEffect(() => {
     if (typeof window === "undefined" || done) return;
@@ -268,13 +258,8 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
       }
 
       clearDraft();
+      setSubmitting(false);
       setDone(true);
-      setTimeout(() => {
-        onClose();
-        toast.success(
-          "Recebemos suas informações! Nosso time entrará em contato em até 30 minutos pelo WhatsApp."
-        );
-      }, 1200);
     } catch (e: any) {
       // eslint-disable-next-line no-console
       console.error(e);
@@ -349,6 +334,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
           <div className="relative">
             <Building2 className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#555]" />
             <Input
+              autoFocus
               placeholder="Nome da empresa"
               value={data.company}
               onChange={(e) => set("company", e.target.value)}
@@ -539,12 +525,58 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
             <div aria-hidden className="pointer-events-none absolute -top-32 -right-24 w-72 h-72 rounded-full bg-[#8B5CF6]/20 blur-[100px]" />
 
             {done ? (
-              <div className="relative px-6 py-16 text-center">
-                <div className="mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-[#6366F1] to-[#8B5CF6] flex items-center justify-center">
+              <div className="relative px-6 py-10 sm:px-10 sm:py-12 text-center">
+                <motion.div
+                  initial={{ scale: 0.6, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                  className="mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-[#6366F1] to-[#8B5CF6] flex items-center justify-center shadow-[0_0_40px_-6px_rgba(139,92,246,0.8)]"
+                >
                   <Check className="w-7 h-7 text-white" />
+                </motion.div>
+                <h3 className="mt-5 text-2xl sm:text-3xl font-light text-[#EDEDED]">
+                  Tudo certo{data.name.trim() ? `, ${data.name.trim().split(" ")[0]}` : ""}!
+                </h3>
+                <p className="mt-2 text-[#9a9aa8] text-[15px]">
+                  Um estrategista da Synlua vai te chamar no WhatsApp{" "}
+                  <span className="text-[#EDEDED]">{maskPhone(data.phone)}</span> em até 30 minutos.
+                </p>
+
+                <ol className="mt-7 space-y-3 text-left max-w-sm mx-auto">
+                  {[
+                    ["Agora", "Recebemos suas respostas e já estamos lendo."],
+                    ["Em até 30 min", "Contato pelo WhatsApp para entender seu cenário."],
+                    ["Na conversa", "Diagnóstico e o caminho que faz sentido, sem compromisso."],
+                  ].map(([when, what], i) => (
+                    <li key={when} className="flex gap-3">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#8B5CF6]/40 bg-[#8B5CF6]/10 text-[11px] text-[#A78BFA]">
+                        {i + 1}
+                      </span>
+                      <span className="text-sm leading-snug">
+                        <span className="block text-[11px] uppercase tracking-[0.18em] text-[#8B5CF6]">{when}</span>
+                        <span className="text-[#c4c4cf] font-light">{what}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+
+                <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+                  <a
+                    href="https://wa.me/5511932267758?text=Ol%C3%A1!%20Acabei%20de%20preencher%20o%20diagn%C3%B3stico%20no%20site."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white text-sm font-medium"
+                  >
+                    Prefere falar agora? Chamar no WhatsApp
+                  </a>
+                  <button
+                    type="button"
+                    onClick={onCloseReset}
+                    className="w-full sm:w-auto px-6 py-3 rounded-xl border border-[#1f1f35] text-[#c4c4cf] text-sm hover:border-[#8B5CF6]/50 transition-colors"
+                  >
+                    Fechar
+                  </button>
                 </div>
-                <h3 className="mt-5 text-2xl font-light text-[#EDEDED]">Tudo certo!</h3>
-                <p className="mt-2 text-[#808080]">Nosso time entrará em contato em até 30 minutos pelo WhatsApp.</p>
               </div>
             ) : (
               <div className="relative">

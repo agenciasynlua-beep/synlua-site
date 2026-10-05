@@ -142,17 +142,10 @@ All colors MUST be HSL.
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    cursor: none;
   }
 
   * {
     font-family: 'Inter', sans-serif;
-  }
-
-  @media (max-width: 1024px) {
-    body, * {
-      cursor: auto !important;
-    }
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -166,7 +159,7 @@ All colors MUST be HSL.
     font-weight: 400;
   }
 
-  /* Acessibilidade: foco visível elegante sem quebrar o cursor customizado */
+  /* Acessibilidade: foco visível elegante sem quebrar o layout */
   :focus-visible {
     outline: 2px solid hsl(258 90% 66% / 0.7);
     outline-offset: 3px;

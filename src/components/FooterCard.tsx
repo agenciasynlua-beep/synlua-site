@@ -1,3 +1,4 @@
+import { openQuiz } from "@/lib/quiz";
 import { useState } from "react";
 import { Instagram, Linkedin, Mail, MapPin, ArrowRight } from "lucide-react";
 import synluaLogo from "@/assets/synlua-logo-white.webp";
@@ -177,7 +178,7 @@ const FooterCard = () => {
               <GlowButton
                 type="button"
                 variant="gradient"
-                onClick={() => scrollTo("diagnostico")}
+                onClick={() => openQuiz()}
                 className="font-light text-sm px-8 py-3"
               >
                 Falar com um estrategista

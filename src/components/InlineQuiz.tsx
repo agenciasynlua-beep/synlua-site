@@ -1,6 +1,6 @@
-import { lazy, Suspense, useState } from "react";
+
 import { ArrowRight, Clock, Shield, Users } from "lucide-react";
-const QuizModal = lazy(() => import("./QuizModal"));
+import { openQuiz } from "@/lib/quiz";
 
 const trustBadges = [
   { icon: Clock, text: "Leva menos de 1 minuto" },
@@ -9,8 +9,6 @@ const trustBadges = [
 ];
 
 const InlineQuiz = ({ id = "diagnostico", formType = "quiz" }: { id?: string; formType?: string }) => {
-  const [open, setOpen] = useState(false);
-
   return (
     <section
       id={id}
@@ -46,7 +44,7 @@ const InlineQuiz = ({ id = "diagnostico", formType = "quiz" }: { id?: string; fo
 
               <button
                 type="button"
-                onClick={() => setOpen(true)}
+                onClick={openQuiz}
                 className="relative group/btn mt-7 inline-flex items-center justify-center gap-2.5 px-9 sm:px-12 py-4 sm:py-4.5 rounded-full text-[15px] sm:text-base font-medium tracking-wide overflow-hidden text-white shadow-[0_0_44px_-4px_rgba(139,92,246,0.6),0_0_68px_-10px_rgba(99,102,241,0.4)] hover:shadow-[0_0_60px_-2px_rgba(139,92,246,0.8),0_0_90px_-8px_rgba(99,102,241,0.55)] transition-all duration-300 active:scale-95 bg-gradient-to-r from-[#7C3AED] via-[#8B5CF6] to-[#6366F1]"
               >
                 <span aria-hidden className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
@@ -71,11 +69,6 @@ const InlineQuiz = ({ id = "diagnostico", formType = "quiz" }: { id?: string; fo
         </div>
       </div>
 
-      {open && (
-        <Suspense fallback={null}>
-          <QuizModal open={open} onClose={() => setOpen(false)} formType={formType} />
-        </Suspense>
-      )}
     </section>
   );
 };

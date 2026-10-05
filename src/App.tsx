@@ -5,8 +5,6 @@ import synluaLogoWhite from "@/assets/synlua-logo-white.webp";
 import LandingPage from "./pages/LandingPage";
 
 
-const CustomCursor = lazy(() => import("./components/CustomCursor"));
-
 const OnboardingPage = lazy(() => import("./pages/OnboardingPage"));
 
 
@@ -22,26 +20,6 @@ const PageLoader = () => (
 );
 
 const Sonner = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })));
-
-const DeferredCursor = () => {
-  const [ready, setReady] = useState(false);
-  useEffect(() => {
-    if (window.matchMedia("(max-width: 1024px)").matches) return;
-    const idle = (window as any).requestIdleCallback;
-    const id = idle ? idle(() => setReady(true), { timeout: 3000 }) : window.setTimeout(() => setReady(true), 1200);
-    return () => {
-      const cancel = (window as any).cancelIdleCallback;
-      if (idle && cancel) cancel(id);
-      else window.clearTimeout(id as number);
-    };
-  }, []);
-  if (!ready) return null;
-  return (
-    <Suspense fallback={null}>
-      <CustomCursor />
-    </Suspense>
-  );
-};
 
 // Toaster só é montado após ociosidade: não bloqueia o primeiro render
 const DeferredToaster = () => {
@@ -71,7 +49,6 @@ const App = () => {
       </Suspense>
       <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>
         <ScrollToTop />
-        <DeferredCursor />
         <Suspense fallback={<PageLoader />}>
           <Routes>
             {/* PT Routes */}

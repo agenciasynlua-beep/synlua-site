@@ -1,3 +1,4 @@
+import { openQuiz } from "@/lib/quiz";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SpotlightCard from "@/components/ui/spotlight-card";
@@ -76,7 +77,7 @@ const FoundersSection = () => {
             type="button"
             variant="gradient"
             onClick={() =>
-              document.getElementById("diagnostico")?.scrollIntoView({ behavior: "smooth", block: "start" })
+              openQuiz()
             }
           >
             Fale Conosco
