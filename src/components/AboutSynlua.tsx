@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react";
-import pabloAsset from "@/assets/pablo-jardim.webp.asset.json";
-const pabloImage = pabloAsset.url;
+import pabloImage from "@/assets/pablo-jardim.webp";
 import beatrizImage from "@/assets/beatriz.webp";
 
 const founders = [

@@ -21,17 +21,14 @@ import maximeNew from "@/assets/hero/maxime.webp";
 import inatto from "@/assets/hero/inatto.webp";
 import augusto from "@/assets/hero/augusto.webp";
 
-import v17 from "@/assets/videos/17.mp4.asset.json";
-import v20 from "@/assets/videos/20.mp4.asset.json";
-import v23 from "@/assets/videos/23.mp4.asset.json";
 
 type Item = { src: string; video?: string };
 
 const columns: Item[][] = [
   [{ src: cap8 }, { src: p5 }, { src: micHands }, { src: wiseUp }, { src: cap13 }],
-  [{ src: p3 }, { src: cap10, video: v17.url }, { src: maximeNew }, { src: cap14 }, { src: p11 }],
-  [{ src: speaker }, { src: cap11 }, { src: inatto }, { src: champagne, video: v20.url }, { src: p9 }],
-  [{ src: cap12 }, { src: augusto }, { src: kombiDuo, video: v23.url }, { src: p12 }, { src: cap15 }],
+  [{ src: p3 }, { src: cap10 }, { src: maximeNew }, { src: cap14 }, { src: p11 }],
+  [{ src: speaker }, { src: cap11 }, { src: inatto }, { src: champagne }, { src: p9 }],
+  [{ src: cap12 }, { src: augusto }, { src: kombiDuo }, { src: p12 }, { src: cap15 }],
 ];
 
 const columnStyles = [

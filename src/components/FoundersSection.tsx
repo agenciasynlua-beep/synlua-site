@@ -2,8 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import SpotlightCard from "@/components/ui/spotlight-card";
 import GlowButton from "@/components/ui/glow-button";
-import pabloAsset from "@/assets/pablo-jardim.webp.asset.json";
-const pabloImage = pabloAsset.url;
+import pabloImage from "@/assets/pablo-jardim.webp";
 import beatrizImage from "@/assets/beatriz.webp";
 
 
