@@ -111,6 +111,8 @@ const HeroShowcase = () => {
         {columns.map((items, ci) => {
           const cfg = columnStyles[ci];
           const loop = [...items, ...items];
+          // Colunas "down" começam deslocadas em -50%: o que aparece primeiro é a 2ª cópia da lista
+          const firstVisible = cfg.direction === "down" ? items.length : 0;
           return (
             <div
               key={ci}
@@ -132,7 +134,7 @@ const HeroShowcase = () => {
                     key={`${ci}-${i}`}
                     item={item}
                     playVideo={playVideo}
-                    priority={i < 2 && ci < 2}
+                    priority={ci < 2 && i >= firstVisible && i < firstVisible + 2}
                   />
                 ))}
               </div>
