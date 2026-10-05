@@ -37,11 +37,7 @@
           window.addEventListener(e, loadGTM, { once: true, passive: true });
         });
         window.addEventListener("load", function () {
-          if (window.requestIdleCallback) {
-            window.requestIdleCallback(loadGTM, { timeout: 4000 });
-          } else {
-            setTimeout(loadGTM, 2500);
-          }
+          setTimeout(loadGTM, 6000);
         });
       })();
     </script>
@@ -67,8 +63,11 @@
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <!-- Meta Pixel Code (deferred until after page load) -->
   <script>
-    window.addEventListener('load', function () {
-      setTimeout(function () {
+    (function () {
+      var started = false;
+      function startPixel() {
+        if (started) return;
+        started = true;
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -79,8 +78,12 @@
         'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '1003373372376335');
         fbq('track', 'PageView');
-      }, 1500);
-    });
+      }
+      ["pointerdown", "keydown", "touchstart", "scroll"].forEach(function (e) {
+        window.addEventListener(e, startPixel, { once: true, passive: true });
+      });
+      window.addEventListener('load', function () { setTimeout(startPixel, 6000); });
+    })();
   </script>
   <!-- End Meta Pixel Code -->
     <script type="application/ld+json">
