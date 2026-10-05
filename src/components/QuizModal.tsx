@@ -238,8 +238,23 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
 
     try {
       if (leadId) {
-        const { error } = await supabase.from("form_submissions").update(row).eq("id", leadId);
+        const { data: done, error } = await supabase.rpc("complete_lead", {
+          p_id: leadId,
+          p_name: row.name,
+          p_phone: row.phone,
+          p_email: row.email,
+          p_company: row.company,
+          p_service_type: row.service_type,
+          p_revenue: row.revenue,
+          p_notes: row.notes,
+          p_form_type: row.form_type,
+        });
         if (error) throw error;
+        // Se o lead parcial não existir mais (ex.: já concluído), grava como novo
+        if (!done) {
+          const { error: insertError } = await supabase.from("form_submissions").insert(row);
+          if (insertError) throw insertError;
+        }
       } else {
         const { error } = await supabase.from("form_submissions").insert(row);
         if (error) throw error;

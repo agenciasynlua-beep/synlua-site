@@ -494,6 +494,20 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      complete_lead: {
+        Args: {
+          p_company: string | null
+          p_email: string
+          p_form_type: string | null
+          p_id: string
+          p_name: string
+          p_notes: string | null
+          p_phone: string
+          p_revenue: string | null
+          p_service_type: string | null
+        }
+        Returns: boolean
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
