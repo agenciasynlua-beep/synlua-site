@@ -11,7 +11,24 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  plugins: [
+    react(),
+    mode === "development" && componentTagger(),
+    {
+      // CSS principal não bloqueia o 1º desenho: a splash (HTML + CSS inline) aparece na hora
+      // e só sai depois que o CSS carregou (ver window.__cssOk no index.html).
+      name: "async-css",
+      apply: "build",
+      transformIndexHtml: {
+        order: "post",
+        handler: (html: string) =>
+          html.replace(
+            /<link rel="stylesheet" crossorigin href="([^"]+)">/g,
+            `<link rel="stylesheet" crossorigin href="$1" media="print" onload="this.media='all';window.__cssOk&&window.__cssOk()"><noscript><link rel="stylesheet" href="$1"></noscript>`,
+          ),
+      },
+    },
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

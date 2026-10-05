@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import synluaLogoWhite from "@/assets/synlua-logo-white.webp";
 import LandingPage from "./pages/LandingPage";
 
 
@@ -16,7 +17,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 
 const PageLoader = () => (
   <div className="min-h-screen bg-[#050508] flex items-center justify-center">
-    <div className="w-6 h-6 border-2 border-[#6366F1]/30 border-t-[#6366F1] rounded-full animate-spin" />
+    <img src={synluaLogoWhite} alt="Synlua" width={560} height={116} className="w-40 h-auto animate-pulse" />
   </div>
 );
 
@@ -57,7 +58,13 @@ const DeferredToaster = () => {
   return ready ? <Sonner /> : null;
 };
 
-const App = () => (
+const App = () => {
+  // Landing é eager: no 1º commit o hero já existe. Dois rAF = depois do 1º desenho.
+  useEffect(() => {
+    const w = window as Window & { __splashReady?: () => void };
+    requestAnimationFrame(() => requestAnimationFrame(() => w.__splashReady?.()));
+  }, []);
+  return (
   <>
       <Suspense fallback={null}>
         <DeferredToaster />
@@ -88,6 +95,7 @@ const App = () => (
         </Suspense>
       </BrowserRouter>
   </>
-);
+  );
+};
 
 export default App;

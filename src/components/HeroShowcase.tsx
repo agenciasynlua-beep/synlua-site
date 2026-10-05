@@ -1,34 +1,29 @@
 import { useEffect, useRef, useState } from "react";
 
-import cap8 from "@/assets/hero/cap-8.webp";
-import cap10 from "@/assets/hero/cap-10.webp";
-import cap11 from "@/assets/hero/cap-11.webp";
-import cap12 from "@/assets/hero/cap-12.webp";
 import cap13 from "@/assets/hero/cap-13.webp";
 import cap14 from "@/assets/hero/cap-14.webp";
 import cap15 from "@/assets/hero/cap-15.webp";
 import micHands from "@/assets/hero/mic-hands.webp";
-import speaker from "@/assets/hero/speaker.webp";
 import kombiDuo from "@/assets/hero/kombi-duo.webp";
 import champagne from "@/assets/hero/champagne.webp";
-import p3 from "@/assets/hero/p3.webp";
-import p5 from "@/assets/hero/p5.webp";
 import p9 from "@/assets/hero/p9.webp";
 import p11 from "@/assets/hero/p11.webp";
 import p12 from "@/assets/hero/p12.webp";
 import wiseUp from "@/assets/hero/wise-up.webp";
 import maximeNew from "@/assets/hero/maxime.webp";
 import inatto from "@/assets/hero/inatto.webp";
-import augusto from "@/assets/hero/augusto.webp";
 
+
+// Imagens da 1ª dobra ficam em /public/hero e são pré-carregadas no index.html
+const pub = (name: string) => `${import.meta.env.BASE_URL}hero/${name}.webp`;
 
 type Item = { src: string; video?: string };
 
 const columns: Item[][] = [
-  [{ src: cap8 }, { src: p5 }, { src: micHands }, { src: wiseUp }, { src: cap13 }],
-  [{ src: p3 }, { src: cap10 }, { src: maximeNew }, { src: cap14 }, { src: p11 }],
-  [{ src: speaker }, { src: cap11 }, { src: inatto }, { src: champagne }, { src: p9 }],
-  [{ src: cap12 }, { src: augusto }, { src: kombiDuo }, { src: p12 }, { src: cap15 }],
+  [{ src: pub("cap-8") }, { src: pub("p5") }, { src: micHands }, { src: wiseUp }, { src: cap13 }],
+  [{ src: pub("p3") }, { src: pub("cap-10") }, { src: maximeNew }, { src: cap14 }, { src: p11 }],
+  [{ src: pub("speaker") }, { src: pub("cap-11") }, { src: inatto }, { src: champagne }, { src: p9 }],
+  [{ src: pub("cap-12") }, { src: pub("augusto") }, { src: kombiDuo }, { src: p12 }, { src: cap15 }],
 ];
 
 const columnStyles = [
