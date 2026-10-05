@@ -1,0 +1,8 @@
+project_id = "jycbtbytztalvhcgrzkb"
+
+[functions.create-admin]
+verify_jwt = false
+
+[functions.notify-lead-telegram]
+verify_jwt = false
+
