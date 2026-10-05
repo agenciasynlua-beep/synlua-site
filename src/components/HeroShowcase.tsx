@@ -137,7 +137,7 @@ const HeroShowcase = () => {
                     key={`${ci}-${i}`}
                     item={item}
                     playVideo={playVideo}
-                    priority={i === 0 && ci < 2}
+                    priority={i < 2 && ci < 2}
                   />
                 ))}
               </div>
