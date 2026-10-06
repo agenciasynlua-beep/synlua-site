@@ -3,8 +3,12 @@ import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
 import { brokeredPreviewStorage } from './previewAuthStorage';
 
-const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-const SUPABASE_PUBLISHABLE_KEY = import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY;
+// URL e chave "publishable" do projeto Synlua LP: são públicas por desenho (o acesso é limitado
+// pelas regras RLS da tabela). Ficam como padrão para o site funcionar em qualquer hospedagem
+// (GitHub Pages, Netlify...) mesmo sem variáveis de ambiente; as variáveis VITE_* têm prioridade.
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || "https://shxzdbqmzxxkbpiexelt.supabase.co";
+const SUPABASE_PUBLISHABLE_KEY =
+  import.meta.env.VITE_SUPABASE_PUBLISHABLE_KEY || "sb_publishable_QzSpbNXSyfEL7KojeqI7_A_8biLVJQ2";
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
