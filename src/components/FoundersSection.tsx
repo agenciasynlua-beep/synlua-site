@@ -13,15 +13,18 @@ const founders = [
     role: "CEO & Fundador",
     image: pabloImage,
     // Retrato vertical: mantém o rosto no terço superior do quadro
-    imageClass: "object-[50%_22%]",
+    imageClass: "absolute inset-0 h-full w-full object-cover object-[50%_22%]",
+    photoBg: "#0a0a14",
     text: "Cuida de funis, vendas e visão estratégica. É quem desenha o caminho entre o investimento em mídia e o resultado real no caixa do cliente.",
   },
   {
     name: "Beatriz Azevedo",
     role: "COO & Fundadora",
     image: beatrizImage,
-    // A foto original traz uma moldura cinza embutida: o zoom corta a moldura e iguala o enquadramento do Pablo
-    imageClass: "object-[50%_30%] scale-[1.35] origin-[50%_48%]",
+    // A foto original traz uma moldura cinza embutida: posicionamos só a área interna (fundo de estúdio)
+    // ocupando a largura do cartão, e o fundo escuro preenche o topo.
+    imageClass: "absolute left-[-17.6%] top-[3.8%] w-[135.1%] max-w-none h-auto",
+    photoBg: "#1e1e20",
     text: "Cuida do time interno, dos processos e da qualidade das entregas. É quem garante que a estratégia vire execução no prazo e no padrão certo.",
   },
 ];
@@ -44,7 +47,7 @@ const FoundersSection = () => {
               <SpotlightCard className="h-full bg-gradient-to-b from-[#14102a] to-[#0a0a14]">
                 <div className="flex h-full flex-col">
                   {/* Mesma proporção e mesmo tratamento de cor nas duas fotos */}
-                  <div className="relative aspect-[4/5] w-full overflow-hidden bg-[#0a0a14]">
+                  <div className="relative aspect-[4/5] w-full overflow-hidden" style={{ backgroundColor: f.photoBg }}>
                     <img
                       src={f.image}
                       alt={f.name}
@@ -52,7 +55,13 @@ const FoundersSection = () => {
                       height={1000}
                       loading="lazy"
                       decoding="async"
-                      className={`absolute inset-0 h-full w-full object-cover saturate-[0.85] contrast-[1.05] ${f.imageClass}`}
+                      className={`saturate-[0.85] contrast-[1.05] ${f.imageClass}`}
+                    />
+                    {/* Esconde a borda superior da foto interna e funde com o fundo */}
+                    <div
+                      aria-hidden
+                      className="absolute inset-x-0 top-0 h-[38%] pointer-events-none"
+                      style={{ backgroundImage: `linear-gradient(to bottom, ${f.photoBg} 50%, transparent)`, opacity: f.photoBg === "#0a0a14" ? 0 : 1 }}
                     />
                     <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(139,92,246,0.22)_0%,transparent_65%)] mix-blend-soft-light pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14] via-[#0a0a14]/35 to-transparent pointer-events-none" />
