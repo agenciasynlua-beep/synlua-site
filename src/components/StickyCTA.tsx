@@ -28,7 +28,7 @@ const StickyCTA = () => {
           <a
             href="#diagnostico"
             onClick={(e) => { e.preventDefault(); openQuiz(); }}
-            className="group/btn relative overflow-hidden flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white font-medium text-sm tracking-wide uppercase rounded-lg shadow-[0_0_30px_rgba(99,102,241,0.35)] active:scale-95 transition-transform duration-150"
+            className="group/btn relative overflow-hidden flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-medium text-sm tracking-wide uppercase rounded-lg shadow-[0_0_30px_rgba(168,81,176,0.35)] active:scale-95 transition-transform duration-150"
           >
             <span aria-hidden className="pointer-events-none absolute inset-y-0 -left-full w-1/2 skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/40 to-transparent animate-[shimmer_2.8s_ease-in-out_infinite]" />
             <span className="relative">Fale Conosco</span>

@@ -68,7 +68,7 @@ const InfluencerOnboarding = () => {
               <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
               <input
                 type="text" value={form.name} onChange={(e) => updateField("name", e.target.value)}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-sm font-light placeholder:text-white/20 focus:outline-none focus:border-[#6366F1]/40 transition-colors"
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-sm font-light placeholder:text-white/20 focus:outline-none focus:border-[#a851b0]/40 transition-colors"
                 placeholder="Seu nome"
               />
             </div>
@@ -88,7 +88,7 @@ const InfluencerOnboarding = () => {
               <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
               <input
                 type="tel" value={form.phone} onChange={(e) => updateField("phone", e.target.value)}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-sm font-light placeholder:text-white/20 focus:outline-none focus:border-[#6366F1]/40 transition-colors"
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-sm font-light placeholder:text-white/20 focus:outline-none focus:border-[#a851b0]/40 transition-colors"
                 placeholder="(00) 00000-0000"
               />
             </div>
@@ -99,7 +99,7 @@ const InfluencerOnboarding = () => {
               <Instagram className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/20" />
               <input
                 type="text" value={form.instagram} onChange={(e) => updateField("instagram", e.target.value)}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-sm font-light placeholder:text-white/20 focus:outline-none focus:border-[#6366F1]/40 transition-colors"
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-sm font-light placeholder:text-white/20 focus:outline-none focus:border-[#a851b0]/40 transition-colors"
                 placeholder="@seuperfil"
               />
             </div>
@@ -116,7 +116,7 @@ const InfluencerOnboarding = () => {
           {nicheOptions.map((n) => (
             <button
               key={n} onClick={() => updateField("niche", n)}
-              className={`p-3 rounded-lg border text-sm font-light transition-all duration-300 ${form.niche === n ? "border-[#6366F1]/60 bg-[#6366F1]/10 text-white/90" : "border-white/[0.08] bg-white/[0.02] text-white/50 hover:border-white/20"}`}
+              className={`p-3 rounded-lg border text-sm font-light transition-all duration-300 ${form.niche === n ? "border-[#a851b0]/60 bg-[#a851b0]/10 text-white/90" : "border-white/[0.08] bg-white/[0.02] text-white/50 hover:border-white/20"}`}
             >
               {n}
             </button>
@@ -133,7 +133,7 @@ const InfluencerOnboarding = () => {
           {followerRanges.map((r) => (
             <button
               key={r} onClick={() => updateField("followers", r)}
-              className={`w-full p-4 rounded-lg border text-sm font-light text-left transition-all duration-300 ${form.followers === r ? "border-[#6366F1]/60 bg-[#6366F1]/10 text-white/90" : "border-white/[0.08] bg-white/[0.02] text-white/50 hover:border-white/20"}`}
+              className={`w-full p-4 rounded-lg border text-sm font-light text-left transition-all duration-300 ${form.followers === r ? "border-[#a851b0]/60 bg-[#a851b0]/10 text-white/90" : "border-white/[0.08] bg-white/[0.02] text-white/50 hover:border-white/20"}`}
             >
               {r}
             </button>
@@ -151,7 +151,7 @@ const InfluencerOnboarding = () => {
           {["Sim", "Não"].map((opt) => (
             <button
               key={opt} onClick={() => updateField("didPubli", opt)}
-              className={`w-full p-4 rounded-lg border text-sm font-light text-left transition-all duration-300 ${form.didPubli === opt ? "border-[#6366F1]/60 bg-[#6366F1]/10 text-white/90" : "border-white/[0.08] bg-white/[0.02] text-white/50 hover:border-white/20"}`}
+              className={`w-full p-4 rounded-lg border text-sm font-light text-left transition-all duration-300 ${form.didPubli === opt ? "border-[#a851b0]/60 bg-[#a851b0]/10 text-white/90" : "border-white/[0.08] bg-white/[0.02] text-white/50 hover:border-white/20"}`}
             >
               {opt}
             </button>
@@ -199,7 +199,7 @@ const InfluencerOnboarding = () => {
       <main className="min-h-screen bg-[#050508] flex items-center justify-center">
         <SEOHead title="Processando | Synlua — Braço de Marketing Completo" description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua." />
         <div className="flex flex-col items-center gap-4">
-          <Loader2 className="w-6 h-6 animate-spin text-[#6366F1]" />
+          <Loader2 className="w-6 h-6 animate-spin text-[#a851b0]" />
           <p className="text-white/40 text-sm font-light">Processando seu cadastro...</p>
         </div>
       </main>
@@ -210,7 +210,7 @@ const InfluencerOnboarding = () => {
   if (phase === "form") {
     const current = steps[step];
     return (
-      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#6366F1]/30">
+      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#a851b0]/30">
         <SEOHead title="Influenciadora | Synlua — Braço de Marketing Completo" description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua." />
         <div className="w-full max-w-md px-6">
           <div className="text-center mb-10">
@@ -220,12 +220,12 @@ const InfluencerOnboarding = () => {
           {/* Progress */}
           <div className="flex gap-1.5 mb-8">
             {steps.map((_, i) => (
-              <div key={i} className={`h-1 flex-1 rounded-full transition-all duration-500 ${i <= step ? "bg-[#6366F1]" : "bg-white/[0.08]"}`} />
+              <div key={i} className={`h-1 flex-1 rounded-full transition-all duration-500 ${i <= step ? "bg-[#a851b0]" : "bg-white/[0.08]"}`} />
             ))}
           </div>
 
           <div className="border border-white/[0.08] rounded-lg p-8 bg-white/[0.02]">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#6366F1]/60 font-light mb-2">
+            <p className="text-xs uppercase tracking-[0.2em] text-[#a851b0]/60 font-light mb-2">
               Etapa {step + 1} de {steps.length}
             </p>
             <h2 className="text-xl font-light text-white/80 mb-6">{current.title}</h2>
@@ -241,7 +241,7 @@ const InfluencerOnboarding = () => {
               <button
                 onClick={handleNext}
                 disabled={!current.valid || isSubmitting}
-                className="flex-1 px-6 py-3 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white text-sm font-light tracking-wide uppercase rounded-md transition-all duration-500 hover:from-[#5558E6] hover:to-[#7C4FEB] hover:shadow-[0_0_30px_rgba(99,102,241,0.3)] disabled:opacity-40 flex items-center justify-center gap-2"
+                className="flex-1 px-6 py-3 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white text-sm font-light tracking-wide uppercase rounded-md transition-all duration-500 hover:from-[#96449f] hover:to-[#b868c1] hover:shadow-[0_0_30px_rgba(168,81,176,0.3)] disabled:opacity-40 flex items-center justify-center gap-2"
               >
                 {isSubmitting ? <><Loader2 className="w-4 h-4 animate-spin" /> Enviando...</> : step === steps.length - 1 ? "Enviar Cadastro" : <>Próximo <ArrowRight className="w-4 h-4" /></>}
               </button>
@@ -254,7 +254,7 @@ const InfluencerOnboarding = () => {
 
   // ─── LANDING ───
   return (
-    <main className="min-h-screen selection:bg-[#6366F1]/30">
+    <main className="min-h-screen selection:bg-[#a851b0]/30">
       <SEOHead title="Influenciadoras | Synlua — Braço de Marketing Completo" description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua." />
 
       {/* ─── HERO (LIGHT) ─── */}
@@ -275,7 +275,7 @@ const InfluencerOnboarding = () => {
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight leading-[1.1] text-[#050505]">
               Bem-vinda ao{" "}
-              <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">Ecossistema Synlua.</span>
+              <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">Ecossistema Synlua.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-base sm:text-lg text-[#666] font-light leading-relaxed max-w-xl mx-auto">
               Somos uma das maiores empresas de marketing digital do Brasil. Conectamos influenciadoras às marcas certas, criando parcerias que geram resultado real para os dois lados.
@@ -284,7 +284,7 @@ const InfluencerOnboarding = () => {
               Seu cadastro foi recebido com sucesso. Agora, conheça como funciona o nosso processo.
             </motion.p>
             <motion.div variants={fadeUp}>
-              <button onClick={() => document.getElementById("quem-somos")?.scrollIntoView({ behavior: "smooth" })} className="group inline-flex items-center gap-3 px-8 py-4 border border-[#6366F1] rounded-sm bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#5558E6] hover:to-[#7C4FEB] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]">
+              <button onClick={() => document.getElementById("quem-somos")?.scrollIntoView({ behavior: "smooth" })} className="group inline-flex items-center gap-3 px-8 py-4 border border-[#a851b0] rounded-sm bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#96449f] hover:to-[#b868c1] hover:shadow-[0_0_30px_rgba(168,81,176,0.4)]">
                 Saiba Mais
                 <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
               </button>
@@ -295,7 +295,7 @@ const InfluencerOnboarding = () => {
 
       {/* ─── QUEM SOMOS (DARK) ─── */}
       <section id="quem-somos" className="py-24 sm:py-32 relative bg-[#050505] text-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/[0.015] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#a851b0]/[0.015] to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 max-w-2xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer}>
             <motion.p variants={fadeUp} className="text-xs sm:text-sm uppercase tracking-[0.35em] text-white/30 font-light mb-4">Quem Somos</motion.p>
@@ -326,13 +326,13 @@ const InfluencerOnboarding = () => {
             </motion.p>
 
             <div className="relative">
-              <div className="absolute left-[27px] sm:left-[31px] top-0 bottom-0 w-px bg-gradient-to-b from-[#6366F1]/30 via-[#6366F1]/10 to-transparent" />
+              <div className="absolute left-[27px] sm:left-[31px] top-0 bottom-0 w-px bg-gradient-to-b from-[#a851b0]/30 via-[#a851b0]/10 to-transparent" />
               <div className="space-y-8">
                 {timelineSteps.map((s, i) => (
                   <motion.div key={i} variants={fadeUp} className="flex gap-5 sm:gap-6 group">
                     <div className="relative flex-shrink-0 mt-1">
-                      <div className="w-[54px] h-[54px] sm:w-[62px] sm:h-[62px] rounded-full border border-[#6366F1]/20 bg-white flex items-center justify-center group-hover:border-[#6366F1]/50 transition-colors duration-500 relative z-10 shadow-sm">
-                        <s.icon className="w-5 h-5 text-[#6366F1]" />
+                      <div className="w-[54px] h-[54px] sm:w-[62px] sm:h-[62px] rounded-full border border-[#a851b0]/20 bg-white flex items-center justify-center group-hover:border-[#a851b0]/50 transition-colors duration-500 relative z-10 shadow-sm">
+                        <s.icon className="w-5 h-5 text-[#a851b0]" />
                       </div>
                     </div>
                     <div className="pb-2 pt-2">
@@ -349,7 +349,7 @@ const InfluencerOnboarding = () => {
 
       {/* ─── ACELERE SEU PROCESSO (DARK) ─── */}
       <section className="py-24 sm:py-32 relative bg-[#050505] text-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/[0.02] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#a851b0]/[0.02] to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 max-w-2xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer}>
             <motion.p variants={fadeUp} className="text-xs sm:text-sm uppercase tracking-[0.35em] text-white/30 font-light mb-4">Plano Prioritário</motion.p>
@@ -358,13 +358,13 @@ const InfluencerOnboarding = () => {
               O processo padrão de análise e match com marcas leva de 4 a 6 semanas. Mas se você quer começar mais rápido, existe um caminho.
             </motion.p>
 
-            <motion.div variants={fadeUp} className="border border-[#6366F1]/30 rounded-lg p-8 sm:p-10 bg-gradient-to-br from-[#6366F1]/[0.06] to-transparent relative overflow-hidden">
+            <motion.div variants={fadeUp} className="border border-[#a851b0]/30 rounded-lg p-8 sm:p-10 bg-gradient-to-br from-[#a851b0]/[0.06] to-transparent relative overflow-hidden">
               <div className="absolute top-4 right-4">
-                <Crown className="w-8 h-8 text-[#6366F1]/20" />
+                <Crown className="w-8 h-8 text-[#a851b0]/20" />
               </div>
               <div className="space-y-6">
                 <div>
-                  <p className="text-xs uppercase tracking-[0.25em] text-[#6366F1]/60 font-medium mb-3">Fila VIP</p>
+                  <p className="text-xs uppercase tracking-[0.25em] text-[#a851b0]/60 font-medium mb-3">Fila VIP</p>
                   <h3 className="text-2xl sm:text-3xl font-extralight text-white/90 mb-2">Plano Acelerado</h3>
                   <p className="text-base text-white/45 font-light leading-relaxed">
                     Com o plano prioritário, seu perfil entra na fila VIP de análise. Em até <strong className="text-white/70">2 semanas</strong>, você recebe a primeira proposta de publi personalizada — enquanto o processo normal pode levar mais de um mês.
@@ -385,7 +385,7 @@ const InfluencerOnboarding = () => {
                     "Acesso antecipado a novas campanhas",
                   ].map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-4 h-4 text-[#6366F1] flex-shrink-0 mt-0.5" />
+                      <CheckCircle2 className="w-4 h-4 text-[#a851b0] flex-shrink-0 mt-0.5" />
                       <p className="text-sm sm:text-base text-white/55 font-light">{item}</p>
                     </div>
                   ))}
@@ -395,7 +395,7 @@ const InfluencerOnboarding = () => {
                   href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20no%20Plano%20Acelerado%20para%20influenciadoras."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white font-light text-sm tracking-wide uppercase rounded-md transition-all duration-500 hover:from-[#5558E6] hover:to-[#7C4FEB] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]"
+                  className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-light text-sm tracking-wide uppercase rounded-md transition-all duration-500 hover:from-[#96449f] hover:to-[#b868c1] hover:shadow-[0_0_30px_rgba(168,81,176,0.4)]"
                 >
                   <Rocket className="w-4 h-4" />
                   Quero Acelerar
@@ -419,8 +419,8 @@ const InfluencerOnboarding = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {whyCards.map((card, i) => (
-                <motion.div key={i} variants={fadeUp} className="flex items-start gap-4 p-5 rounded-lg border border-[#050505]/[0.06] bg-white hover:border-[#6366F1]/30 transition-colors duration-500">
-                  <card.icon className="w-5 h-5 text-[#6366F1] flex-shrink-0 mt-0.5" />
+                <motion.div key={i} variants={fadeUp} className="flex items-start gap-4 p-5 rounded-lg border border-[#050505]/[0.06] bg-white hover:border-[#a851b0]/30 transition-colors duration-500">
+                  <card.icon className="w-5 h-5 text-[#a851b0] flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-base text-[#333] font-normal mb-1">{card.title}</p>
                     <p className="text-sm text-[#666] font-light leading-relaxed">{card.desc}</p>
@@ -437,11 +437,11 @@ const InfluencerOnboarding = () => {
         <div className="container mx-auto px-6 max-w-2xl text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer}>
             <motion.div variants={fadeUp}>
-              <div className="w-16 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[#6366F1]/40 to-transparent" />
+              <div className="w-16 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[#a851b0]/40 to-transparent" />
             </motion.div>
             <motion.h2 variants={fadeUp} className="text-2xl sm:text-3xl md:text-4xl font-extralight tracking-tight mb-6">
               Seu cadastro foi{" "}
-              <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">recebido.</span>
+              <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">recebido.</span>
             </motion.h2>
             <motion.p variants={fadeUp} className="text-base sm:text-lg text-white/45 font-light leading-relaxed max-w-lg mx-auto mb-4">
               Nossa equipe já está analisando seu perfil. Em breve, entraremos em contato com os próximos passos — fique de olho no seu WhatsApp e e-mail.

@@ -45,7 +45,7 @@ const FaqSection = () => {
     <section id="faq" className="relative bg-[#050508] py-16 sm:py-24" style={{ scrollMarginTop: "90px" }}>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(139,92,246,0.08)_0%,transparent_60%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(201,127,209,0.08)_0%,transparent_60%)]"
       />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10 max-w-3xl">
@@ -61,7 +61,7 @@ const FaqSection = () => {
           </div>
           <h2 className="mt-5 text-[clamp(1.75rem,7vw,2.4rem)] sm:text-4xl md:text-5xl font-extralight text-[#EDEDED] tracking-tight leading-[1.15]">
             Antes de falar com a gente,{" "}
-            <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">
               tire suas dúvidas
             </span>
           </h2>
@@ -79,7 +79,7 @@ const FaqSection = () => {
               <AccordionItem
                 key={item.q}
                 value={item.q}
-                className="border border-white/[0.06] bg-[#0a0a14]/70 rounded-2xl px-5 sm:px-6 data-[state=open]:border-[#8B5CF6]/30 transition-colors"
+                className="border border-white/[0.06] bg-[#0a0a14]/70 rounded-2xl px-5 sm:px-6 data-[state=open]:border-[#c97fd1]/30 transition-colors"
               >
                 <AccordionTrigger className="text-left text-[15px] sm:text-base font-light text-[#EDEDED] hover:no-underline py-5">
                   {item.q}

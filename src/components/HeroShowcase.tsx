@@ -34,7 +34,7 @@ const columnStyles = [
 ];
 
 const Card = ({ item, playVideo, priority }: { item: Item; playVideo: boolean; priority: boolean }) => (
-  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a14] shadow-[0_18px_60px_-24px_rgba(139,92,246,0.55)]">
+  <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a14] shadow-[0_18px_60px_-24px_rgba(201,127,209,0.55)]">
     {item.video && playVideo ? (
       <video
         src={item.video}

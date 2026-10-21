@@ -22,19 +22,19 @@ const row2 = [
 const ServiceCard = ({ service }: { service: typeof row1[0] }) => {
   const Icon = service.icon;
   return (
-    <div className="flex-shrink-0 w-[280px] sm:w-[320px] p-6 sm:p-8 rounded-2xl border border-[#1a1a2e] bg-[#0a0a14] hover:border-[#6366F1]/40 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-[#6366F1]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+    <div className="flex-shrink-0 w-[280px] sm:w-[320px] p-6 sm:p-8 rounded-2xl border border-[#1a1a2e] bg-[#0a0a14] hover:border-[#a851b0]/40 hover:scale-[1.02] hover:-translate-y-1 transition-all duration-500 group relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-br from-[#a851b0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <span className="absolute top-4 right-4 text-[#6366F1]/30 text-xs font-mono tracking-[0.2em]">{service.num}</span>
+      <span className="absolute top-4 right-4 text-[#a851b0]/30 text-xs font-mono tracking-[0.2em]">{service.num}</span>
       
       <div className="relative z-10">
-        <div className="w-12 h-12 rounded-full bg-[#6366F1]/10 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(99,102,241,0.25)] transition-shadow duration-500">
+        <div className="w-12 h-12 rounded-full bg-[#a851b0]/10 flex items-center justify-center mb-5 group-hover:shadow-[0_0_20px_rgba(168,81,176,0.25)] transition-shadow duration-500">
           <Icon className="w-5 h-5" style={{ stroke: "url(#serviceGradientLux)" }} />
         </div>
         <h3 className="text-sm sm:text-base font-light tracking-[0.2em] text-[#EDEDED] mb-2">
           {service.title}
         </h3>
-        <div className="w-8 h-[1px] bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] mb-3 group-hover:w-12 transition-all duration-500" />
+        <div className="w-8 h-[1px] bg-gradient-to-r from-[#a851b0] to-[#c97fd1] mb-3 group-hover:w-12 transition-all duration-500" />
         <p className="text-xs sm:text-sm text-[#808080] leading-relaxed">
           {service.description}
         </p>
@@ -52,14 +52,14 @@ const InteractiveServices = () => {
 
   return (
     <section className="relative py-8 sm:py-10 md:py-14 bg-[#050508] overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.03)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,81,176,0.03)_0%,transparent_60%)]" />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 mb-8 sm:mb-10 animate-fade-in">
         <div className="flex justify-center">
           <SectionLabel text="NOSSOS_SERVIÇOS" />
         </div>
         <h2 className="text-center text-3xl sm:text-4xl md:text-5xl font-light text-[#EDEDED] mt-4 max-w-2xl mx-auto leading-tight">
           Soluções completas para{" "}
-          <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent font-medium">
+          <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent font-medium">
             escalar sua marca
           </span>
         </h2>
@@ -103,8 +103,8 @@ const InteractiveServices = () => {
       <svg width="0" height="0" className="absolute">
         <defs>
           <linearGradient id="serviceGradientLux" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#6366F1" />
-            <stop offset="100%" stopColor="#8B5CF6" />
+            <stop offset="0%" stopColor="#a851b0" />
+            <stop offset="100%" stopColor="#c97fd1" />
           </linearGradient>
         </defs>
       </svg>

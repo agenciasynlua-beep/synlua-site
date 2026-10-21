@@ -281,7 +281,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
             value={data.name}
             onChange={(e) => set("name", e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && canAdvance() && go(2)}
-            className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl focus:border-[#8B5CF6]/60"
+            className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl focus:border-[#c97fd1]/60"
           />
         </div>
       ),
@@ -299,7 +299,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
               value={data.phone}
               onChange={(e) => set("phone", maskPhone(e.target.value))}
               onKeyDown={(e) => e.key === "Enter" && canAdvance() && go(3)}
-              className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl pl-11 focus:border-[#8B5CF6]/60"
+              className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl pl-11 focus:border-[#c97fd1]/60"
             />
           </div>
         </div>
@@ -321,7 +321,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
               value={data.email}
               onChange={(e) => set("email", e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && canAdvance() && go(4)}
-              className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl pl-11 focus:border-[#8B5CF6]/60"
+              className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl pl-11 focus:border-[#c97fd1]/60"
             />
           </div>
         </div>
@@ -339,7 +339,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
               value={data.company}
               onChange={(e) => set("company", e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && canAdvance() && go(5)}
-              className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl pl-11 focus:border-[#8B5CF6]/60"
+              className="bg-[#0c0c16] border-[#1f1f35] text-[#EDEDED] placeholder:text-[#555] h-14 rounded-xl pl-11 focus:border-[#c97fd1]/60"
             />
           </div>
         </div>
@@ -367,8 +367,8 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                   }}
                   className={`px-4 py-3 rounded-full text-sm border transition-all ${
                     active
-                      ? "border-[#8B5CF6] bg-[#8B5CF6]/15 text-[#EDEDED]"
-                      : "border-[#1f1f35] text-[#8a8a95] hover:border-[#8B5CF6]/50 hover:text-[#EDEDED]/80"
+                      ? "border-[#c97fd1] bg-[#c97fd1]/15 text-[#EDEDED]"
+                      : "border-[#1f1f35] text-[#8a8a95] hover:border-[#c97fd1]/50 hover:text-[#EDEDED]/80"
                   }`}
                 >
                   {s}
@@ -395,8 +395,8 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                         onClick={() => set("service", s)}
                         className={`px-4 py-3 rounded-full text-sm border transition-all ${
                           active
-                            ? "border-[#8B5CF6] bg-[#8B5CF6]/15 text-[#EDEDED]"
-                            : "border-[#1f1f35] text-[#8a8a95] hover:border-[#8B5CF6]/50 hover:text-[#EDEDED]/80"
+                            ? "border-[#c97fd1] bg-[#c97fd1]/15 text-[#EDEDED]"
+                            : "border-[#1f1f35] text-[#8a8a95] hover:border-[#c97fd1]/50 hover:text-[#EDEDED]/80"
                         }`}
                       >
                         {s}
@@ -428,8 +428,8 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                     onClick={() => set("revenue", r)}
                     className={`px-4 py-2.5 rounded-full text-sm border transition-all ${
                       active
-                        ? "border-[#8B5CF6] bg-[#8B5CF6]/15 text-[#EDEDED]"
-                        : "border-[#1f1f35] text-[#8a8a95] hover:border-[#8B5CF6]/50 hover:text-[#EDEDED]/80"
+                        ? "border-[#c97fd1] bg-[#c97fd1]/15 text-[#EDEDED]"
+                        : "border-[#1f1f35] text-[#8a8a95] hover:border-[#c97fd1]/50 hover:text-[#EDEDED]/80"
                     }`}
                   >
                     {r}
@@ -452,8 +452,8 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                     onClick={() => set("urgency", u)}
                     className={`px-4 py-2.5 rounded-full text-sm border transition-all ${
                       active
-                        ? "border-[#8B5CF6] bg-[#8B5CF6]/15 text-[#EDEDED]"
-                        : "border-[#1f1f35] text-[#8a8a95] hover:border-[#8B5CF6]/50 hover:text-[#EDEDED]/80"
+                        ? "border-[#c97fd1] bg-[#c97fd1]/15 text-[#EDEDED]"
+                        : "border-[#1f1f35] text-[#8a8a95] hover:border-[#c97fd1]/50 hover:text-[#EDEDED]/80"
                     }`}
                   >
                     {u}
@@ -480,7 +480,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
               set("agreed", agreed);
               submit(agreed);
             }}
-            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white rounded-xl font-medium tracking-wide shadow-[0_12px_36px_-12px_rgba(139,92,246,0.65)] transition-all active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white rounded-xl font-medium tracking-wide shadow-[0_12px_36px_-12px_rgba(201,127,209,0.65)] transition-all active:scale-[0.98] disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {submitting ? (
               <>
@@ -520,9 +520,9 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
             exit={{ opacity: 0, scale: 0.96, y: 10 }}
             transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-xl bg-[#08080f] border border-[#1f1f35] rounded-[24px] overflow-hidden shadow-[0_40px_100px_-30px_rgba(139,92,246,0.4)]"
+            className="relative w-full max-w-xl bg-[#08080f] border border-[#1f1f35] rounded-[24px] overflow-hidden shadow-[0_40px_100px_-30px_rgba(201,127,209,0.4)]"
           >
-            <div aria-hidden className="pointer-events-none absolute -top-32 -right-24 w-72 h-72 rounded-full bg-[#8B5CF6]/20 blur-[100px]" />
+            <div aria-hidden className="pointer-events-none absolute -top-32 -right-24 w-72 h-72 rounded-full bg-[#c97fd1]/20 blur-[100px]" />
 
             {done ? (
               <div className="relative px-6 py-10 sm:px-10 sm:py-12 text-center">
@@ -530,7 +530,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                   initial={{ scale: 0.6, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ type: "spring", stiffness: 260, damping: 18 }}
-                  className="mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-[#6366F1] to-[#8B5CF6] flex items-center justify-center shadow-[0_0_40px_-6px_rgba(139,92,246,0.8)]"
+                  className="mx-auto w-14 h-14 rounded-full bg-gradient-to-br from-[#a851b0] to-[#c97fd1] flex items-center justify-center shadow-[0_0_40px_-6px_rgba(201,127,209,0.8)]"
                 >
                   <Check className="w-7 h-7 text-white" />
                 </motion.div>
@@ -549,11 +549,11 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                     ["Na conversa", "Diagnóstico e o caminho que faz sentido, sem compromisso."],
                   ].map(([when, what], i) => (
                     <li key={when} className="flex gap-3">
-                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#8B5CF6]/40 bg-[#8B5CF6]/10 text-[11px] text-[#A78BFA]">
+                      <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-[#c97fd1]/40 bg-[#c97fd1]/10 text-[11px] text-[#dcaae2]">
                         {i + 1}
                       </span>
                       <span className="text-sm leading-snug">
-                        <span className="block text-[11px] uppercase tracking-[0.18em] text-[#8B5CF6]">{when}</span>
+                        <span className="block text-[11px] uppercase tracking-[0.18em] text-[#c97fd1]">{when}</span>
                         <span className="text-[#c4c4cf] font-light">{what}</span>
                       </span>
                     </li>
@@ -565,14 +565,14 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                     href="https://wa.me/5511932267758?text=Ol%C3%A1!%20Acabei%20de%20preencher%20o%20diagn%C3%B3stico%20no%20site."
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white text-sm font-medium"
+                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white text-sm font-medium"
                   >
                     Prefere falar agora? Chamar no WhatsApp
                   </a>
                   <button
                     type="button"
                     onClick={onCloseReset}
-                    className="w-full sm:w-auto px-6 py-3 rounded-xl border border-[#1f1f35] text-[#c4c4cf] text-sm hover:border-[#8B5CF6]/50 transition-colors"
+                    className="w-full sm:w-auto px-6 py-3 rounded-xl border border-[#1f1f35] text-[#c4c4cf] text-sm hover:border-[#c97fd1]/50 transition-colors"
                   >
                     Fechar
                   </button>
@@ -587,7 +587,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                         <ArrowLeft className="w-5 h-5" />
                       </button>
                     )}
-                    <span className="text-[11px] tracking-[0.2em] uppercase text-[#8B5CF6]">
+                    <span className="text-[11px] tracking-[0.2em] uppercase text-[#c97fd1]">
                       Etapa {step} de {TOTAL}
                       <span className="ml-2 normal-case tracking-normal text-[#6f6f7d]">· menos de 1 minuto</span>
                     </span>
@@ -600,7 +600,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
 
                 <div className="mx-5 sm:mx-7 mt-4 h-[3px] rounded-full bg-[#1a1a2e] overflow-hidden">
                   <motion.div
-                    className="h-full bg-gradient-to-r from-[#6366F1] to-[#8B5CF6]"
+                    className="h-full bg-gradient-to-r from-[#a851b0] to-[#c97fd1]"
                     initial={{ width: 0 }}
                     animate={{ width: `${progress}%` }}
                     transition={{ duration: 0.35, ease: "easeOut" }}
@@ -645,7 +645,7 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                       type="button"
                       disabled={!canAdvance() || submitting}
                       onClick={() => go(step + 1)}
-                      className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white rounded-xl font-medium tracking-wide shadow-[0_12px_36px_-12px_rgba(139,92,246,0.65)] transition-all active:scale-[0.98] disabled:opacity-40 disabled:shadow-none disabled:cursor-not-allowed overflow-hidden relative"
+                      className="flex-1 flex items-center justify-center gap-2 px-6 py-4 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white rounded-xl font-medium tracking-wide shadow-[0_12px_36px_-12px_rgba(201,127,209,0.65)] transition-all active:scale-[0.98] disabled:opacity-40 disabled:shadow-none disabled:cursor-not-allowed overflow-hidden relative"
                     >
                       <>
                         Avançar

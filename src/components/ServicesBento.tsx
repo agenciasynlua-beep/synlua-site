@@ -55,7 +55,7 @@ const shimmer = (
 const ServicesBento = () => {
   return (
     <section id="servicos" className="relative bg-[#050508] py-16 sm:py-24" style={{ scrollMarginTop: "90px" }}>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.07)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,81,176,0.07)_0%,transparent_60%)]" />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -66,7 +66,7 @@ const ServicesBento = () => {
         >
           <h2 className="text-[clamp(1.75rem,7vw,2.4rem)] sm:text-4xl md:text-5xl font-extralight text-[#EDEDED] tracking-tight leading-[1.15]">
             Tudo o que sua empresa precisa para{" "}
-            <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">
               vender mais no digital
             </span>
           </h2>
@@ -92,8 +92,8 @@ const ServicesBento = () => {
                   intensity={card.highlight ? 0.22 : 0.16}
                   className={`h-full p-6 sm:p-9 relative overflow-hidden group/card transition-transform duration-300 hover:-translate-y-1 ${
                     card.highlight
-                      ? "bg-gradient-to-br from-[#6D28D9] via-[#7C3AED] to-[#5B21B6] border-[#8B5CF6]/40 shadow-[0_0_50px_rgba(139,92,246,0.25)]"
-                      : "border-white/[0.06] hover:border-[#8B5CF6]/20"
+                      ? "bg-gradient-to-br from-[#8b3f95] via-[#8b3f95] to-[#6e2f78] border-[#c97fd1]/40 shadow-[0_0_50px_rgba(201,127,209,0.25)]"
+                      : "border-white/[0.06] hover:border-[#c97fd1]/20"
                   }`}
                 >
                   {card.highlight && shimmer}
@@ -101,7 +101,7 @@ const ServicesBento = () => {
                     className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-5 sm:mb-8 transition-colors duration-300 ${
                       card.highlight
                         ? "bg-white/10 text-white"
-                        : "bg-[#0c0c16] text-[#8B5CF6] group-hover/card:text-white group-hover/card:bg-[#8B5CF6]/20"
+                        : "bg-[#0c0c16] text-[#c97fd1] group-hover/card:text-white group-hover/card:bg-[#c97fd1]/20"
                     }`}
                     whileHover={{ rotate: [0, -6, 6, 0], scale: 1.05 }}
                     transition={{ duration: 0.5 }}
@@ -124,7 +124,7 @@ const ServicesBento = () => {
                     {card.text}
                   </p>
 
-                  <div className={`mt-5 sm:mt-6 h-px bg-gradient-to-r from-transparent ${card.highlight ? "via-white/20" : "via-[#8B5CF6]/30"} to-transparent`} />
+                  <div className={`mt-5 sm:mt-6 h-px bg-gradient-to-r from-transparent ${card.highlight ? "via-white/20" : "via-[#c97fd1]/30"} to-transparent`} />
                 </SpotlightCard>
               </motion.div>
             );

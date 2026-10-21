@@ -42,7 +42,7 @@ const ExitIntentPopup = () => {
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-md rounded-2xl p-[1px] bg-gradient-to-br from-[#6366F1]/50 via-[#8B5CF6]/30 to-transparent"
+            className="relative w-full max-w-md rounded-2xl p-[1px] bg-gradient-to-br from-[#a851b0]/50 via-[#c97fd1]/30 to-transparent"
           >
             <div className="rounded-2xl bg-[#0a0a0a] px-6 sm:px-10 py-10 sm:py-12 text-center relative overflow-hidden">
               {/* Glow */}
@@ -58,7 +58,7 @@ const ExitIntentPopup = () => {
               </button>
 
               <div className="relative z-10">
-                <p className="text-xs tracking-[0.3em] uppercase text-[#6366F1] mb-4 font-light">
+                <p className="text-xs tracking-[0.3em] uppercase text-[#a851b0] mb-4 font-light">
                   Antes de sair...
                 </p>
 
@@ -74,7 +74,7 @@ const ExitIntentPopup = () => {
                 <Link
                   to="/#diagnostico"
                   onClick={() => setShow(false)}
-                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white font-medium text-sm tracking-wide uppercase rounded-lg transition-all duration-300 hover:from-[#5558E6] hover:to-[#7C4FD1] hover:scale-105 shadow-[0_0_30px_rgba(99,102,241,0.3)] hover:shadow-[0_0_50px_rgba(99,102,241,0.5)] active:scale-[0.97] group"
+                  className="inline-flex items-center justify-center gap-3 px-10 py-4 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-medium text-sm tracking-wide uppercase rounded-lg transition-all duration-300 hover:from-[#96449f] hover:to-[#7C4FD1] hover:scale-105 shadow-[0_0_30px_rgba(168,81,176,0.3)] hover:shadow-[0_0_50px_rgba(168,81,176,0.5)] active:scale-[0.97] group"
                 >
                   Agendar Call
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

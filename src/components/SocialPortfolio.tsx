@@ -46,7 +46,7 @@ const rowBottom = allClients.slice(half);
 
 const DragHint = ({ light = false }: { light?: boolean }) => (
   <div className="flex md:hidden items-center justify-center gap-2 mt-4 text-[11px] font-light tracking-wide opacity-70 animate-fade-in">
-    <Hand className={`w-3.5 h-3.5 ${light ? "text-[#6366F1]" : "text-[#8B5CF6]"}`} />
+    <Hand className={`w-3.5 h-3.5 ${light ? "text-[#a851b0]" : "text-[#c97fd1]"}`} />
     <span className={light ? "text-[#555]" : "text-[#808080]"}>Arraste para explorar</span>
   </div>
 );
@@ -68,7 +68,7 @@ const MarqueeRow = ({ items, reverse = false, duration = "70s", light = false }:
           <div key={setIndex} className="flex gap-5 sm:gap-6 pr-5 sm:pr-6" aria-hidden={setIndex === 1}>
             {items.map((client) => (
               <div key={`${client.name}-${setIndex}`} className="flex-shrink-0 w-[240px] sm:w-[300px] md:w-[340px] group">
-                <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-[#1f1f35]/40 bg-[#0a0a14] shadow-[0_8px_32px_-20px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-[#6366F1]/50 hover:shadow-[0_12px_40px_-18px_rgba(99,102,241,0.25)] hover:scale-[1.02] hover:-translate-y-1">
+                <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-[#1f1f35]/40 bg-[#0a0a14] shadow-[0_8px_32px_-20px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-[#a851b0]/50 hover:shadow-[0_12px_40px_-18px_rgba(168,81,176,0.25)] hover:scale-[1.02] hover:-translate-y-1">
                   <img
                     src={client.image}
                     alt={`Portfolio ${client.name}`}
@@ -88,7 +88,7 @@ const MarqueeRow = ({ items, reverse = false, duration = "70s", light = false }:
                   <div className="flex gap-2 shrink-0">
                     {client.tags.slice(0, 1).map((tag) => (
                       <span key={tag} className={`inline-flex items-center gap-1.5 text-[10px] sm:text-xs rounded-full px-3 py-1 border ${light ? "text-[#1a1a2e]/80 bg-[#f5f5f7] border-[#e0e0e8]" : "text-[#EDEDED]/80 bg-[#0a0a14] border-[#1a1a2e]"}`}>
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#8B5CF6]" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#c97fd1]" />
                         {tag}
                       </span>
                     ))}
@@ -111,8 +111,8 @@ const SocialPortfolio = ({ subtitle, light = false }: { subtitle?: string; light
       className={`relative py-12 sm:py-16 overflow-hidden ${light ? "bg-[#FAFAFA] text-[#1a1a2e]" : "bg-[#050508] text-[#EDEDED]"}`}
       style={{ scrollMarginTop: "90px" }}
     >
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6366F1]/10 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#6366F1]/10 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#a851b0]/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#a851b0]/10 to-transparent" />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-10">
         <div className="text-center animate-fade-in">
           <div className="flex justify-center">
@@ -120,7 +120,7 @@ const SocialPortfolio = ({ subtitle, light = false }: { subtitle?: string; light
           </div>
           <h2 className={`text-3xl sm:text-4xl md:text-5xl font-light leading-tight ${light ? "text-[#1a1a2e]" : "text-[#EDEDED]"}`}>
             Estética que{" "}
-            <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent font-medium">
+            <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent font-medium">
               converte
             </span>
           </h2>
@@ -145,8 +145,8 @@ const SocialPortfolio = ({ subtitle, light = false }: { subtitle?: string; light
           onClick={() => openQuiz()}
           className={`inline-flex items-center gap-2 text-sm rounded-full px-5 py-2.5 transition-all duration-300 ${
             light
-              ? "text-[#1a1a2e] border border-[#e0e0e8] bg-white hover:border-[#6366F1]/50"
-              : "text-[#EDEDED]/80 hover:text-[#EDEDED] border border-[#1a1a2e] hover:border-[#6366F1]/50 bg-[#0a0a14]/50 hover:bg-[#0a0a14]"
+              ? "text-[#1a1a2e] border border-[#e0e0e8] bg-white hover:border-[#a851b0]/50"
+              : "text-[#EDEDED]/80 hover:text-[#EDEDED] border border-[#1a1a2e] hover:border-[#a851b0]/50 bg-[#0a0a14]/50 hover:bg-[#0a0a14]"
           }`}
         >
           Fale Conosco

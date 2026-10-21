@@ -46,7 +46,7 @@ const SupplierOnboarding = () => {
 
   if (isSuccess) {
     return (
-      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#6366F1]/30">
+      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#a851b0]/30">
         <SEOHead title="Cadastro Recebido | Synlua — Braço de Marketing Completo" description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua." />
         <div className="w-full max-w-md px-6 text-center">
           <img src={synluaLogoHorizontal} alt="Synlua" className="h-12 sm:h-14 mx-auto mb-10" />
@@ -55,7 +55,7 @@ const SupplierOnboarding = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <CheckCircle2 className="w-14 h-14 text-[#6366F1] mx-auto mb-6" />
+            <CheckCircle2 className="w-14 h-14 text-[#a851b0] mx-auto mb-6" />
           </motion.div>
           <h1 className="text-2xl sm:text-3xl font-extralight text-white/90 mb-4 tracking-tight">
             Cadastro recebido
@@ -69,7 +69,7 @@ const SupplierOnboarding = () => {
   }
 
   return (
-    <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#6366F1]/30 py-16">
+    <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#a851b0]/30 py-16">
       <SEOHead title="Fornecedor | Synlua — Braço de Marketing Completo" description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua." />
       <div className="w-full max-w-lg px-6">
         <div className="text-center mb-10">
@@ -92,7 +92,7 @@ const SupplierOnboarding = () => {
                 type="text"
                 value={form.name}
                 onChange={(e) => updateField("name", e.target.value)}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-base font-light placeholder:text-white/20 focus:outline-none focus:border-[#6366F1]/40 transition-colors"
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-base font-light placeholder:text-white/20 focus:outline-none focus:border-[#a851b0]/40 transition-colors"
                 placeholder="Seu nome ou da empresa"
                 maxLength={100}
               />
@@ -107,7 +107,7 @@ const SupplierOnboarding = () => {
                 type="text"
                 value={form.instagram}
                 onChange={(e) => updateField("instagram", e.target.value)}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-base font-light placeholder:text-white/20 focus:outline-none focus:border-[#6366F1]/40 transition-colors"
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-base font-light placeholder:text-white/20 focus:outline-none focus:border-[#a851b0]/40 transition-colors"
                 placeholder="@seuinstagram"
                 maxLength={100}
               />
@@ -122,7 +122,7 @@ const SupplierOnboarding = () => {
                 type="text"
                 value={form.niche}
                 onChange={(e) => updateField("niche", e.target.value)}
-                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-base font-light placeholder:text-white/20 focus:outline-none focus:border-[#6366F1]/40 transition-colors"
+                className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md pl-10 pr-4 py-3 text-white/80 text-base font-light placeholder:text-white/20 focus:outline-none focus:border-[#a851b0]/40 transition-colors"
                 placeholder="Ex: Moda, Beleza, Tech, Gastronomia..."
                 maxLength={100}
               />
@@ -132,7 +132,7 @@ const SupplierOnboarding = () => {
           <button
             onClick={handleSubmit}
             disabled={!isValid || isSubmitting}
-            className="w-full mt-2 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-md bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#5558E6] hover:to-[#7C4FEB] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)] disabled:opacity-40 disabled:cursor-not-allowed"
+            className="w-full mt-2 inline-flex items-center justify-center gap-3 px-8 py-4 rounded-md bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#96449f] hover:to-[#b868c1] hover:shadow-[0_0_30px_rgba(168,81,176,0.4)] disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <>

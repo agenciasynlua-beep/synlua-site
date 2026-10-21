@@ -115,7 +115,7 @@ const OnboardingPage = () => {
 
   if (!isAuthenticated) {
     return (
-      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#6366F1]/30">
+      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#a851b0]/30">
         <SEOHead
           title="Login | Synlua — Braço de Marketing Completo"
           description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua."
@@ -129,7 +129,7 @@ const OnboardingPage = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <CheckCircle2 className="w-14 h-14 text-[#6366F1] mx-auto mb-6" />
+            <CheckCircle2 className="w-14 h-14 text-[#a851b0] mx-auto mb-6" />
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 10 }}
@@ -152,7 +152,7 @@ const OnboardingPage = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
           >
-            <Loader2 className="w-5 h-5 animate-spin text-[#6366F1]/50 mx-auto" />
+            <Loader2 className="w-5 h-5 animate-spin text-[#a851b0]/50 mx-auto" />
           </motion.div>
         </div>
       </main>
@@ -162,7 +162,7 @@ const OnboardingPage = () => {
   // ─── ROLE SELECTION ───
   if (isAuthenticated && !userRole) {
     return (
-      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#6366F1]/30">
+      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#a851b0]/30">
         <SEOHead title="Perfil | Synlua — Braço de Marketing Completo" description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua." path="/onboarding" noindex />
         <div className="w-full max-w-lg px-6">
           <div className="text-center mb-10">
@@ -171,7 +171,7 @@ const OnboardingPage = () => {
 
           {isSelectingRole ? (
             <div className="flex flex-col items-center gap-4 py-16">
-              <Loader2 className="w-6 h-6 animate-spin text-[#6366F1]" />
+              <Loader2 className="w-6 h-6 animate-spin text-[#a851b0]" />
               <p className="text-white/40 text-sm font-light">Preparando seu painel...</p>
             </div>
           ) : (
@@ -182,9 +182,9 @@ const OnboardingPage = () => {
                   <button
                     key={opt.key}
                     onClick={() => handleRoleSelect(opt.key)}
-                    className="w-full flex items-center gap-4 p-5 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:border-[#6366F1]/50 hover:bg-[#6366F1]/[0.05] transition-all duration-400 text-left group"
+                    className="w-full flex items-center gap-4 p-5 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:border-[#a851b0]/50 hover:bg-[#a851b0]/[0.05] transition-all duration-400 text-left group"
                   >
-                    <opt.icon className="w-5 h-5 text-white/30 group-hover:text-[#6366F1] transition-colors flex-shrink-0" />
+                    <opt.icon className="w-5 h-5 text-white/30 group-hover:text-[#a851b0] transition-colors flex-shrink-0" />
                     <div>
                       <p className="text-base text-white/80 font-light">{opt.label}</p>
                       <p className="text-sm text-white/30 font-light">{opt.desc}</p>
@@ -215,7 +215,7 @@ const OnboardingPage = () => {
   }
 
   return (
-    <main className="min-h-screen selection:bg-[#6366F1]/30">
+    <main className="min-h-screen selection:bg-[#a851b0]/30">
       <SEOHead
         title="Onboarding | Synlua — Braço de Marketing Completo"
         description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua."
@@ -268,7 +268,7 @@ const OnboardingPage = () => {
               className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight leading-[1.1] text-[#050505]"
             >
               Bem-vindo à{" "}
-              <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">
                 Synlua.
               </span>
             </motion.h1>
@@ -292,7 +292,7 @@ const OnboardingPage = () => {
                 onClick={() =>
                   document.getElementById("processo")?.scrollIntoView({ behavior: "smooth" })
                 }
-                className="group inline-flex items-center gap-3 px-8 py-4 border border-[#6366F1] rounded-sm bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#5558E6] hover:to-[#7C4FEB] hover:shadow-[0_0_30px_rgba(99,102,241,0.4)]"
+                className="group inline-flex items-center gap-3 px-8 py-4 border border-[#a851b0] rounded-sm bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#96449f] hover:to-[#b868c1] hover:shadow-[0_0_30px_rgba(168,81,176,0.4)]"
               >
                 Entender o Processo
                 <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
@@ -304,7 +304,7 @@ const OnboardingPage = () => {
 
       {/* ─── TIMELINE (DARK) ─── */}
       <section id="processo" className="py-24 sm:py-32 relative bg-[#050505] text-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#6366F1]/[0.015] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#a851b0]/[0.015] to-transparent pointer-events-none" />
 
         <div className="container mx-auto px-6 max-w-2xl relative z-10">
           <motion.div
@@ -334,7 +334,7 @@ const OnboardingPage = () => {
           </motion.div>
 
           <div className="relative">
-            <div className="absolute left-[27px] sm:left-[31px] top-0 bottom-0 w-px bg-gradient-to-b from-[#6366F1]/30 via-[#6366F1]/10 to-transparent" />
+            <div className="absolute left-[27px] sm:left-[31px] top-0 bottom-0 w-px bg-gradient-to-b from-[#a851b0]/30 via-[#a851b0]/10 to-transparent" />
 
             <motion.div
               initial="hidden"
@@ -346,12 +346,12 @@ const OnboardingPage = () => {
               {timelineData.map((step, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex gap-5 sm:gap-6 group">
                   <div className="relative flex-shrink-0 mt-1">
-                    <div className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] rounded-full border border-[#6366F1]/40 bg-[#050505] flex items-center justify-center group-hover:border-[#6366F1]/80 transition-colors duration-500 relative z-10">
-                      <div className="w-[5px] h-[5px] sm:w-[6px] sm:h-[6px] rounded-full bg-[#6366F1]/60 group-hover:bg-[#6366F1] transition-colors duration-500" />
+                    <div className="w-[14px] h-[14px] sm:w-[16px] sm:h-[16px] rounded-full border border-[#a851b0]/40 bg-[#050505] flex items-center justify-center group-hover:border-[#a851b0]/80 transition-colors duration-500 relative z-10">
+                      <div className="w-[5px] h-[5px] sm:w-[6px] sm:h-[6px] rounded-full bg-[#a851b0]/60 group-hover:bg-[#a851b0] transition-colors duration-500" />
                     </div>
                   </div>
                   <div className="pb-2">
-                    <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#6366F1]/70 font-medium mb-2">
+                    <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-[#a851b0]/70 font-medium mb-2">
                       {step.day}
                     </p>
                     <ul className="space-y-1.5">
@@ -402,9 +402,9 @@ const OnboardingPage = () => {
                 <motion.div
                   key={i}
                   variants={fadeUp}
-                  className="flex items-start gap-4 p-4 rounded-lg border border-[#050505]/[0.06] bg-white hover:border-[#6366F1]/30 transition-colors duration-500"
+                  className="flex items-start gap-4 p-4 rounded-lg border border-[#050505]/[0.06] bg-white hover:border-[#a851b0]/30 transition-colors duration-500"
                 >
-                  <CheckCircle2 className="w-4 h-4 text-[#6366F1] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#a851b0] flex-shrink-0 mt-0.5" />
                   <p className="text-base sm:text-lg text-[#333] font-light">{item}</p>
                 </motion.div>
               ))}
@@ -440,7 +440,7 @@ const OnboardingPage = () => {
               className="p-6 rounded-lg border border-white/[0.06] bg-white/[0.02]"
             >
               <div className="flex items-start gap-4">
-                <MessageSquare className="w-5 h-5 text-[#6366F1]/50 flex-shrink-0 mt-0.5" />
+                <MessageSquare className="w-5 h-5 text-[#a851b0]/50 flex-shrink-0 mt-0.5" />
                 <div className="space-y-3">
                    <p className="text-base sm:text-lg text-white/55 font-light leading-relaxed">
                     Toda comunicação será feita pelo grupo oficial do projeto, garantindo rastreabilidade e agilidade nas trocas.
@@ -485,9 +485,9 @@ const OnboardingPage = () => {
                 <motion.div
                   key={i}
                   variants={fadeUp}
-                  className="flex items-center gap-4 p-5 rounded-lg border border-[#050505]/[0.06] bg-white hover:border-[#6366F1]/30 transition-colors duration-500"
+                  className="flex items-center gap-4 p-5 rounded-lg border border-[#050505]/[0.06] bg-white hover:border-[#a851b0]/30 transition-colors duration-500"
                 >
-                  <item.icon className="w-5 h-5 text-[#6366F1] flex-shrink-0" />
+                  <item.icon className="w-5 h-5 text-[#a851b0] flex-shrink-0" />
                   <p className="text-base sm:text-lg text-[#333] font-light">{item.text}</p>
                 </motion.div>
               ))}
@@ -495,10 +495,10 @@ const OnboardingPage = () => {
 
             {/* Final statement */}
             <motion.div variants={fadeUp} className="text-center pt-8">
-              <div className="w-16 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[#6366F1]/40 to-transparent" />
+              <div className="w-16 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[#a851b0]/40 to-transparent" />
               <p className="text-xl sm:text-2xl md:text-3xl font-extralight tracking-tight text-[#050505]/70">
                 Conversão não é acaso.{" "}
-                <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">
                   É método.
                 </span>
               </p>

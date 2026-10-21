@@ -63,8 +63,8 @@ const FooterCard = () => {
     <footer className="relative bg-[#050508] px-4 sm:px-6 md:px-8 pb-6 sm:pb-8 pt-6">
       <div className="container mx-auto max-w-7xl">
         <div className="relative rounded-3xl border border-[#1a1a2e] bg-[#0a0a12]/80 backdrop-blur-xl overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.08)_0%,transparent_55%)] pointer-events-none" />
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#6366F1]/40 to-transparent" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(168,81,176,0.08)_0%,transparent_55%)] pointer-events-none" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#a851b0]/40 to-transparent" />
 
           <div className="relative z-10 p-6 sm:p-10 md:p-14 lg:p-18">
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 lg:gap-12">
@@ -106,7 +106,7 @@ const FooterCard = () => {
 
                 <div className="flex flex-col gap-4">
                   <div className="flex items-start gap-3 text-sm text-[#808080] font-light">
-                    <MapPin className="w-4 h-4 mt-0.5 text-[#6366F1] flex-shrink-0" />
+                    <MapPin className="w-4 h-4 mt-0.5 text-[#a851b0] flex-shrink-0" />
                     <span>Barueri, São Paulo — Brasil</span>
                   </div>
                   <a
@@ -115,14 +115,14 @@ const FooterCard = () => {
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 text-sm text-[#808080] hover:text-[#EDEDED] transition-colors duration-300 font-light"
                   >
-                    <WhatsAppIcon className="w-4 h-4 text-[#6366F1] flex-shrink-0" />
+                    <WhatsAppIcon className="w-4 h-4 text-[#a851b0] flex-shrink-0" />
                     <span>(11) 93226-7758</span>
                   </a>
                   <a
                     href="mailto:mkt@synlua.com.br"
                     className="flex items-center gap-3 text-sm text-[#808080] hover:text-[#EDEDED] transition-colors duration-300 font-light"
                   >
-                    <Mail className="w-4 h-4 text-[#6366F1] flex-shrink-0" />
+                    <Mail className="w-4 h-4 text-[#a851b0] flex-shrink-0" />
                     <span>mkt@synlua.com.br</span>
                   </a>
                 </div>
@@ -135,12 +135,12 @@ const FooterCard = () => {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="seu@email.com"
-                      className="flex-1 min-w-0 bg-[#0c0c16] border border-[#1a1a2e] rounded-full px-4 py-2.5 text-sm text-[#EDEDED] placeholder:text-[#555] focus:border-[#8B5CF6]/60 focus:outline-none transition-colors"
+                      className="flex-1 min-w-0 bg-[#0c0c16] border border-[#1a1a2e] rounded-full px-4 py-2.5 text-sm text-[#EDEDED] placeholder:text-[#555] focus:border-[#c97fd1]/60 focus:outline-none transition-colors"
                     />
                     <button
                       type="submit"
                       aria-label="Assinar newsletter"
-                      className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] text-white flex items-center justify-center hover:shadow-[0_0_20px_-4px_rgba(139,92,246,0.6)] transition-shadow"
+                      className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white flex items-center justify-center hover:shadow-[0_0_20px_-4px_rgba(201,127,209,0.6)] transition-shadow"
                     >
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -155,7 +155,7 @@ const FooterCard = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={label}
-                      className="w-10 h-10 rounded-xl border border-[#1a1a2e] bg-[#0c0c16] flex items-center justify-center text-[#808080] hover:text-[#EDEDED] hover:border-[#6366F1]/50 hover:bg-[#12121f] transition-all duration-300"
+                      className="w-10 h-10 rounded-xl border border-[#1a1a2e] bg-[#0c0c16] flex items-center justify-center text-[#808080] hover:text-[#EDEDED] hover:border-[#a851b0]/50 hover:bg-[#12121f] transition-all duration-300"
                     >
                       <Icon className="w-4 h-4" />
                     </a>

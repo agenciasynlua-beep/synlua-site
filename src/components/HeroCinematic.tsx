@@ -26,9 +26,9 @@ const HeroCinematic = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-[#050508]/80 via-[#050508]/15 to-[#050508]/65" />
 
         {/* Glow roxo muito sutil no lado direito */}
-        <div className="absolute top-[-10%] right-[5%] w-[45vw] h-[45vw] max-w-[620px] max-h-[620px] rounded-full bg-[#8B5CF6]/10 blur-[140px]" />
+        <div className="absolute top-[-10%] right-[5%] w-[45vw] h-[45vw] max-w-[620px] max-h-[620px] rounded-full bg-[#c97fd1]/10 blur-[140px]" />
         {/* Glow roxo muito sutil no lado esquerdo */}
-        <div className="absolute bottom-[5%] left-[-10%] w-[55vw] h-[55vw] max-w-[720px] max-h-[720px] rounded-full bg-[#6366F1]/6 blur-[160px]" />
+        <div className="absolute bottom-[5%] left-[-10%] w-[55vw] h-[55vw] max-w-[720px] max-h-[720px] rounded-full bg-[#a851b0]/6 blur-[160px]" />
       </div>
 
       {/* Textura/grid sutil do lado esquerdo */}
@@ -37,7 +37,7 @@ const HeroCinematic = () => {
         className="pointer-events-none absolute inset-0 z-[1]"
         style={{
           backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(139,92,246,0.22) 1px, transparent 0), radial-gradient(circle at 1px 1px, rgba(99,102,241,0.12) 1px, transparent 0)",
+            "radial-gradient(circle at 1px 1px, rgba(201,127,209,0.22) 1px, transparent 0), radial-gradient(circle at 1px 1px, rgba(168,81,176,0.12) 1px, transparent 0)",
           backgroundSize: "40px 40px, 80px 80px",
           maskImage: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.22) 35%, transparent 60%)",
           WebkitMaskImage: "linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.22) 35%, transparent 60%)",
@@ -50,7 +50,7 @@ const HeroCinematic = () => {
             className="hero-rise text-[clamp(1.85rem,7.4vw,3rem)] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[74px] sm:leading-[1.05] font-extralight tracking-tight text-[#EDEDED]"
           >
             Tenha um braço de{" "}
-            <span className="bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] bg-clip-text text-transparent font-light">
+            <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent font-light">
               Marketing
             </span>{" "}
             completo para sua empresa.
@@ -60,7 +60,7 @@ const HeroCinematic = () => {
             style={{ animationDelay: "0.18s" }}
             className="hero-fade mt-6 sm:mt-7 inline-flex items-start sm:items-center justify-center md:justify-start gap-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3 mx-auto md:mx-0"
           >
-            <Zap className="w-4 h-4 shrink-0 mt-0.5 sm:mt-0 text-[#8B5CF6]" />
+            <Zap className="w-4 h-4 shrink-0 mt-0.5 sm:mt-0 text-[#c97fd1]" />
             <span className="text-[13px] sm:text-sm text-[#EDEDED]/90 font-light">
               Estratégia, posicionamento e geração de demanda.
             </span>

@@ -110,7 +110,7 @@ const MinimalNavigation = () => {
                 >
                   {link.label}
                   <span
-                    className={`absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-[#6366F1] to-[#8B5CF6] transition-all duration-300 ${
+                    className={`absolute -bottom-1 left-0 h-[2px] bg-gradient-to-r from-[#a851b0] to-[#c97fd1] transition-all duration-300 ${
                       activeSection === link.id ? "w-full" : "w-0 group-hover:w-full"
                     }`}
                   />
@@ -129,7 +129,7 @@ const MinimalNavigation = () => {
               <a
                 href="#diagnostico"
                 onClick={(e) => handleNavClick(e, "diagnostico")}
-                className="rounded-full bg-[#EDEDED] text-[#0a0a14] px-5 py-2.5 text-sm font-medium hover:bg-[#8B5CF6] hover:text-white transition-all duration-300 shadow-[0_0_24px_-6px_rgba(139,92,246,0)] hover:shadow-[0_0_24px_-6px_rgba(139,92,246,0.45)]"
+                className="rounded-full bg-[#EDEDED] text-[#0a0a14] px-5 py-2.5 text-sm font-medium hover:bg-[#c97fd1] hover:text-white transition-all duration-300 shadow-[0_0_24px_-6px_rgba(201,127,209,0)] hover:shadow-[0_0_24px_-6px_rgba(201,127,209,0.45)]"
               >
                 Fale Conosco
               </a>
@@ -176,7 +176,7 @@ const MinimalNavigation = () => {
                   {link.label}
                   {activeSection === link.id && (
                     <span
-                      className="absolute -left-5 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#8B5CF6]"
+                      className="absolute -left-5 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-[#c97fd1]"
                     />
                   )}
                 </a>
