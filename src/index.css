@@ -79,8 +79,8 @@ All colors MUST be HSL.
     --gradient-subtle: linear-gradient(135deg, hsl(0 0% 15% / 0.2) 0%, transparent 100%);
     --gradient-dark: linear-gradient(180deg, hsl(0 0% 2%) 0%, hsl(0 0% 4%) 100%);
     --gradient-glow: radial-gradient(circle at 50% 50%, hsl(0 0% 50% / 0.08) 0%, transparent 70%);
-    --gradient-button: linear-gradient(135deg, hsl(293 37% 51%) 0%, hsl(294 50% 65%) 100%);
-    --gradient-button-hover: linear-gradient(135deg, hsl(293 37% 46%) 0%, hsl(294 50% 60%) 100%);
+    --gradient-button: linear-gradient(135deg, hsl(257 58% 60%) 0%, hsl(268 87% 73%) 100%);
+    --gradient-button-hover: linear-gradient(135deg, hsl(257 58% 55%) 0%, hsl(268 80% 68%) 100%);
     
     /* Advanced Glassmorphism */
     --glass-bg: hsl(0 0% 2% / 0.9);
@@ -161,13 +161,13 @@ All colors MUST be HSL.
 
   /* Acessibilidade: foco visível elegante sem quebrar o layout */
   :focus-visible {
-    outline: 2px solid hsl(294 50% 65% / 0.7);
+    outline: 2px solid hsl(268 87% 73% / 0.7);
     outline-offset: 3px;
   }
 
   button:focus-visible,
   a:focus-visible {
-    outline-color: hsl(294 50% 65%);
+    outline-color: hsl(268 87% 73%);
   }
 
   @media (prefers-reduced-motion: reduce) {

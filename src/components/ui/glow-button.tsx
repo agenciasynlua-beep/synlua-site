@@ -12,8 +12,8 @@ interface GlowButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variants: Record<GlowVariant, string> = {
   light: "bg-[#F2F0EC] text-[#0a0a14] hover:bg-white",
-  gradient: "bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white",
-  outline: "border border-[#2a2a45] bg-[#0a0a14] text-[#EDEDED] hover:border-[#c97fd1]/60",
+  gradient: "bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] text-white",
+  outline: "border border-[#2a2a45] bg-[#0a0a14] text-[#EDEDED] hover:border-[#bd86f5]/60",
 };
 
 /**
@@ -30,7 +30,7 @@ const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
         {/* Glow neon de fundo */}
         <span
           aria-hidden
-          className="pointer-events-none absolute -inset-2 rounded-full bg-[radial-gradient(closest-side,rgba(201,127,209,0.55),transparent)] blur-xl opacity-40 transition-opacity duration-500 group-hover/glow:opacity-100"
+          className="pointer-events-none absolute -inset-2 rounded-full bg-[radial-gradient(closest-side,rgba(189,134,245,0.55),transparent)] blur-xl opacity-40 transition-opacity duration-500 group-hover/glow:opacity-100"
         />
         <button
           ref={ref}
@@ -39,7 +39,7 @@ const GlowButton = forwardRef<HTMLButtonElement, GlowButtonProps>(
             "relative z-10 inline-flex items-center justify-center gap-2.5 overflow-hidden rounded-full",
             "px-8 py-4 text-sm font-medium tracking-wide",
             "transition-[transform,box-shadow,background-color,border-color] duration-300 ease-out will-change-transform",
-            "hover:shadow-[0_0_45px_-6px_rgba(201,127,209,0.55)] active:scale-95",
+            "hover:shadow-[0_0_45px_-6px_rgba(189,134,245,0.55)] active:scale-95",
             "disabled:opacity-60 disabled:pointer-events-none",
             "motion-reduce:transition-none motion-reduce:active:scale-100",
             block && "w-full",

@@ -37,19 +37,19 @@ const StickyCard = ({ service, index }: { service: typeof services[0]; index: nu
   return (
     <div className="mb-4 md:mb-0 md:h-[45vh] md:last:h-auto">
       <div
-        className="relative md:sticky bg-white border border-[#e5e5ea] rounded-xl p-6 sm:p-8 md:p-10 shadow-sm transition-all duration-500 hover:border-[#a851b0]/30 hover:shadow-md will-change-transform group"
+        className="relative md:sticky bg-white border border-[#e5e5ea] rounded-xl p-6 sm:p-8 md:p-10 shadow-sm transition-all duration-500 hover:border-[#7c5ad6]/30 hover:shadow-md will-change-transform group"
         style={{ top: topOffset, zIndex: (index + 1) * 10 }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#a851b0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#7c5ad6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
         
         <div className="relative z-10 flex flex-col md:flex-row md:items-start md:gap-10">
           <div className="flex-shrink-0 md:w-[280px] lg:w-[320px] mb-4 md:mb-0">
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-[#a851b0]/40 text-xs font-mono tracking-[0.3em]">{number}</span>
-              <div className="h-[1px] w-8 bg-gradient-to-r from-[#a851b0]/40 to-transparent" />
+              <span className="text-[#7c5ad6]/40 text-xs font-mono tracking-[0.3em]">{number}</span>
+              <div className="h-[1px] w-8 bg-gradient-to-r from-[#7c5ad6]/40 to-transparent" />
             </div>
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#a851b0]/10 flex items-center justify-center mb-4 transition-shadow duration-500 group-hover:shadow-[0_0_20px_rgba(168,81,176,0.25)]">
-              <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#a851b0]" />
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-[#7c5ad6]/10 flex items-center justify-center mb-4 transition-shadow duration-500 group-hover:shadow-[0_0_20px_rgba(124,90,214,0.25)]">
+              <Icon className="w-6 h-6 sm:w-7 sm:h-7 text-[#7c5ad6]" />
             </div>
             <h3 className="text-xl sm:text-2xl md:text-3xl font-light text-[#1a1a2e] tracking-tight mb-2">
               {service.title}
@@ -57,7 +57,7 @@ const StickyCard = ({ service, index }: { service: typeof services[0]; index: nu
             <p className="text-xs sm:text-sm text-[#555] font-light uppercase tracking-wider mb-3">
               {service.subtitle}
             </p>
-            <div className="w-8 h-[1px]" style={{ background: "linear-gradient(90deg, #a851b0, #c97fd1)" }} />
+            <div className="w-8 h-[1px]" style={{ background: "linear-gradient(90deg, #7c5ad6, #bd86f5)" }} />
           </div>
           <div className="flex-1 flex items-center">
             <p className="text-sm sm:text-base md:text-lg text-[#666] leading-relaxed font-light">
@@ -82,7 +82,7 @@ const Marketing360 = () => {
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="max-w-4xl mx-auto text-center mb-6 sm:mb-8 md:mb-10 animate-fade-in">
           <div className="flex justify-center">
-            <SectionLabel text="PILARES" className="text-[#a851b0]" />
+            <SectionLabel text="PILARES" className="text-[#7c5ad6]" />
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-[#1a1a2e] leading-tight mb-4 sm:mb-6 px-2 sm:px-4">
             O que fazemos
@@ -101,7 +101,7 @@ const Marketing360 = () => {
         <div className="max-w-4xl mx-auto text-center mt-8 sm:mt-12 px-4 animate-fade-in">
           <button
             onClick={scrollToForm}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 md:px-10 py-4 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-medium text-sm tracking-wide uppercase rounded-sm transition-all duration-300 hover:from-[#96449f] hover:to-[#b868c1] hover:scale-105 hover:shadow-[0_0_40px_rgba(168,81,176,0.4)] group active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 md:px-10 py-4 bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] text-white font-medium text-sm tracking-wide uppercase rounded-sm transition-all duration-300 hover:from-[#6a47c4] hover:to-[#9168e6] hover:scale-105 hover:shadow-[0_0_40px_rgba(124,90,214,0.4)] group active:scale-[0.98]"
           >
             Fale Conosco
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

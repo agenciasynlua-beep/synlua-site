@@ -20,7 +20,7 @@ const ClientsMarquee = () => {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a1a2e] to-transparent" />
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#1a1a2e] to-transparent" />
 
-      <p className="text-center text-[10px] tracking-[0.3em] text-[#a851b0]/60 uppercase mb-6 sm:mb-8 font-mono">
+      <p className="text-center text-[10px] tracking-[0.3em] text-[#7c5ad6]/60 uppercase mb-6 sm:mb-8 font-mono">
         Marcas que confiam
       </p>
 

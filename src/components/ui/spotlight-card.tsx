@@ -50,7 +50,7 @@ const SpotlightCard = ({ children, className, intensity = 0.16 }: SpotlightCardP
       className={cn(
         "group/spot relative overflow-hidden rounded-2xl border border-white/10 bg-[#0a0a14]",
         "transition-[transform,border-color,box-shadow] duration-500 ease-out will-change-transform",
-        "md:hover:scale-[1.02] md:hover:border-[#c97fd1]/50 md:hover:shadow-[0_0_60px_-12px_rgba(201,127,209,0.45)]",
+        "md:hover:scale-[1.02] md:hover:border-[#bd86f5]/50 md:hover:shadow-[0_0_60px_-12px_rgba(189,134,245,0.45)]",
         "motion-reduce:transition-none motion-reduce:md:hover:scale-100",
         className
       )}
@@ -61,7 +61,7 @@ const SpotlightCard = ({ children, className, intensity = 0.16 }: SpotlightCardP
         className="pointer-events-none absolute inset-0 hidden md:block opacity-[var(--spot-opacity,0)] transition-opacity duration-300"
         style={{
           background:
-            "radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(201,127,209,var(--spot-alpha)), transparent 70%)",
+            "radial-gradient(340px circle at var(--mx, 50%) var(--my, 50%), rgba(189,134,245,var(--spot-alpha)), transparent 70%)",
         }}
       />
       <div className="relative z-10 h-full">{children}</div>

@@ -99,7 +99,7 @@ const expectations = [
 
 const CollaboratorOnboarding = () => {
   return (
-    <main className="min-h-screen selection:bg-[#a851b0]/30">
+    <main className="min-h-screen selection:bg-[#7c5ad6]/30">
       <SEOHead
         title="Colaborador | Synlua — Braço de Marketing Completo"
         description="Time de especialistas em Marketing 360 que cuida da sua estratégia, conteúdo, tráfego e conversão. Fale com um estrategista da Synlua."
@@ -122,7 +122,7 @@ const CollaboratorOnboarding = () => {
             </motion.p>
             <motion.h1 variants={fadeUp} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extralight tracking-tight leading-[1.1] text-[#050505]">
               Bem-vindo à{" "}
-              <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">Synlua.</span>
+              <span className="bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent">Synlua.</span>
             </motion.h1>
             <motion.p variants={fadeUp} className="text-base sm:text-lg text-[#666] font-light leading-relaxed max-w-xl mx-auto">
               Esse material é, ao mesmo tempo, um onboarding e um alinhamento de cultura. Leia com calma e veja se faz sentido pra você trabalhar com a gente.
@@ -130,7 +130,7 @@ const CollaboratorOnboarding = () => {
             <motion.div variants={fadeUp}>
               <button
                 onClick={() => document.getElementById("sobre-synlua")?.scrollIntoView({ behavior: "smooth" })}
-                className="group inline-flex items-center gap-3 px-8 py-4 border border-[#a851b0] rounded-sm bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#96449f] hover:to-[#b868c1] hover:shadow-[0_0_30px_rgba(168,81,176,0.4)]"
+                className="group inline-flex items-center gap-3 px-8 py-4 border border-[#7c5ad6] rounded-sm bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] text-white font-light text-sm tracking-wide uppercase transition-all duration-500 hover:from-[#6a47c4] hover:to-[#9168e6] hover:shadow-[0_0_30px_rgba(124,90,214,0.4)]"
               >
                 Conhecer a Synlua
                 <ArrowDown className="w-4 h-4 transition-transform group-hover:translate-y-1" />
@@ -174,7 +174,7 @@ const CollaboratorOnboarding = () => {
               Nosso HQ fica em Barueri, na região metropolitana de São Paulo. O time opera de forma híbrida — boa parte do trabalho acontece remoto, mas as captações de audiovisual, reuniões com clientes e encontros do time são presenciais aqui na região.
             </motion.p>
             <motion.div variants={fadeUp} className="flex items-start gap-4 p-6 rounded-lg border border-[#050505]/[0.06] bg-white/60">
-              <MapPin className="w-5 h-5 text-[#a851b0]/70 flex-shrink-0 mt-1" />
+              <MapPin className="w-5 h-5 text-[#7c5ad6]/70 flex-shrink-0 mt-1" />
               <p className="text-base text-[#050505]/70 font-light leading-relaxed">
                 Você não precisa morar em Barueri para colaborar conosco — funções como edição, design e tráfego podem ser 100% remotas. Mas para captação audiovisual e funções presenciais, é essencial ter disponibilidade para se deslocar até Barueri, Alphaville e região.
               </p>
@@ -185,7 +185,7 @@ const CollaboratorOnboarding = () => {
 
       {/* ─── COMO TRABALHAMOS (DARK) ─── */}
       <section id="como-trabalhamos" className="py-24 sm:py-32 relative bg-[#050505] text-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#a851b0]/[0.015] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#7c5ad6]/[0.015] to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 max-w-2xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer}>
             <motion.p variants={fadeUp} className="text-xs sm:text-sm uppercase tracking-[0.35em] text-white/30 font-light mb-4">
@@ -199,8 +199,8 @@ const CollaboratorOnboarding = () => {
             </motion.p>
             <div className="space-y-5">
               {tools.map((tool, i) => (
-                <motion.div key={i} variants={fadeUp} className="flex items-start gap-5 p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#a851b0]/30 transition-colors duration-500">
-                  <tool.icon className="w-6 h-6 text-[#a851b0]/70 flex-shrink-0 mt-0.5" />
+                <motion.div key={i} variants={fadeUp} className="flex items-start gap-5 p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#7c5ad6]/30 transition-colors duration-500">
+                  <tool.icon className="w-6 h-6 text-[#7c5ad6]/70 flex-shrink-0 mt-0.5" />
                   <div>
                     <p className="text-lg sm:text-xl text-white/80 font-light mb-1">{tool.title}</p>
                     <p className="text-base text-white/45 font-light leading-relaxed">{tool.description}</p>
@@ -214,7 +214,7 @@ const CollaboratorOnboarding = () => {
 
       {/* ─── NOSSA CULTURA (DARK) ─── */}
       <section className="py-24 sm:py-32 relative bg-[#050505] text-white">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#c97fd1]/[0.01] to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#bd86f5]/[0.01] to-transparent pointer-events-none" />
         <div className="container mx-auto px-6 max-w-3xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer}>
             <motion.p variants={fadeUp} className="text-xs sm:text-sm uppercase tracking-[0.35em] text-white/30 font-light mb-4">
@@ -225,8 +225,8 @@ const CollaboratorOnboarding = () => {
             </motion.h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {cultureCards.map((card, i) => (
-                <motion.div key={i} variants={fadeUp} className="p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#a851b0]/30 transition-colors duration-500">
-                  <card.icon className="w-6 h-6 text-[#a851b0]/70 mb-4" />
+                <motion.div key={i} variants={fadeUp} className="p-6 rounded-lg border border-white/[0.06] bg-white/[0.02] hover:border-[#7c5ad6]/30 transition-colors duration-500">
+                  <card.icon className="w-6 h-6 text-[#7c5ad6]/70 mb-4" />
                   <p className="text-lg text-white/80 font-light mb-2">{card.title}</p>
                   <p className="text-sm text-white/40 font-light leading-relaxed">{card.description}</p>
                 </motion.div>
@@ -254,21 +254,21 @@ const CollaboratorOnboarding = () => {
                 <motion.div
                   key={i}
                   variants={fadeUp}
-                  className="p-6 sm:p-8 rounded-lg border border-[#050505]/[0.06] bg-white/70 hover:border-[#a851b0]/30 transition-colors duration-500"
+                  className="p-6 sm:p-8 rounded-lg border border-[#050505]/[0.06] bg-white/70 hover:border-[#7c5ad6]/30 transition-colors duration-500"
                 >
                   <div className="flex items-start gap-5 mb-5">
-                    <div className="w-11 h-11 rounded-md bg-gradient-to-br from-[#a851b0]/10 to-[#c97fd1]/10 flex items-center justify-center flex-shrink-0">
-                      <role.icon className="w-5 h-5 text-[#a851b0]" />
+                    <div className="w-11 h-11 rounded-md bg-gradient-to-br from-[#7c5ad6]/10 to-[#bd86f5]/10 flex items-center justify-center flex-shrink-0">
+                      <role.icon className="w-5 h-5 text-[#7c5ad6]" />
                     </div>
                     <div>
                       <p className="text-lg sm:text-xl text-[#050505]/85 font-light">{role.title}</p>
-                      <p className="text-sm text-[#a851b0]/80 font-light mt-0.5">{role.subtitle}</p>
+                      <p className="text-sm text-[#7c5ad6]/80 font-light mt-0.5">{role.subtitle}</p>
                     </div>
                   </div>
                   <ul className="space-y-3 pl-1 sm:pl-16">
                     {role.points.map((p, idx) => (
                       <li key={idx} className="flex gap-3 text-base text-[#050505]/65 font-light leading-relaxed">
-                        <span className="text-[#a851b0] mt-2 flex-shrink-0 w-1 h-1 rounded-full bg-[#a851b0]" />
+                        <span className="text-[#7c5ad6] mt-2 flex-shrink-0 w-1 h-1 rounded-full bg-[#7c5ad6]" />
                         <span>{p}</span>
                       </li>
                     ))}
@@ -296,7 +296,7 @@ const CollaboratorOnboarding = () => {
             <div className="space-y-5">
               {expectations.map((item, i) => (
                 <motion.div key={i} variants={fadeUp} className="flex items-center gap-4 p-5 rounded-lg border border-[#050505]/[0.06] bg-white/60">
-                  <item.icon className="w-5 h-5 text-[#a851b0]/70 flex-shrink-0" />
+                  <item.icon className="w-5 h-5 text-[#7c5ad6]/70 flex-shrink-0" />
                   <p className="text-base text-[#050505]/70 font-light">{item.text}</p>
                 </motion.div>
               ))}
@@ -310,10 +310,10 @@ const CollaboratorOnboarding = () => {
         <div className="container mx-auto px-6 max-w-2xl relative z-10">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-80px" }} variants={staggerContainer}>
             <motion.div variants={fadeUp} className="text-center">
-              <div className="w-16 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[#a851b0]/40 to-transparent" />
+              <div className="w-16 h-px mx-auto mb-8 bg-gradient-to-r from-transparent via-[#7c5ad6]/40 to-transparent" />
               <p className="text-xl sm:text-2xl md:text-3xl font-extralight tracking-tight text-[#050505]/70">
                 Bem-vindo ao time.{" "}
-                <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent">
                   Vamos construir juntos.
                 </span>
               </p>

@@ -27,7 +27,7 @@ const ContactPage = () => {
             <SectionLabel text="CONTATO" />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light text-[#EDEDED] tracking-tight mt-4 mb-6">
               Vamos{" "}
-              <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent">
                 conversar
               </span>
             </h1>
@@ -63,7 +63,7 @@ const ContactPage = () => {
                     </p>
                     <Link
                       to="/#diagnostico"
-                      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#a851b0] to-[#c97fd1] text-white font-medium text-sm tracking-wide uppercase rounded-lg transition-all duration-300 hover:from-[#96449f] hover:to-[#b868c1] hover:scale-105 shadow-[0_0_30px_hsl(258,90%,66%,0.3)] hover:shadow-[0_0_50px_hsl(258,90%,66%,0.5)] group"
+                      className="inline-flex items-center justify-center gap-3 px-8 py-4 bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] text-white font-medium text-sm tracking-wide uppercase rounded-lg transition-all duration-300 hover:from-[#6a47c4] hover:to-[#9168e6] hover:scale-105 shadow-[0_0_30px_hsl(258,90%,66%,0.3)] hover:shadow-[0_0_50px_hsl(258,90%,66%,0.5)] group"
                     >
                       Quero Escalar Meus Resultados
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -95,10 +95,10 @@ const ContactPage = () => {
                     <Tag
                       key={item.label}
                       {...(item.href ? { href: item.href, target: "_blank", rel: "noopener noreferrer" } : {})}
-                      className="flex items-center gap-4 p-4 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#a851b0]/20 transition-all duration-300"
+                      className="flex items-center gap-4 p-4 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#7c5ad6]/20 transition-all duration-300"
                     >
-                      <div className="w-10 h-10 rounded-lg bg-[#a851b0]/10 flex items-center justify-center">
-                        <Icon className="w-4 h-4 text-[#a851b0]" />
+                      <div className="w-10 h-10 rounded-lg bg-[#7c5ad6]/10 flex items-center justify-center">
+                        <Icon className="w-4 h-4 text-[#7c5ad6]" />
                       </div>
                       <span className="text-sm text-[#EDEDED] font-light">{item.label}</span>
                     </Tag>
@@ -112,7 +112,7 @@ const ContactPage = () => {
                   href="https://instagram.com/synlua"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-3 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#a851b0]/20 transition-all duration-300 text-sm text-[#808080] hover:text-[#EDEDED]"
+                  className="flex items-center gap-2 px-4 py-3 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#7c5ad6]/20 transition-all duration-300 text-sm text-[#808080] hover:text-[#EDEDED]"
                 >
                   <Instagram className="w-4 h-4" /> Instagram
                 </a>
@@ -120,7 +120,7 @@ const ContactPage = () => {
                   href="https://wa.me/5511945592596?text=Olá!%20Quero%20mais%20informações."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-3 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#a851b0]/20 transition-all duration-300 text-sm text-[#808080] hover:text-[#EDEDED]"
+                  className="flex items-center gap-2 px-4 py-3 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#7c5ad6]/20 transition-all duration-300 text-sm text-[#808080] hover:text-[#EDEDED]"
                 >
                   <MessageCircle className="w-4 h-4" /> WhatsApp
                 </a>
@@ -138,12 +138,12 @@ const ContactPage = () => {
               <div className="border border-[#1a1a1a] rounded-xl overflow-hidden bg-[#0a0a0a] flex-1 min-h-[300px] flex items-center justify-center relative">
                 <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,hsl(258,90%,66%,0.04)_0%,transparent_70%)]" />
                 <div className="text-center relative z-10 p-8">
-                  <div className="w-16 h-16 rounded-full bg-[#a851b0]/10 flex items-center justify-center mx-auto mb-6">
-                    <MapPin className="w-7 h-7 text-[#a851b0]" />
+                  <div className="w-16 h-16 rounded-full bg-[#7c5ad6]/10 flex items-center justify-center mx-auto mb-6">
+                    <MapPin className="w-7 h-7 text-[#7c5ad6]" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-light text-[#EDEDED] mb-2">São Paulo, SP</h3>
                   <p className="text-sm text-[#666]">Brasil</p>
-                  <div className="mt-6 w-16 h-[1px] bg-gradient-to-r from-transparent via-[#a851b0]/40 to-transparent mx-auto" />
+                  <div className="mt-6 w-16 h-[1px] bg-gradient-to-r from-transparent via-[#7c5ad6]/40 to-transparent mx-auto" />
                   <p className="mt-6 text-sm text-[#999] max-w-xs mx-auto leading-relaxed">
                     Atendemos empresas de todo o Brasil com equipe remota e presencial em São Paulo.
                   </p>
@@ -152,7 +152,7 @@ const ContactPage = () => {
 
               <div className="border border-[#1a1a1a] rounded-xl p-6 bg-[#0a0a0a]/50">
                 <h3 className="text-sm font-light text-[#EDEDED] mb-2 tracking-wide">HORÁRIO DE ATENDIMENTO</h3>
-                <div className="w-8 h-[1px] bg-gradient-to-r from-[#a851b0] to-[#c97fd1] mb-3" />
+                <div className="w-8 h-[1px] bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] mb-3" />
                 <p className="text-sm text-[#999]">Segunda a Sexta: 9h às 18h</p>
                 <p className="text-xs text-[#666] mt-1">Respondemos em até 24 horas úteis</p>
               </div>

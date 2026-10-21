@@ -23,7 +23,7 @@ const footerColumns = [
 const GiantFooter = () => {
   return (
     <footer className="relative py-12 sm:py-16 md:py-20 bg-[#050508] overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#a851b0]/20 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7c5ad6]/20 to-transparent" />
 
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative">
         {/* Top: Logo + Columns */}
@@ -45,7 +45,7 @@ const GiantFooter = () => {
           <div className="flex gap-12 sm:gap-16 animate-fade-in" style={{ animationDelay: "0.15s", animationFillMode: "both" }}>
             {footerColumns.map((col) => (
               <div key={col.title}>
-                <h4 className="text-[10px] tracking-[0.3em] text-[#a851b0]/60 uppercase mb-4 font-mono">{col.title}</h4>
+                <h4 className="text-[10px] tracking-[0.3em] text-[#7c5ad6]/60 uppercase mb-4 font-mono">{col.title}</h4>
                 <div className="flex flex-col gap-3">
                   {col.links.map((link) => (
                     <Link
@@ -84,7 +84,7 @@ const GiantFooter = () => {
               href="https://instagram.com/synlua"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center border border-[#1a1a2e] rounded-sm text-[#808080] hover:text-[#EDEDED] hover:border-[#a851b0]/50 hover:shadow-[0_0_15px_rgba(168,81,176,0.2)] transition-all duration-300 bg-[#0a0a14]/60 active:scale-95"
+              className="w-12 h-12 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center border border-[#1a1a2e] rounded-sm text-[#808080] hover:text-[#EDEDED] hover:border-[#7c5ad6]/50 hover:shadow-[0_0_15px_rgba(124,90,214,0.2)] transition-all duration-300 bg-[#0a0a14]/60 active:scale-95"
             >
               <Instagram className="w-5 h-5" />
             </a>
@@ -92,7 +92,7 @@ const GiantFooter = () => {
               href="https://wa.me/5511945592596?text=Olá!%20Acabei%20de%20preencher%20o%20formulário.%20Quero%20mais%20informações."
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center border border-[#1a1a2e] rounded-sm text-[#808080] hover:text-[#EDEDED] hover:border-[#a851b0]/50 hover:shadow-[0_0_15px_rgba(168,81,176,0.2)] transition-all duration-300 bg-[#0a0a14]/60 active:scale-95"
+              className="w-12 h-12 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center border border-[#1a1a2e] rounded-sm text-[#808080] hover:text-[#EDEDED] hover:border-[#7c5ad6]/50 hover:shadow-[0_0_15px_rgba(124,90,214,0.2)] transition-all duration-300 bg-[#0a0a14]/60 active:scale-95"
             >
               <MessageCircle className="w-5 h-5" />
             </a>

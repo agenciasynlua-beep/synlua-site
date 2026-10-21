@@ -23,7 +23,7 @@ const Word = ({
   return (
     <motion.span style={{ opacity, filter: blur, y }} className="inline-block mr-[0.22em] sm:mr-[0.25em] will-change-transform">
       {highlight ? (
-        <span className="bg-gradient-to-r from-[#dcaae2] via-[#c97fd1] to-[#a851b0] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(201,127,209,0.45)]">
+        <span className="bg-gradient-to-r from-[#c7b2f7] via-[#bd86f5] to-[#7c5ad6] bg-clip-text text-transparent drop-shadow-[0_0_28px_rgba(189,134,245,0.45)]">
           {word}
         </span>
       ) : (
@@ -120,7 +120,7 @@ const ScrollRevealText = () => {
         <motion.div
           aria-hidden
           style={{ opacity: auraOpacity, scale: auraScale }}
-          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[110vw] h-[110vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full blur-[90px] sm:blur-[120px] bg-[radial-gradient(circle,rgba(201,127,209,0.35)_0%,rgba(168,81,176,0.15)_45%,transparent_70%)]"
+          className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[110vw] h-[110vw] sm:w-[80vw] sm:h-[80vw] max-w-[900px] max-h-[900px] rounded-full blur-[90px] sm:blur-[120px] bg-[radial-gradient(circle,rgba(189,134,245,0.35)_0%,rgba(124,90,214,0.15)_45%,transparent_70%)]"
         />
         <div
           aria-hidden
@@ -142,7 +142,7 @@ const ScrollRevealText = () => {
                 cy="20"
                 r="16"
                 fill="none"
-                stroke="rgba(201,127,209,0.15)"
+                stroke="rgba(189,134,245,0.15)"
                 strokeWidth="1.5"
               />
               <motion.circle
@@ -150,17 +150,17 @@ const ScrollRevealText = () => {
                 cy="20"
                 r="16"
                 fill="none"
-                stroke="#c97fd1"
+                stroke="#bd86f5"
                 strokeWidth="1.5"
                 strokeLinecap="round"
                 style={{ pathLength: indicatorProgress }}
-                className="drop-shadow-[0_0_8px_rgba(201,127,209,0.7)]"
+                className="drop-shadow-[0_0_8px_rgba(189,134,245,0.7)]"
               />
             </svg>
             <motion.div
               animate={{ scale: [1, 1.2, 1], opacity: [0.85, 1, 0.85] }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              className="w-2 h-2 rounded-full bg-[#c97fd1] shadow-[0_0_14px_rgba(201,127,209,0.9)]"
+              className="w-2 h-2 rounded-full bg-[#bd86f5] shadow-[0_0_14px_rgba(189,134,245,0.9)]"
             />
           </div>
         </motion.div>

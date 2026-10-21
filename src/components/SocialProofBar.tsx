@@ -49,14 +49,14 @@ const Counter = ({ target, prefix = "", suffix = "", duration = 2000 }: { target
   }, [hasStarted, target, duration]);
 
   return (
-    <span ref={ref} className="text-xl xs:text-2xl sm:text-4xl md:text-5xl font-light bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent tabular-nums whitespace-nowrap leading-none">
+    <span ref={ref} className="text-xl xs:text-2xl sm:text-4xl md:text-5xl font-light bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent tabular-nums whitespace-nowrap leading-none">
       {prefix}{count}{suffix}
     </span>
   );
 };
 
 const StaticValue = ({ text }: { text: string }) => (
-  <span className="text-xl xs:text-2xl sm:text-4xl md:text-5xl font-light bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent whitespace-nowrap leading-none">
+  <span className="text-xl xs:text-2xl sm:text-4xl md:text-5xl font-light bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent whitespace-nowrap leading-none">
     {text}
   </span>
 );
@@ -64,7 +64,7 @@ const StaticValue = ({ text }: { text: string }) => (
 const SocialProofBar = () => {
   return (
     <section className="relative py-8 sm:py-10 md:py-12 bg-[#050508] overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,81,176,0.04)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(124,90,214,0.04)_0%,transparent_60%)]" />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -73,13 +73,13 @@ const SocialProofBar = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-6 sm:mb-10 max-w-3xl mx-auto"
         >
-          <p className="text-[10px] tracking-[0.3em] text-[#a851b0]/60 uppercase mb-4 font-mono">
+          <p className="text-[10px] tracking-[0.3em] text-[#7c5ad6]/60 uppercase mb-4 font-mono">
             Resultados
           </p>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#EDEDED] leading-tight">
 
             Números que{" "}
-            <span className="bg-gradient-to-r from-[#a851b0] to-[#c97fd1] bg-clip-text text-transparent font-medium">
+            <span className="bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent font-medium">
               traduzem resultado
             </span>
           </h2>
@@ -103,12 +103,12 @@ const SocialProofBar = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative flex flex-col items-center text-center gap-3 p-3 sm:p-6 md:p-8 rounded-xl border border-[#1a1a2e] bg-[#0a0a14] hover:border-[#a851b0]/30 transition-all duration-500 group min-w-0 overflow-hidden"
+                className="relative flex flex-col items-center text-center gap-3 p-3 sm:p-6 md:p-8 rounded-xl border border-[#1a1a2e] bg-[#0a0a14] hover:border-[#7c5ad6]/30 transition-all duration-500 group min-w-0 overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-[#a851b0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#7c5ad6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
                 <div className="relative z-10 flex flex-col items-center gap-3">
-                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#a851b0]/10 flex items-center justify-center">
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#a851b0]" />
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-[#7c5ad6]/10 flex items-center justify-center">
+                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#7c5ad6]" />
                   </div>
                   {metric.staticText ? (
                     <StaticValue text={metric.staticText} />

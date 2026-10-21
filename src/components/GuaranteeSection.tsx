@@ -29,7 +29,7 @@ const GuaranteeSection = () => {
           viewport={{ once: true }}
           className="text-center mb-10 sm:mb-14"
         >
-          <SectionLabel text="SUA_SEGURANÇA" className="text-[#a851b0]" />
+          <SectionLabel text="SUA_SEGURANÇA" className="text-[#7c5ad6]" />
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extralight tracking-tight text-[#050505] mt-4 sm:mt-6 leading-tight">
             Sem risco.{" "}
             <span className="bg-gradient-to-r from-emerald-500 to-emerald-400 bg-clip-text text-transparent">Sem surpresas.</span>

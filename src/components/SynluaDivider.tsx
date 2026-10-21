@@ -7,7 +7,7 @@ const items = Array.from({ length: count }, () => item);
 const SynluaDivider = () => {
   return (
     <section className="relative bg-[#050508] py-5 sm:py-6 overflow-hidden border-y border-[#12121f]">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(201,127,209,0.04)_0%,transparent_70%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(189,134,245,0.04)_0%,transparent_70%)]" />
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -24,7 +24,7 @@ const SynluaDivider = () => {
                   className="text-xs sm:text-sm font-medium tracking-[0.25em] uppercase text-[#EDEDED]/40 whitespace-nowrap"
                 >
                   {text}
-                  <span className="ml-6 sm:ml-8 text-[#c97fd1]/60">|</span>
+                  <span className="ml-6 sm:ml-8 text-[#bd86f5]/60">|</span>
                 </span>
               ))}
             </div>

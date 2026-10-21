@@ -24,8 +24,8 @@ const scrollToForm = () => {
 const AboutSynlua = () => {
   return (
     <section className="relative py-8 sm:py-10 md:py-12 bg-[#080812] overflow-hidden">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#a851b0]/10 to-transparent" />
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#a851b0]/10 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7c5ad6]/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#7c5ad6]/10 to-transparent" />
       <div className="absolute inset-0 opacity-[0.02] hidden sm:block">
         <div className="absolute inset-0" style={{
           backgroundImage: `linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)`,
@@ -38,10 +38,10 @@ const AboutSynlua = () => {
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 md:px-8">
         <div className="text-center mb-6 sm:mb-8 md:mb-10 animate-fade-in">
           <div className="flex items-center gap-4 justify-center mb-6">
-            <span className="text-[#a851b0]/60 text-xs font-mono tracking-[0.3em]">04</span>
-            <div className="h-[1px] w-12 bg-gradient-to-r from-[#a851b0]/40 to-transparent" />
+            <span className="text-[#7c5ad6]/60 text-xs font-mono tracking-[0.3em]">04</span>
+            <div className="h-[1px] w-12 bg-gradient-to-r from-[#7c5ad6]/40 to-transparent" />
           </div>
-          <span className="inline-block text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-[#a851b0]/60 uppercase mb-4 sm:mb-6 px-3 sm:px-4 py-2 border border-[#1a1a2e] rounded-full font-mono bg-[#0a0a14]/40">
+          <span className="inline-block text-[10px] sm:text-xs tracking-[0.3em] sm:tracking-[0.4em] text-[#7c5ad6]/60 uppercase mb-4 sm:mb-6 px-3 sm:px-4 py-2 border border-[#1a1a2e] rounded-full font-mono bg-[#0a0a14]/40">
             Sobre Nós
           </span>
           
@@ -56,7 +56,7 @@ const AboutSynlua = () => {
           </p>
         </div>
 
-        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#a851b0]/20 to-transparent mb-6 sm:mb-8 md:mb-10" />
+        <div className="w-full h-px bg-gradient-to-r from-transparent via-[#7c5ad6]/20 to-transparent mb-6 sm:mb-8 md:mb-10" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-12">
           {founders.map((founder, index) => (
@@ -65,11 +65,11 @@ const AboutSynlua = () => {
               className="group animate-fade-in"
               style={{ animationDelay: `${0.2 + index * 0.15}s`, animationFillMode: "both" }}
             >
-              <div className="relative border border-[#1a1a2e] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0a0a14]/60 p-4 sm:p-6 md:p-8 lg:p-10 transition-all duration-500 hover:border-[#a851b0]/30 hover:shadow-[0_0_30px_rgba(168,81,176,0.1)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#a851b0]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
+              <div className="relative border border-[#1a1a2e] rounded-xl sm:rounded-2xl overflow-hidden bg-[#0a0a14]/60 p-4 sm:p-6 md:p-8 lg:p-10 transition-all duration-500 hover:border-[#7c5ad6]/30 hover:shadow-[0_0_30px_rgba(124,90,214,0.1)]">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#7c5ad6]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-xl" />
                 
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 sm:px-3 py-1 bg-[#a851b0]/10 border border-[#a851b0]/20 rounded-full">
-                  <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-[#a851b0]/80 uppercase font-mono">Fundador</span>
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-2 sm:px-3 py-1 bg-[#7c5ad6]/10 border border-[#7c5ad6]/20 rounded-full">
+                  <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-[#7c5ad6]/80 uppercase font-mono">Fundador</span>
                 </div>
                 
                 <div className="relative z-10 flex flex-row sm:flex-col items-center sm:items-center gap-4 sm:gap-0 sm:text-center">
@@ -87,9 +87,9 @@ const AboutSynlua = () => {
                       {founder.name}
                     </h3>
                     
-                    <div className="hidden sm:block w-12 h-px bg-gradient-to-r from-transparent via-[#a851b0]/40 to-transparent mx-auto mb-4" />
+                    <div className="hidden sm:block w-12 h-px bg-gradient-to-r from-transparent via-[#7c5ad6]/40 to-transparent mx-auto mb-4" />
                     
-                    <span className="inline-block text-[9px] sm:text-[10px] md:text-xs tracking-[0.2em] text-[#a851b0]/60 uppercase mb-2 sm:mb-6 font-mono">
+                    <span className="inline-block text-[9px] sm:text-[10px] md:text-xs tracking-[0.2em] text-[#7c5ad6]/60 uppercase mb-2 sm:mb-6 font-mono">
                       {founder.role}
                     </span>
                     
@@ -99,7 +99,7 @@ const AboutSynlua = () => {
                   </div>
                 </div>
 
-                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-1/2 h-px bg-gradient-to-r from-transparent via-[#a851b0]/40 to-transparent transition-all duration-500" />
+                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-1/2 h-px bg-gradient-to-r from-transparent via-[#7c5ad6]/40 to-transparent transition-all duration-500" />
               </div>
             </div>
           ))}
@@ -108,7 +108,7 @@ const AboutSynlua = () => {
         <div className="text-center mt-8 sm:mt-12 md:mt-16 px-4 animate-fade-in" style={{ animationDelay: "0.4s", animationFillMode: "both" }}>
           <button 
             onClick={scrollToForm}
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 md:px-10 py-4 border border-[#1a1a2e] bg-[#0a0a14]/60 text-[#EDEDED] font-light text-sm tracking-widest uppercase rounded-sm transition-all duration-500 hover:border-[#a851b0]/50 hover:shadow-[0_0_30px_rgba(168,81,176,0.2)] group active:scale-[0.98]"
+            className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-6 sm:px-8 md:px-10 py-4 border border-[#1a1a2e] bg-[#0a0a14]/60 text-[#EDEDED] font-light text-sm tracking-widest uppercase rounded-sm transition-all duration-500 hover:border-[#7c5ad6]/50 hover:shadow-[0_0_30px_rgba(124,90,214,0.2)] group active:scale-[0.98]"
           >
             Fale com Nosso Time
             <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

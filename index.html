@@ -10,8 +10,8 @@
       #splash.out{opacity:0;visibility:hidden;pointer-events:none}
       #splash .wrap{position:relative;display:flex;flex-direction:column;align-items:center;gap:22px}
       #splash img{display:block;width:min(64vw,360px);height:auto;animation:sp-reveal 1.1s cubic-bezier(.22,1,.36,1) both}
-      #splash .bar{display:block;width:min(40vw,200px);height:1px;background:linear-gradient(90deg,transparent,#c97fd1,#a851b0,transparent);transform-origin:center;animation:sp-bar 1.1s cubic-bezier(.22,1,.36,1) .15s both}
-      #splash .glow{position:absolute;left:50%;top:50%;width:520px;height:520px;max-width:120vw;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(201,127,209,.22),transparent 65%);animation:sp-glow 1.4s ease-out both;pointer-events:none}
+      #splash .bar{display:block;width:min(40vw,200px);height:1px;background:linear-gradient(90deg,transparent,#bd86f5,#7c5ad6,transparent);transform-origin:center;animation:sp-bar 1.1s cubic-bezier(.22,1,.36,1) .15s both}
+      #splash .glow{position:absolute;left:50%;top:50%;width:520px;height:520px;max-width:120vw;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(189,134,245,.22),transparent 65%);animation:sp-glow 1.4s ease-out both;pointer-events:none}
       @keyframes sp-reveal{from{clip-path:inset(0 100% 0 0);opacity:.3;filter:blur(10px);transform:scale(.97)}to{clip-path:inset(0 0 0 0);opacity:1;filter:blur(0);transform:none}}
       @keyframes sp-bar{from{transform:scaleX(0);opacity:0}to{transform:scaleX(1);opacity:1}}
       @keyframes sp-glow{from{opacity:0}to{opacity:1}}

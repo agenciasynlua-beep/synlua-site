@@ -32,7 +32,7 @@ const founders = [
 const FoundersSection = () => {
   return (
     <section id="sobre" className="relative bg-[#050508] py-16 sm:py-24 overflow-hidden" style={{ scrollMarginTop: "90px" }}>
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(201,127,209,0.10)_0%,transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_35%,rgba(189,134,245,0.10)_0%,transparent_60%)]" />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12 max-w-5xl mx-auto">
           {founders.map((f, i) => (
@@ -63,16 +63,16 @@ const FoundersSection = () => {
                       className="absolute inset-x-0 top-0 h-[38%] pointer-events-none"
                       style={{ backgroundImage: `linear-gradient(to bottom, ${f.photoBg} 50%, transparent)`, opacity: f.photoBg === "#0a0a14" ? 0 : 1 }}
                     />
-                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(201,127,209,0.22)_0%,transparent_65%)] mix-blend-soft-light pointer-events-none" />
+                    <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_15%,rgba(189,134,245,0.22)_0%,transparent_65%)] mix-blend-soft-light pointer-events-none" />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a14] via-[#0a0a14]/35 to-transparent pointer-events-none" />
                   </div>
 
                   <div className="relative -mt-16 flex flex-1 flex-col px-6 pb-7 sm:px-8 sm:pb-9">
-                    <span className="text-[10px] font-mono tracking-[0.3em] text-[#c97fd1] uppercase">{f.role}</span>
+                    <span className="text-[10px] font-mono tracking-[0.3em] text-[#bd86f5] uppercase">{f.role}</span>
                     <h2 className="mt-3 text-[clamp(1.9rem,7vw,2.5rem)] font-extralight text-[#EDEDED] tracking-tight leading-[1.05]">
                       {f.name}
                     </h2>
-                    <div className="mt-4 w-16 h-px bg-gradient-to-r from-[#a851b0] to-transparent" />
+                    <div className="mt-4 w-16 h-px bg-gradient-to-r from-[#7c5ad6] to-transparent" />
                     <p className="mt-4 text-[15px] sm:text-base text-[#a0a0a0] font-light leading-relaxed">{f.text}</p>
                   </div>
                 </div>

@@ -67,7 +67,7 @@ const StatItem = ({ stat, index }: { stat: Stat; index: number }) => {
       className="flex-1 text-center px-2 sm:px-8 relative w-full pt-6 first:pt-0 sm:pt-0"
     >
       {index > 0 && (
-        <span className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-12 bg-gradient-to-b from-[#a851b0] to-[#c97fd1]" />
+        <span className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-12 bg-gradient-to-b from-[#7c5ad6] to-[#bd86f5]" />
       )}
       <p
         className="text-[clamp(1.9rem,8vw,2.6rem)] sm:text-4xl md:text-5xl font-light text-[#EDEDED] tracking-tight whitespace-nowrap"
@@ -76,7 +76,7 @@ const StatItem = ({ stat, index }: { stat: Stat; index: number }) => {
       >
         {stat.prefix}
         {count}
-        {stat.suffix && <span className="text-[#c97fd1]">{stat.suffix}</span>}
+        {stat.suffix && <span className="text-[#bd86f5]">{stat.suffix}</span>}
       </p>
       <p className="mt-2 text-xs sm:text-sm text-[#808080] font-light leading-snug">{stat.label}</p>
     </motion.div>
