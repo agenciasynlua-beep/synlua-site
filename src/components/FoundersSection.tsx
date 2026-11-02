@@ -15,7 +15,7 @@ const founders = [
     // Retrato vertical: mantém o rosto no terço superior do quadro
     imageClass: "absolute inset-0 h-full w-full object-cover object-[50%_22%]",
     photoBg: "#0a0a14",
-    text: "Cuida de funis, vendas e visão estratégica. É quem desenha o caminho entre o investimento em mídia e o resultado real no caixa do cliente.",
+    text: "Cuida de funis, vendas e estratégia. Liga o investimento em mídia ao resultado no caixa.",
   },
   {
     name: "Beatriz Azevedo",
@@ -25,7 +25,7 @@ const founders = [
     // ocupando a largura do cartão, e o fundo escuro preenche o topo.
     imageClass: "absolute left-[-17.6%] top-[3.8%] w-[135.1%] max-w-none h-auto",
     photoBg: "#1e1e20",
-    text: "Cuida do time interno, dos processos e da qualidade das entregas. É quem garante que a estratégia vire execução no prazo e no padrão certo.",
+    text: "Cuida do time, dos processos e da qualidade. Garante que a estratégia vire entrega no prazo e no padrão.",
   },
 ];
 

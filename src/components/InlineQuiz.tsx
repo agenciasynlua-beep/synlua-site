@@ -4,7 +4,7 @@ import { openQuiz } from "@/lib/quiz";
 import SectionLabel from "@/components/SectionLabel";
 
 const trustBadges = [
-  { icon: Clock, text: "Leva menos de 1 minuto" },
+  { icon: Clock, text: "Leva 1 minuto" },
   { icon: Shield, text: "Sem compromisso" },
   { icon: Users, text: "+400 empresas atendidas" },
 ];
@@ -36,7 +36,7 @@ const InlineQuiz = ({ id = "diagnostico", formType = "quiz" }: { id?: string; fo
             <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[480px] h-[260px] bg-[radial-gradient(ellipse_at_top,rgba(189,134,245,0.14)_0%,transparent_70%)]" />
 
             <div className="relative z-10 flex flex-col items-center">
-              <SectionLabel text="DIAGNÓSTICO" />
+              <SectionLabel text="PRÓXIMO_PASSO" />
               <h2 className="text-[clamp(1.9rem,7vw,2.8rem)] sm:text-5xl md:text-6xl text-[#EDEDED] max-w-2xl">
                 Quero levar minha empresa{" "}
                 <span className="sl-grad">
@@ -50,7 +50,7 @@ const InlineQuiz = ({ id = "diagnostico", formType = "quiz" }: { id?: string; fo
                 className="relative group/btn mt-7 inline-flex items-center justify-center gap-2.5 px-9 sm:px-12 py-4 sm:py-4.5 rounded-full text-[15px] sm:text-base font-medium tracking-wide overflow-hidden text-white shadow-[0_0_44px_-4px_rgba(189,134,245,0.6),0_0_68px_-10px_rgba(124,90,214,0.4)] hover:shadow-[0_0_60px_-2px_rgba(189,134,245,0.8),0_0_90px_-8px_rgba(124,90,214,0.55)] transition-all duration-300 active:scale-95 bg-gradient-to-r from-[#5f3fb5] via-[#bd86f5] to-[#7c5ad6]"
               >
                 <span aria-hidden className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700" />
-                <span className="relative">Começar diagnóstico estratégico</span>
+                <span className="relative">Quero meu plano de crescimento</span>
                 <ArrowRight className="w-4 h-4 relative transition-transform duration-300 group-hover/btn:translate-x-1" />
               </button>
 

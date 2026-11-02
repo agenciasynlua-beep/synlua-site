@@ -2,7 +2,7 @@ import { useRef, useMemo } from "react";
 import { motion, useScroll, useTransform, useSpring, MotionValue, useReducedMotion } from "framer-motion";
 
 const PHRASE_ONE = ["Nosso foco é te trazer", "dinheiro e reconhecimento."];
-const PHRASE_TWO = ["Vamos nos tornar o time de", "Marketing 360 da sua empresa."];
+const PHRASE_TWO = ["Marketing 360 com time próprio", "e resultado medido."];
 
 const HIGHLIGHTS = ["dinheiro", "reconhecimento.", "Marketing", "360"];
 

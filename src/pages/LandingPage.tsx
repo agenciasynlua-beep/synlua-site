@@ -9,6 +9,7 @@ const ScrollRevealText = lazy(() => import("@/components/ScrollRevealText"));
 const SynluaDivider = lazy(() => import("@/components/SynluaDivider"));
 const StatsStrip = lazy(() => import("@/components/StatsStrip"));
 const ServicesBento = lazy(() => import("@/components/ServicesBento"));
+const Results = lazy(() => import("@/components/Results"));
 const SocialPortfolio = lazy(() => import("@/components/SocialPortfolio"));
 const BrandingMarquee = lazy(() => import("@/components/BrandingMarquee"));
 const FoundersSection = lazy(() => import("@/components/FoundersSection"));
@@ -67,6 +68,10 @@ const LandingPage = () => {
         <SynluaDivider />
         <Scene className="cv-auto">
           <ServicesBento />
+        </Scene>
+        <SynluaDivider />
+        <Scene className="cv-auto">
+          <Results />
         </Scene>
         <SynluaDivider />
         <Scene className="cv-auto">

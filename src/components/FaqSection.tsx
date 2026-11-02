@@ -13,27 +13,27 @@ import SectionLabel from "@/components/SectionLabel";
 const faqs = [
   {
     q: "Quanto custa trabalhar com a Synlua?",
-    a: "O investimento varia conforme o escopo: social media, tráfego pago, audiovisual ou o pacote completo. Na conversa inicial entendemos seu cenário e apresentamos uma proposta com valores claros, sem taxas escondidas.",
+    a: "Depende do escopo: social media, tráfego, audiovisual ou o pacote completo. Na conversa inicial você recebe uma proposta com valores claros, sem taxas escondidas.",
   },
   {
     q: "Em quanto tempo começo a ver resultado?",
-    a: "Os primeiros sinais (leads, alcance e volume de conteúdo) costumam aparecer nas primeiras semanas de mídia ativa. Resultados consistentes de posicionamento e vendas são construídos ao longo dos primeiros 90 dias.",
+    a: "Leads e alcance aparecem nas primeiras semanas de mídia ativa. Posicionamento e vendas consistentes se constroem em cerca de 90 dias.",
   },
   {
     q: "Existe fidelidade ou multa de cancelamento?",
-    a: "Trabalhamos com contratos sem multa de cancelamento. A parceria se mantém pelo resultado entregue, não por amarras contratuais.",
+    a: "Não. Nossos contratos não têm multa de cancelamento: você fica pelo resultado, não por obrigação.",
   },
   {
     q: "Como funciona o começo do trabalho?",
-    a: "Depois da conversa estratégica, fazemos o diagnóstico do seu negócio, alinhamos metas e montamos o plano de ação. Em seguida entram a produção de conteúdo, as captações e a estruturação das campanhas.",
+    a: "Conversa estratégica, diagnóstico do negócio, metas e plano de ação. Depois entram conteúdo, captações e campanhas.",
   },
   {
     q: "Vocês atendem empresas de fora de Barueri?",
-    a: "Sim. Nosso time fica em Barueri/SP, com estrutura própria de captação, e atendemos clientes de todo o Brasil de forma remota, com agendas presenciais quando o projeto pede.",
+    a: "Sim. Nosso time fica em Barueri/SP e atende todo o Brasil de forma remota, com captações presenciais quando o projeto pede.",
   },
   {
     q: "Preciso já ter redes sociais estruturadas?",
-    a: "Não. Atendemos tanto quem está começando do zero quanto quem já tem presença digital e precisa de estratégia, constância e performance.",
+    a: "Não. Atendemos quem começa do zero e quem já tem presença digital e precisa de estratégia e constância.",
   },
 ];
 
