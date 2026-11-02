@@ -70,7 +70,7 @@ const StatItem = ({ stat, index }: { stat: Stat; index: number }) => {
         <span className="hidden sm:block absolute left-0 top-1/2 -translate-y-1/2 w-[2px] h-12 bg-gradient-to-b from-[#7c5ad6] to-[#bd86f5]" />
       )}
       <p
-        className="text-[clamp(1.9rem,8vw,2.6rem)] sm:text-4xl md:text-5xl font-light text-[#EDEDED] tracking-tight whitespace-nowrap"
+        className="font-display text-[clamp(2.2rem,9vw,3rem)] sm:text-5xl md:text-6xl text-[#EDEDED] tracking-[-0.05em] whitespace-nowrap"
         aria-live="polite"
         aria-atomic="true"
       >
@@ -78,7 +78,7 @@ const StatItem = ({ stat, index }: { stat: Stat; index: number }) => {
         {count}
         {stat.suffix && <span className="text-[#bd86f5]">{stat.suffix}</span>}
       </p>
-      <p className="mt-2 text-xs sm:text-sm text-[#808080] font-light leading-snug">{stat.label}</p>
+      <p className="mt-3 text-xs sm:text-sm text-[#808080] font-light leading-snug">{stat.label}</p>
     </motion.div>
   );
 };
@@ -87,7 +87,7 @@ const StatsStrip = () => {
   const stats: Stat[] = statsData.map((s) => ({ ...s, ...parseStat(s.value) }));
 
   return (
-    <section className="relative bg-[#050508] py-12 sm:py-16 border-y border-[#12121f]">
+    <section className="relative bg-[#050508] py-16 sm:py-24 border-y border-[#12121f]">
       <div className="container mx-auto px-4 sm:px-6 md:px-8">
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-0 divide-y sm:divide-y-0 divide-[#12121f]">
           {stats.map((s, i) => (

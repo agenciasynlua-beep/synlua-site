@@ -47,10 +47,10 @@ const HeroCinematic = () => {
       <div className="container mx-auto px-5 sm:px-6 md:px-10 relative z-10 pt-28 pb-16 sm:pt-32 sm:pb-12">
         <div className="max-w-3xl mx-auto md:mx-0 md:ml-[8vw] lg:ml-[12vw] text-center md:text-left">
           <h1
-            className="hero-rise text-[clamp(1.85rem,7.4vw,3rem)] leading-[1.1] sm:text-5xl md:text-6xl lg:text-[74px] sm:leading-[1.05] font-extralight tracking-tight text-[#EDEDED]"
+            className="hero-rise sl-display text-[clamp(2rem,9.2vw,3.4rem)] sm:text-6xl md:text-7xl lg:text-[84px] text-[#EDEDED]"
           >
             Tenha um braço de{" "}
-            <span className="bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent font-light">
+            <span className="sl-grad">
               Marketing
             </span>{" "}
             completo para sua empresa.
@@ -58,10 +58,10 @@ const HeroCinematic = () => {
 
           <div
             style={{ animationDelay: "0.18s" }}
-            className="hero-fade mt-6 sm:mt-7 inline-flex items-start sm:items-center justify-center md:justify-start gap-3 rounded-xl border border-white/10 bg-white/5 backdrop-blur-md px-4 py-3 mx-auto md:mx-0"
+            className="hero-fade mt-7 sm:mt-9 inline-flex items-center justify-center md:justify-start gap-3 rounded-full border border-[#c7b2f7]/25 bg-white/5 backdrop-blur-md px-5 py-2.5 mx-auto md:mx-0"
           >
             <Zap className="w-4 h-4 shrink-0 mt-0.5 sm:mt-0 text-[#bd86f5]" />
-            <span className="text-[13px] sm:text-sm text-[#EDEDED]/90 font-light">
+            <span className="sl-label text-[11px] sm:text-xs">
               Estratégia, posicionamento e geração de demanda.
             </span>
           </div>

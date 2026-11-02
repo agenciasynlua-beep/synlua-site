@@ -4,6 +4,7 @@ import SEOHead from "@/components/SEOHead";
 import ScrollProgress from "@/components/ScrollProgress";
 import MinimalNavigation from "@/components/MinimalNavigation";
 import QuizHost from "@/components/QuizHost";
+import Scene from "@/components/Scene";
 
 const ScrollRevealText = lazy(() => import("@/components/ScrollRevealText"));
 const SynluaDivider = lazy(() => import("@/components/SynluaDivider"));
@@ -66,26 +67,30 @@ const LandingPage = () => {
         <SynluaDivider />
         <StatsStrip />
         <SynluaDivider />
-        <div className="cv-auto">
+        <Scene className="cv-auto">
           <ServicesBento />
-        </div>
+        </Scene>
         <SynluaDivider />
-        <section className="cv-auto" style={{ scrollMarginTop: "90px" }}>
-          <SocialPortfolio />
-          <BrandingMarquee />
-        </section>
+        <Scene className="cv-auto">
+          <section style={{ scrollMarginTop: "90px" }}>
+            <SocialPortfolio />
+            <BrandingMarquee />
+          </section>
+        </Scene>
         <SynluaDivider />
-        <section className="cv-auto" style={{ scrollMarginTop: "90px" }}>
-          <FoundersSection />
-        </section>
+        <Scene className="cv-auto">
+          <section style={{ scrollMarginTop: "90px" }}>
+            <FoundersSection />
+          </section>
+        </Scene>
         <SynluaDivider />
-        <div className="cv-auto">
+        <Scene className="cv-auto">
           <FaqSection />
-        </div>
+        </Scene>
         <SynluaDivider />
-        <div className="cv-auto">
+        <Scene className="cv-auto">
           <InlineQuiz />
-        </div>
+        </Scene>
 
         <SynluaDivider />
         <FooterCard />

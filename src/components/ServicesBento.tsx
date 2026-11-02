@@ -2,7 +2,9 @@ import { openQuiz } from "@/lib/quiz";
 import { motion } from "framer-motion";
 import SpotlightCard from "@/components/ui/spotlight-card";
 import GlowButton from "@/components/ui/glow-button";
-import { Target, Video, TrendingUp, Sparkles, LineChart, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import SectionLabel from "@/components/SectionLabel";
+import { StrategyVisual, TrafficVisual, VideoVisual, SocialVisual, DataVisual } from "@/components/ServiceVisuals";
 
 const scrollToForm = () => {
   openQuiz();
@@ -10,35 +12,35 @@ const scrollToForm = () => {
 
 const cards = [
   {
-    icon: Target,
+    visual: StrategyVisual,
     title: "Estratégia Digital",
     text: "Planejamento para posicionar sua marca, atrair clientes e vender mais no digital.",
     span: "md:col-span-2",
     highlight: false,
   },
   {
-    icon: TrendingUp,
+    visual: TrafficVisual,
     title: "Tráfego Pago",
     text: "Gestão de anúncios em Meta e Google para gerar leads, vendas e crescimento acelerado.",
     span: "md:col-span-3",
     highlight: true,
   },
   {
-    icon: Video,
+    visual: VideoVisual,
     title: "Audiovisual",
     text: "Captações presenciais, edição e conteúdo com qualidade de cinema, tudo com equipe in house.",
     span: "md:col-span-3",
     highlight: false,
   },
   {
-    icon: Sparkles,
+    visual: SocialVisual,
     title: "Social Media",
     text: "Conteúdo, design e gestão de redes que constroem autoridade todos os dias.",
     span: "md:col-span-2",
     highlight: false,
   },
   {
-    icon: LineChart,
+    visual: DataVisual,
     title: "Dados e Relatórios",
     text: "Acompanhamento claro dos números para decidir com segurança e escalar o que funciona.",
     span: "md:col-span-5",
@@ -54,7 +56,8 @@ const shimmer = (
 
 const ServicesBento = () => {
   return (
-    <section id="servicos" className="relative bg-[#050508] py-16 sm:py-24" style={{ scrollMarginTop: "90px" }}>
+    <section id="servicos" className="relative bg-[#050508] py-20 sm:py-32" style={{ scrollMarginTop: "90px" }}>
+      <span aria-hidden className="sl-moon left-1/2 -translate-x-1/2 top-24 h-[780px] w-[780px] hidden md:block" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,90,214,0.07)_0%,transparent_60%)]" />
       <div className="container mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <motion.div
@@ -62,14 +65,15 @@ const ServicesBento = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="grid md:grid-cols-2 gap-4 md:gap-6 items-end mb-10 sm:mb-12"
+          className="grid md:grid-cols-2 gap-4 md:gap-10 items-end mb-12 sm:mb-16"
         >
-          <h2 className="text-[clamp(1.75rem,7vw,2.4rem)] sm:text-4xl md:text-5xl font-extralight text-[#EDEDED] tracking-tight leading-[1.15]">
-            Tudo o que sua empresa precisa para{" "}
-            <span className="bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] bg-clip-text text-transparent">
-              vender mais no digital
-            </span>
-          </h2>
+          <div>
+            <SectionLabel text="SERVIÇOS" className="!justify-start" />
+            <h2 className="text-[clamp(1.9rem,8vw,2.6rem)] sm:text-5xl md:text-6xl text-[#EDEDED]">
+              Tudo o que sua empresa precisa para{" "}
+              <span className="sl-grad">vender mais no digital</span>
+            </h2>
+          </div>
           <p className="text-sm sm:text-base text-[#808080] font-light leading-relaxed md:text-right">
             <strong className="text-[#EDEDED] font-normal">Nós cuidamos</strong> de toda a estrutura de marketing
             enquanto você foca no crescimento do seu negócio.
@@ -78,7 +82,7 @@ const ServicesBento = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 sm:gap-5">
           {cards.map((card, i) => {
-            const Icon = card.icon;
+            const Visual = card.visual;
             return (
               <motion.div
                 key={card.title}
@@ -97,20 +101,10 @@ const ServicesBento = () => {
                   }`}
                 >
                   {card.highlight && shimmer}
-                  <motion.div
-                    className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-5 sm:mb-8 transition-colors duration-300 ${
-                      card.highlight
-                        ? "bg-white/10 text-white"
-                        : "bg-[#0c0c16] text-[#bd86f5] group-hover/card:text-white group-hover/card:bg-[#bd86f5]/20"
-                    }`}
-                    whileHover={{ rotate: [0, -6, 6, 0], scale: 1.05 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
-                  </motion.div>
+                  <div className="mb-6 sm:mb-8"><Visual /></div>
 
                   <h3
-                    className={`text-xl sm:text-3xl font-light tracking-tight mb-2.5 sm:mb-3 ${
+                    className={`font-display uppercase text-xl sm:text-3xl tracking-[-0.04em] leading-none mb-3 sm:mb-4 ${
                       card.highlight ? "text-white" : "text-[#EDEDED]"
                     }`}
                   >

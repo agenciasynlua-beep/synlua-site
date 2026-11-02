@@ -21,7 +21,7 @@ const SynluaDivider = () => {
               {items.map((text, i) => (
                 <span
                   key={`${text}-${i}-${set}`}
-                  className="text-xs sm:text-sm font-medium tracking-[0.25em] uppercase text-[#EDEDED]/40 whitespace-nowrap"
+                  className="font-display text-xs sm:text-sm tracking-[0.18em] uppercase text-[#EDEDED]/40 whitespace-nowrap"
                 >
                   {text}
                   <span className="ml-6 sm:ml-8 text-[#bd86f5]/60">|</span>

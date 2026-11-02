@@ -24,6 +24,11 @@
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Delight: fonte de títulos do design system Synlua */
+@font-face { font-family: 'Delight'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/delight-regular.otf') format('opentype'); }
+@font-face { font-family: 'Delight'; font-style: normal; font-weight: 300; font-display: swap; src: url('/fonts/delight-light.otf') format('opentype'); }
+@font-face { font-family: 'Delight'; font-style: normal; font-weight: 200; font-display: swap; src: url('/fonts/delight-extralight.otf') format('opentype'); }
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -559,3 +564,32 @@ All colors MUST be HSL.
 @media (prefers-reduced-motion: reduce) {
   .nav-in, .menu-in, .menu-item-in { animation: none; }
 }
+
+
+/* ============ Design system Synlua · camada de títulos e movimento ============ */
+.sl-display, #servicos h2, #portfolio h2, #sobre h2, #faq h2, #diagnostico h2 {
+  font-family: 'Delight', 'Inter', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+.sl-label {
+  font-family: 'Delight', 'Inter', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #c7b2f7;
+}
+.sl-grad { background: linear-gradient(95deg, #7c5ad6 0%, #bd86f5 60%, #e0c8ff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.sl-moon { position: absolute; border-radius: 9999px; border: 1px solid rgba(199,178,247,.12); pointer-events: none; }
+
+/* Visuais animados dos serviços (nada fica parado) */
+@keyframes sv-ring { 0% { transform: scale(.2); opacity: .9; } 100% { transform: scale(1); opacity: 0; } }
+@keyframes sv-bar { 0%,100% { transform: scaleY(.35); } 50% { transform: scaleY(1); } }
+@keyframes sv-play { 0% { left: 4%; } 100% { left: 94%; } }
+@keyframes sv-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+@keyframes sv-heart { 0% { transform: translateY(14px) scale(.6); opacity: 0; } 25% { opacity: 1; } 100% { transform: translateY(-64px) scale(1); opacity: 0; } }
+@keyframes sv-draw { 0% { stroke-dashoffset: 100; } 60%,100% { stroke-dashoffset: 0; } }
+@keyframes sv-click { 0%,60% { transform: translate(0,0) scale(1); } 75% { transform: translate(-34px,-26px) scale(.9); } 100% { transform: translate(-34px,-26px) scale(1); } }
+@keyframes sv-pulse { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .sv-anim * { animation: none !important; } }

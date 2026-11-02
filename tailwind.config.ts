@@ -15,7 +15,7 @@ export default {
     extend: {
 			fontFamily: {
 				sans: ['Inter', 'sans-serif'],
-				display: ['Space Grotesk', 'sans-serif'],
+				display: ['Delight', 'Inter', 'sans-serif'],
 			},
 		backgroundImage: {
 			'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

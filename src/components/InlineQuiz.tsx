@@ -1,6 +1,7 @@
 
 import { ArrowRight, Clock, Shield, Users } from "lucide-react";
 import { openQuiz } from "@/lib/quiz";
+import SectionLabel from "@/components/SectionLabel";
 
 const trustBadges = [
   { icon: Clock, text: "Leva menos de 1 minuto" },
@@ -13,7 +14,7 @@ const InlineQuiz = ({ id = "diagnostico", formType = "quiz" }: { id?: string; fo
     <section
       id={id}
       style={{ scrollMarginTop: "80px" }}
-      className="relative py-12 sm:py-16 px-4 sm:px-6 overflow-hidden bg-[#050508]"
+      className="relative py-16 sm:py-28 px-4 sm:px-6 overflow-hidden bg-[#050508]"
     >
       {/* Reflexos de luz sutil */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
@@ -35,9 +36,10 @@ const InlineQuiz = ({ id = "diagnostico", formType = "quiz" }: { id?: string; fo
             <div aria-hidden className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[480px] h-[260px] bg-[radial-gradient(ellipse_at_top,rgba(189,134,245,0.14)_0%,transparent_70%)]" />
 
             <div className="relative z-10 flex flex-col items-center">
-              <h2 className="text-[clamp(1.9rem,6.5vw,2.8rem)] sm:text-4xl md:text-5xl font-light tracking-[-0.02em] text-[#EDEDED] leading-[1.12] max-w-2xl">
+              <SectionLabel text="DIAGNÓSTICO" />
+              <h2 className="text-[clamp(1.9rem,7vw,2.8rem)] sm:text-5xl md:text-6xl text-[#EDEDED] max-w-2xl">
                 Quero levar minha empresa{" "}
-                <span className="bg-gradient-to-r from-[#bd86f5] via-[#c7b2f7] to-[#7c5ad6] bg-clip-text text-transparent">
+                <span className="sl-grad">
                   para o próximo nível
                 </span>
               </h2>
