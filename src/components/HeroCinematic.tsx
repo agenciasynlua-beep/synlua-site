@@ -47,13 +47,13 @@ const HeroCinematic = () => {
       <div className="container mx-auto px-5 sm:px-6 md:px-10 relative z-10 pt-28 pb-16 sm:pt-32 sm:pb-12">
         <div className="max-w-3xl mx-auto md:mx-0 md:ml-[8vw] lg:ml-[12vw] text-center md:text-left">
           <h1
-            className="hero-rise sl-display text-[clamp(2rem,9.2vw,3.4rem)] sm:text-6xl md:text-7xl lg:text-[84px] text-[#EDEDED]"
+            className="hero-rise sl-display text-[clamp(1.6rem,7.9vw,3.2rem)] sm:text-[52px] md:text-[56px] lg:text-[66px] text-[#EDEDED]"
           >
-            Tenha um braço de{" "}
-            <span className="sl-grad">
-              Marketing
-            </span>{" "}
-            completo para sua empresa.
+            <span className="block whitespace-nowrap">Tenha um braço de</span>
+            <span className="block whitespace-nowrap">
+              <span className="sl-grad">marketing</span> completo
+            </span>
+            <span className="block whitespace-nowrap">para sua empresa.</span>
           </h1>
 
           <div

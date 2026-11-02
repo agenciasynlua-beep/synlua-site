@@ -22,27 +22,25 @@ import maximeNew from "@/assets/portfolio/new/Maxime.webp";
 import daRochaOliveira from "@/assets/portfolio/new/Da_Rocha_e_Oliveira_ADV.webp";
 import wiserEmpreende from "@/assets/portfolio/new/Wiser_Empreende.webp";
 
-type Client = { name: string; image: string; tags: string[]; niche: string };
+type Client = { name: string; image: string; tags: string[] };
 
-/** Nichos usados no filtro. Ajuste aqui se algum cliente estiver no grupo errado. */
 const allClients: Client[] = [
-  { name: "Dra. Gisele Gomes", image: giseleGomes, tags: ["Conteúdo", "Design"], niche: "Advocacia" },
-  { name: "Parnassah", image: parnassahNew, tags: ["Conteúdo", "Estratégia"], niche: "Eventos e marca" },
-  { name: "Wise Up", image: wiseUp, tags: ["Conteúdo", "Branding"], niche: "Educação" },
-  { name: "Professor Augusto", image: professorAugusto, tags: ["Conteúdo", "Estratégia"], niche: "Educação" },
-  { name: "Inatto Arquitetura", image: inattoArquitetura, tags: ["Conteúdo", "Design"], niche: "Arquitetura" },
-  { name: "Maxime", image: maximeNew, tags: ["Conteúdo", "Branding"], niche: "Indústria" },
-  { name: "Da Rocha e Oliveira ADV", image: daRochaOliveira, tags: ["Conteúdo", "Design"], niche: "Advocacia" },
-  { name: "Wiser Empreende", image: wiserEmpreende, tags: ["Conteúdo", "Estratégia"], niche: "Educação" },
-  { name: "Jeniffer Duval", image: jenifferDuval, tags: ["Conteúdo", "Estratégia"], niche: "Saúde mental" },
-  { name: "Graziella Aguiar", image: graziellaAguiar, tags: ["Conteúdo", "Design"], niche: "Arquitetura" },
-  { name: "Petshop Cãofiel", image: caofiel, tags: ["Conteúdo", "Branding"], niche: "Pet" },
-  { name: "Wiser", image: wiser, tags: ["Conteúdo", "Design"], niche: "Educação" },
-  { name: "Maxime (Industrial)", image: maxime, tags: ["Conteúdo", "Design"], niche: "Indústria" },
-  { name: "Bruno Ferreira", image: brunoFerreira, tags: ["Conteúdo", "Branding"], niche: "Tecnologia" },
-  { name: "Openbot", image: openbot, tags: ["Conteúdo", "Estratégia"], niche: "Tecnologia" },
+  { name: "Dra. Gisele Gomes", image: giseleGomes, tags: ["Conteúdo", "Design"] },
+  { name: "Parnassah", image: parnassahNew, tags: ["Conteúdo", "Estratégia"] },
+  { name: "Wise Up", image: wiseUp, tags: ["Conteúdo", "Branding"] },
+  { name: "Professor Augusto", image: professorAugusto, tags: ["Conteúdo", "Estratégia"] },
+  { name: "Inatto Arquitetura", image: inattoArquitetura, tags: ["Conteúdo", "Design"] },
+  { name: "Maxime", image: maximeNew, tags: ["Conteúdo", "Branding"] },
+  { name: "Da Rocha e Oliveira ADV", image: daRochaOliveira, tags: ["Conteúdo", "Design"] },
+  { name: "Wiser Empreende", image: wiserEmpreende, tags: ["Conteúdo", "Estratégia"] },
+  { name: "Jeniffer Duval", image: jenifferDuval, tags: ["Conteúdo", "Estratégia"] },
+  { name: "Graziella Aguiar", image: graziellaAguiar, tags: ["Conteúdo", "Design"] },
+  { name: "Petshop Cãofiel", image: caofiel, tags: ["Conteúdo", "Branding"] },
+  { name: "Wiser", image: wiser, tags: ["Conteúdo", "Design"] },
+  { name: "Maxime (Industrial)", image: maxime, tags: ["Conteúdo", "Design"] },
+  { name: "Bruno Ferreira", image: brunoFerreira, tags: ["Conteúdo", "Branding"] },
+  { name: "Openbot", image: openbot, tags: ["Conteúdo", "Estratégia"] },
 ];
-const niches = ["Todos", ...Array.from(new Set(allClients.map((c) => c.niche)))];
 
 const half = Math.ceil(allClients.length / 2);
 const rowTop = allClients.slice(0, half);
@@ -88,7 +86,7 @@ const ClientCard = ({ client, light, onOpen, className = "" }: { client: Client;
         <p className="text-current text-sm sm:text-base font-light tracking-wide truncate pr-2">{client.name}</p>
         <span className={`shrink-0 inline-flex items-center gap-1.5 text-[10px] sm:text-xs rounded-full px-3 py-1 border ${light ? "text-[#1a1a2e]/80 bg-[#f5f5f7] border-[#e0e0e8]" : "text-[#EDEDED]/80 bg-[#0a0a14] border-[#1a1a2e]"}`}>
           <span className="w-1.5 h-1.5 rounded-full bg-[#bd86f5]" />
-          {client.niche}
+          {client.tags[0]}
         </span>
       </div>
     </div>
@@ -121,9 +119,7 @@ const MarqueeRow = ({ items, reverse = false, duration = "70s", light = false, o
 };
 
 const SocialPortfolio = ({ subtitle, light = false }: { subtitle?: string; light?: boolean }) => {
-  const [niche, setNiche] = useState("Todos");
-  const [open, setOpen] = useState<Client | null>(null);
-  const filtered = niche === "Todos" ? allClients : allClients.filter((c) => c.niche === niche);
+    const [open, setOpen] = useState<Client | null>(null);
   return (
     <section
       id="portfolio"
@@ -146,48 +142,16 @@ const SocialPortfolio = ({ subtitle, light = false }: { subtitle?: string; light
             {subtitle ?? "Criamos conteúdo estratégico que transforma \nfeeds em máquinas de conversão."}
           </p>
 
-          {/* filtro por nicho */}
-          <div className="mt-8 flex flex-wrap justify-center gap-2" role="tablist" aria-label="Filtrar por nicho">
-            {niches.map((n) => {
-              const on = n === niche;
-              return (
-                <button
-                  key={n}
-                  type="button"
-                  role="tab"
-                  aria-selected={on}
-                  onClick={() => setNiche(n)}
-                  className={`sl-label text-[11px] sm:text-xs rounded-full px-4 py-2 border transition-all duration-300 ${
-                    on
-                      ? "!text-white border-transparent bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] shadow-[0_0_28px_-6px_rgba(189,134,245,0.7)]"
-                      : light ? "!text-[#1a1a2e]/70 border-[#e0e0e8] bg-white hover:border-[#7c5ad6]/50" : "!text-[#EDEDED]/60 border-[#1a1a2e] bg-[#0a0a14]/60 hover:border-[#7c5ad6]/50 hover:!text-[#EDEDED]"
-                  }`}
-                >
-                  {n}
-                </button>
-              );
-            })}
-          </div>
-          {niche === "Todos" && <DragHint light={light} />}
+          <DragHint light={light} />
         </div>
       </div>
 
-      {niche === "Todos" ? (
-        <div className="relative space-y-6">
-          <div className={`absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r to-transparent z-10 pointer-events-none ${light ? "from-[#FAFAFA]" : "from-[#050508]"}`} />
-          <div className={`absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l to-transparent z-10 pointer-events-none ${light ? "from-[#FAFAFA]" : "from-[#050508]"}`} />
-          <MarqueeRow items={rowTop} duration="80s" light={light} onOpen={setOpen} />
-          <MarqueeRow items={rowBottom} reverse duration="90s" light={light} onOpen={setOpen} />
-        </div>
-      ) : (
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div key={niche} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 animate-fade-in">
-            {filtered.map((c) => (
-              <ClientCard key={c.name} client={c} light={light} onOpen={setOpen} />
-            ))}
-          </div>
-        </div>
-      )}
+      <div className="relative space-y-6">
+        <div className={`absolute left-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-r to-transparent z-10 pointer-events-none ${light ? "from-[#FAFAFA]" : "from-[#050508]"}`} />
+        <div className={`absolute right-0 top-0 bottom-0 w-12 sm:w-20 bg-gradient-to-l to-transparent z-10 pointer-events-none ${light ? "from-[#FAFAFA]" : "from-[#050508]"}`} />
+        <MarqueeRow items={rowTop} duration="80s" light={light} onOpen={setOpen} />
+        <MarqueeRow items={rowBottom} reverse duration="90s" light={light} onOpen={setOpen} />
+      </div>
 
       <div className="mt-10 sm:mt-14 flex justify-center">
         <button
@@ -213,7 +177,7 @@ const SocialPortfolio = ({ subtitle, light = false }: { subtitle?: string; light
                 <img src={open.image} alt={`Case ${open.name}`} className="block w-full h-full object-cover md:max-h-[92svh]" />
               </div>
               <div className="p-7 sm:p-10 flex flex-col justify-center gap-5">
-                <span className="sl-label text-xs">[{open.niche}]</span>
+                <span className="sl-label text-xs">[Case]</span>
                 <DialogTitle className="sl-display text-3xl sm:text-4xl !tracking-[-0.05em] text-left">{open.name}</DialogTitle>
                 <DialogDescription className="text-sm sm:text-base text-[#808080] font-light leading-relaxed text-left">
                   Estratégia, conteúdo e design pensados para o posicionamento deste negócio, com a rotina de produção e publicação a cargo da Synlua.
