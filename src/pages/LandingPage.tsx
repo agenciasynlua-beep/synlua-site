@@ -6,6 +6,7 @@ import MinimalNavigation from "@/components/MinimalNavigation";
 import Scene from "@/components/Scene";
 
 const ScrollRevealText = lazy(() => import("@/components/ScrollRevealText"));
+const FilmSection = lazy(() => import("@/components/FilmSection"));
 const SynluaDivider = lazy(() => import("@/components/SynluaDivider"));
 const StatsStrip = lazy(() => import("@/components/StatsStrip"));
 const ServicesBento = lazy(() => import("@/components/ServicesBento"));
@@ -63,6 +64,9 @@ const LandingPage = () => {
 
       {belowFold && <Suspense fallback={null}>
         <ScrollRevealText />
+        <Scene className="cv-auto">
+          <FilmSection />
+        </Scene>
         <SynluaDivider />
         <StatsStrip />
         <SynluaDivider />
