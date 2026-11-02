@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import SectionLabel from "@/components/SectionLabel";
 import { openQuiz } from "@/lib/quiz";
+import { useDragScroll } from "@/hooks/use-drag-scroll";
 
 const shots = import.meta.glob("@/assets/results/*.webp", { eager: true, query: "?url", import: "default" }) as Record<string, string>;
 const shot = (name: string) => shots[Object.keys(shots).find((k) => k.endsWith(`/${name}.webp`)) ?? ""];
@@ -12,16 +12,37 @@ type Result = { img: string; w: number; h: number; big: string; unit: string; te
 // Prints reais de clientes; nomes, fotos e marcas ficam pixelados nas imagens.
 const results: Result[] = [
   { img: "meta-300k", w: 760, h: 567, big: "R$ 300 mil", unit: "meta batida em 13 dias", text: "Em um lançamento, o cliente passou de R$ 300 mil em vendas em apenas 13 dias.", feature: true },
+  { img: "setenta-cinco", w: 760, h: 919, big: "R$ 75 mil", unit: "em vendas em 7 dias", text: "Resultado da última semana, só com o trabalho de resposta direta e Marketing 360." },
   { img: "faturamento-semana", w: 760, h: 437, big: "R$ 149 mil", unit: "em uma semana", text: "Só com captação orgânica e social selling. Agora o cliente quer somar mídia paga." },
   { img: "cem-mil", w: 760, h: 708, big: "R$ 100 mil", unit: "de faturamento no mês", text: "R$ 50 mil vieram em uma única semana." },
   { img: "quinze-mil", w: 760, h: 495, big: "+R$ 15 mil", unit: "em um dia de campanha", text: "Média de R$ 9.340 por dia desde o início da semana do consumidor." },
   { img: "agendados", w: 760, h: 802, big: "23 consultas", unit: "agendadas, R$ 4.025", text: "Primeira campanha de público quente, com R$ 529 investidos." },
   { img: "recorde", w: 760, h: 601, big: "Recorde", unit: "de vendas em 3 anos", text: "Em um ano os leads superaram tudo o que a empresa tinha visto antes." },
+  { img: "atoe", w: 760, h: 612, big: "Novo cliente", unit: "com o novo posicionamento", text: "Com apenas 3 conteúdos, o estúdio ganhou direção e já atraiu um possível novo projeto." },
   { img: "contratos", w: 760, h: 582, big: "2 contratos", unit: "fechados em um dia", text: "R$ 7,5 mil em recorrência, com acompanhamento direto no sistema." },
   { img: "vendas", w: 760, h: 1007, big: "Vendas", unit: "entrando todo dia", text: "Notificações de venda realizada, de R$ 497 a R$ 1.166 cada." },
   { img: "views", w: 760, h: 255, big: "50 mil", unit: "visualizações por mês", text: "Alcance que o cliente nunca tinha conseguido sozinho." },
+  { img: "stories", w: 760, h: 640, big: "“Tão feliz”", unit: "ao ver o trabalho nascendo", text: "A cliente contando nos próprios stories como ficou o conteúdo do mês." },
+  { img: "erick", w: 760, h: 314, big: "“Tudo muito lindo”", unit: "e já podemos postar", text: "Material organizado e aprovado de primeira." },
+  { img: "okzaco", w: 760, h: 314, big: "“Okzaço”", unit: "logo na primeira entrega", text: "Aprovação na hora, com direito a parabéns para o time." },
   { img: "depoimento", w: 760, h: 687, big: "“Escolhi vocês”", unit: "pelo encontro que imaginei", text: "O elogio mais comum: entrega, cuidado e um olhar singular para a marca." },
+  { img: "andressa", w: 760, h: 291, big: "“Gostei muito”", unit: "dos criativos", text: "" },
+  { img: "claudia", w: 760, h: 693, big: "“Parceiros”", unit: "fazendo o possível e o impossível", text: "" },
+  { img: "charles", w: 760, h: 293, big: "“Bacana o engajamento”", unit: "parabéns pelo trabalho", text: "" },
+  { img: "perfeito", w: 760, h: 498, big: "“Ficou perfeito”", unit: "aprovação de primeira", text: "" },
+  { img: "parnassah", w: 760, h: 362, big: "“Que time!”", unit: "depois de um evento", text: "" },
+  { img: "contrato", w: 760, h: 500, big: "“Pode mandar o contrato”", unit: "renovação na hora", text: "" },
+  { img: "gisele-satisf", w: 760, h: 617, big: "“Estou adorando”", unit: "satisfação com a liberdade e a equipe", text: "" },
+  { img: "vendas-mg", w: 760, h: 590, big: "Venda nova", unit: "com campanha ativa na região", text: "" },
+  { img: "gisele-grata", w: 760, h: 340, big: "“Seguimos juntos”", unit: "gratidão da cliente", text: "" },
+  { img: "media-5086", w: 760, h: 329, big: "R$ 5 mil", unit: "por dia, em média", text: "" },
+  { img: "beatriz-fisio", w: 760, h: 296, big: "“Muito organizados”", unit: "parabéns ao time", text: "" },
+  { img: "numeros", w: 760, h: 1260, big: "R$ 75 mil", unit: "acumulados, rumo aos 80 mil", text: "" },
+  { img: "daia", w: 760, h: 378, big: "“Fiquei emocionada”", unit: "ao ver o teaser pronto", text: "" },
+  { img: "lilie", w: 760, h: 716, big: "“Primeiro evento”", unit: "que eu merecia", text: "" },
 ];
+
+const FEATURED = 6;
 
 const Card = ({ r, i }: { r: Result; i: number }) => (
   <motion.figure
@@ -49,10 +70,40 @@ const Card = ({ r, i }: { r: Result; i: number }) => (
   </motion.figure>
 );
 
-const Results = () => {
-  const [all, setAll] = useState(false);
+const MiniCard = ({ r }: { r: Result }) => (
+  <figure className="w-[260px] flex-shrink-0 sm:w-[300px]">
+    <div className="h-full overflow-hidden rounded-[22px] border border-white/[0.06] bg-[#0a0a12] p-4">
+      <p className="sl-display sl-grad text-[1.6rem] leading-[1.02] sm:text-[1.8rem]">{r.big}</p>
+      <p className="mt-1 text-[10px] font-medium uppercase tracking-[0.12em] text-[#c7b2f7] sm:text-[11px]">{r.unit}</p>
+      <div className="relative mt-3 max-h-[300px] overflow-hidden rounded-xl border border-white/[0.07] bg-black sm:max-h-[340px]">
+        <img src={shot(r.img)} alt={`Print real de conversa de cliente: ${r.big} ${r.unit}`} width={r.w} height={r.h} draggable={false} loading="lazy" decoding="async" className="pointer-events-none block h-auto w-full" />
+        {r.h / r.w > 0.95 && <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black to-transparent" />}
+      </div>
+    </div>
+  </figure>
+);
+
+const Row = ({ items, reverse = false, duration }: { items: Result[]; reverse?: boolean; duration: string }) => {
+  const { containerRef, handlers } = useDragScroll();
   return (
-    <section id="resultados" className="relative bg-[#050508] py-20 sm:py-32" style={{ scrollMarginTop: "90px" }}>
+    <div ref={containerRef} {...handlers} className="overflow-x-auto overflow-y-visible scrollbar-hide select-none [touch-action:pan-x_pan-y]" style={{ scrollbarWidth: "none" }}>
+      <div className={`flex w-max ${reverse ? "animate-scroll-right" : "animate-scroll-left"} will-change-transform transform-gpu`} style={{ animationDuration: duration }}>
+        {[0, 1].map((k) => (
+          <div key={k} className="flex items-start gap-4 pr-4 sm:gap-5 sm:pr-5" aria-hidden={k === 1}>
+            {items.map((r) => <MiniCard key={`${r.img}-${k}`} r={r} />)}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Results = () => {
+  const featured = results.slice(0, FEATURED);
+  const rest = results.slice(FEATURED);
+  const half = Math.ceil(rest.length / 2);
+  return (
+    <section id="resultados" className="relative overflow-hidden bg-[#050508] py-20 sm:py-32" style={{ scrollMarginTop: "90px" }}>
       <div aria-hidden className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(124,90,214,0.10)_0%,transparent_60%)]" />
       <div className="container relative z-10 mx-auto px-4 sm:px-6 md:px-8">
         <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mx-auto mb-12 max-w-3xl text-center sm:mb-16">
@@ -66,31 +117,27 @@ const Results = () => {
         </motion.div>
 
         <div className="mx-auto max-w-6xl columns-1 gap-4 sm:gap-5 md:columns-2 lg:columns-3">
-          {results.map((r, i) => (
-            <div key={r.img} className={!all && i >= 6 ? "md:block hidden" : ""}>
-              <Card r={r} i={i} />
-            </div>
-          ))}
+          {featured.map((r, i) => <Card key={r.img} r={r} i={i} />)}
         </div>
+      </div>
 
-        {!all && (
-          <div className="mt-2 flex justify-center md:hidden">
-            <button type="button" onClick={() => setAll(true)} className="rounded-full border border-white/10 px-6 py-3 text-sm font-light text-[#EDEDED] active:scale-95">
-              Ver mais resultados
-            </button>
-          </div>
-        )}
+      <div className="relative mt-10 space-y-4 sm:mt-14 sm:space-y-5">
+        <div aria-hidden className="pointer-events-none absolute bottom-0 left-0 top-0 z-10 w-12 bg-gradient-to-r from-[#050508] to-transparent sm:w-24" />
+        <div aria-hidden className="pointer-events-none absolute bottom-0 right-0 top-0 z-10 w-12 bg-gradient-to-l from-[#050508] to-transparent sm:w-24" />
+        <Row items={rest.slice(0, half)} duration="110s" />
+        <Row items={rest.slice(half)} reverse duration="125s" />
+      </div>
+      <p className="relative mt-6 text-center text-[11px] font-light text-[#808080]">Arraste para o lado para ver mais</p>
 
-        <div className="mt-12 flex justify-center">
-          <button
-            type="button"
-            onClick={openQuiz}
-            className="group/btn relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-[#5f3fb5] via-[#bd86f5] to-[#7c5ad6] px-9 py-4 text-[15px] font-medium tracking-wide text-white shadow-[0_0_44px_-4px_rgba(189,134,245,0.6)] transition-all duration-300 active:scale-95 sm:px-12"
-          >
-            <span className="relative">Quero um resultado assim</span>
-            <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
-          </button>
-        </div>
+      <div className="relative z-10 mt-10 flex justify-center sm:mt-12">
+        <button
+          type="button"
+          onClick={openQuiz}
+          className="group/btn relative inline-flex items-center gap-2.5 overflow-hidden rounded-full bg-gradient-to-r from-[#5f3fb5] via-[#bd86f5] to-[#7c5ad6] px-9 py-4 text-[15px] font-medium tracking-wide text-white shadow-[0_0_44px_-4px_rgba(189,134,245,0.6)] transition-all duration-300 active:scale-95 sm:px-12"
+        >
+          <span className="relative">Quero um resultado assim</span>
+          <ArrowRight className="relative h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+        </button>
       </div>
     </section>
   );
