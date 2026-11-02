@@ -26,7 +26,7 @@ const StickyCTA = () => {
           className="fixed bottom-0 left-0 right-0 z-40 md:hidden p-3 pb-[calc(0.75rem+env(safe-area-inset-bottom))] bg-[#050505]/90 backdrop-blur-md border-t border-[#1a1a1a]"
         >
           <a
-            href="#diagnostico"
+            href="https://forms.synlua.com.br"
             onClick={(e) => { e.preventDefault(); openQuiz(); }}
             className="group/btn relative overflow-hidden flex items-center justify-center gap-2 w-full py-3.5 bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] text-white font-medium text-sm tracking-wide uppercase rounded-lg shadow-[0_0_30px_rgba(124,90,214,0.35)] active:scale-95 transition-transform duration-150"
           >
