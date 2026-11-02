@@ -5,41 +5,33 @@ import { Hand, X, ArrowRight } from "lucide-react";
 import { useRef, useState } from "react";
 import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 
-import giseleGomes from "@/assets/portfolio/new/p5.webp";
-import parnassahNew from "@/assets/portfolio/new/p3.webp";
-import jenifferDuval from "@/assets/portfolio/new/p11.webp";
-import graziellaAguiar from "@/assets/portfolio/new/p12.webp";
-import caofiel from "@/assets/portfolio/new/p9.webp";
-import wiser from "@/assets/portfolio/wiser.webp";
-import maxime from "@/assets/portfolio/maxime.webp";
-import brunoFerreira from "@/assets/portfolio/bruno-ferreira.webp";
-import openbot from "@/assets/portfolio/openbot.webp";
+const full = import.meta.glob("@/assets/portfolio/**/*.webp", { eager: true, query: "?url", import: "default" }) as Record<string, string>;
+const find = (rel: string, small: boolean) => {
+  const suffix = `/portfolio/${rel}${small ? ".sm" : ""}.webp`;
+  const k = Object.keys(full).find((p) => p.endsWith(suffix));
+  return k ? full[k] : "";
+};
+/** `image` (720 px) para telas grandes e o case ampliado; `small` (420 px) para celular */
+const pic = (rel: string) => ({ image: find(rel, false), small: find(rel, true) });
 
-import wiseUp from "@/assets/portfolio/new/Wise_Up.webp";
-import professorAugusto from "@/assets/portfolio/new/Professor_Augusto.webp";
-import inattoArquitetura from "@/assets/portfolio/new/Inatto_Arquitetura.webp";
-import maximeNew from "@/assets/portfolio/new/Maxime.webp";
-import daRochaOliveira from "@/assets/portfolio/new/Da_Rocha_e_Oliveira_ADV.webp";
-import wiserEmpreende from "@/assets/portfolio/new/Wiser_Empreende.webp";
-
-type Client = { name: string; image: string; tags: string[] };
+type Client = { name: string; image: string; small: string; tags: string[] };
 
 const allClients: Client[] = [
-  { name: "Dra. Gisele Gomes", image: giseleGomes, tags: ["Conteúdo", "Design"] },
-  { name: "Parnassah", image: parnassahNew, tags: ["Conteúdo", "Estratégia"] },
-  { name: "Wise Up", image: wiseUp, tags: ["Conteúdo", "Branding"] },
-  { name: "Professor Augusto", image: professorAugusto, tags: ["Conteúdo", "Estratégia"] },
-  { name: "Inatto Arquitetura", image: inattoArquitetura, tags: ["Conteúdo", "Design"] },
-  { name: "Maxime", image: maximeNew, tags: ["Conteúdo", "Branding"] },
-  { name: "Da Rocha e Oliveira ADV", image: daRochaOliveira, tags: ["Conteúdo", "Design"] },
-  { name: "Wiser Empreende", image: wiserEmpreende, tags: ["Conteúdo", "Estratégia"] },
-  { name: "Jeniffer Duval", image: jenifferDuval, tags: ["Conteúdo", "Estratégia"] },
-  { name: "Graziella Aguiar", image: graziellaAguiar, tags: ["Conteúdo", "Design"] },
-  { name: "Petshop Cãofiel", image: caofiel, tags: ["Conteúdo", "Branding"] },
-  { name: "Wiser", image: wiser, tags: ["Conteúdo", "Design"] },
-  { name: "Maxime (Industrial)", image: maxime, tags: ["Conteúdo", "Design"] },
-  { name: "Bruno Ferreira", image: brunoFerreira, tags: ["Conteúdo", "Branding"] },
-  { name: "Openbot", image: openbot, tags: ["Conteúdo", "Estratégia"] },
+  { name: "Dra. Gisele Gomes", ...pic("new/p5"), tags: ["Conteúdo", "Design"] },
+  { name: "Parnassah", ...pic("new/p3"), tags: ["Conteúdo", "Estratégia"] },
+  { name: "Wise Up", ...pic("new/Wise_Up"), tags: ["Conteúdo", "Branding"] },
+  { name: "Professor Augusto", ...pic("new/Professor_Augusto"), tags: ["Conteúdo", "Estratégia"] },
+  { name: "Inatto Arquitetura", ...pic("new/Inatto_Arquitetura"), tags: ["Conteúdo", "Design"] },
+  { name: "Maxime", ...pic("new/Maxime"), tags: ["Conteúdo", "Branding"] },
+  { name: "Da Rocha e Oliveira ADV", ...pic("new/Da_Rocha_e_Oliveira_ADV"), tags: ["Conteúdo", "Design"] },
+  { name: "Wiser Empreende", ...pic("new/Wiser_Empreende"), tags: ["Conteúdo", "Estratégia"] },
+  { name: "Jeniffer Duval", ...pic("new/p11"), tags: ["Conteúdo", "Estratégia"] },
+  { name: "Graziella Aguiar", ...pic("new/p12"), tags: ["Conteúdo", "Design"] },
+  { name: "Petshop Cãofiel", ...pic("new/p9"), tags: ["Conteúdo", "Branding"] },
+  { name: "Wiser", ...pic("wiser"), tags: ["Conteúdo", "Design"] },
+  { name: "Maxime (Industrial)", ...pic("maxime"), tags: ["Conteúdo", "Design"] },
+  { name: "Bruno Ferreira", ...pic("bruno-ferreira"), tags: ["Conteúdo", "Branding"] },
+  { name: "Openbot", ...pic("openbot"), tags: ["Conteúdo", "Estratégia"] },
 ];
 
 const half = Math.ceil(allClients.length / 2);
@@ -68,7 +60,9 @@ const ClientCard = ({ client, light, onOpen, className = "" }: { client: Client;
     >
       <div className="relative aspect-[4/5] rounded-xl overflow-hidden border border-[#1f1f35]/40 bg-[#0a0a14] shadow-[0_8px_32px_-20px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-[#7c5ad6]/50 hover:shadow-[0_12px_40px_-18px_rgba(124,90,214,0.25)] hover:scale-[1.02] hover:-translate-y-1">
         <img
-          src={client.image}
+          src={client.small || client.image}
+          srcSet={client.small ? `${client.small} 420w, ${client.image} 720w` : undefined}
+          sizes="(min-width: 768px) 340px, 240px"
           alt={`Portfolio ${client.name}`}
           draggable={false}
           width={1080}
