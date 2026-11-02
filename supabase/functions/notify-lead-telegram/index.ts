@@ -5,6 +5,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // consegue forjar mensagens no grupo nem leads no CRM.
 //   1) Telegram: grupo da Synlua (uma única vez por lead).
 //   2) Synlua Hub: cria o lead no CRM (idempotente por external_id; tenta de novo se falhou antes).
+// Os segredos ficam na tabela trancada app_secrets (a tabela tem prioridade sobre variáveis de ambiente).
 
 const CHAT_ID = Deno.env.get("NOTIFY_CHAT_ID") ?? "-5359371572";
 const SITE = "https://forms.synlua.com.br";
@@ -91,10 +92,8 @@ Deno.serve(async (req) => {
   const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 
   const secret = async (k: string) => {
-    const env = Deno.env.get(k);
-    if (env) return env;
     const { data } = await db.from("app_secrets").select("value").eq("key", k).maybeSingle();
-    return data?.value as string | undefined;
+    return (data?.value as string | undefined) || Deno.env.get(k);
   };
 
   const { data: row } = await db.from("form_submissions").select("*").eq("id", id).neq("status", "partial").maybeSingle();
