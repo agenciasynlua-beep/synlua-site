@@ -1,4 +1,4 @@
-import { Instagram, MessageCircle } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import synluaLogo from "@/assets/synlua-logo-white.webp";
 
@@ -89,12 +89,11 @@ const GiantFooter = () => {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://wa.me/5511945592596?text=Olá!%20Acabei%20de%20preencher%20o%20formulário.%20Quero%20mais%20informações."
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:mkt@synlua.com.br"
+              aria-label="E-mail"
               className="w-12 h-12 sm:w-11 sm:h-11 md:w-12 md:h-12 flex items-center justify-center border border-[#1a1a2e] rounded-sm text-[#808080] hover:text-[#EDEDED] hover:border-[#7c5ad6]/50 hover:shadow-[0_0_15px_rgba(124,90,214,0.2)] transition-all duration-300 bg-[#0a0a14]/60 active:scale-95"
             >
-              <MessageCircle className="w-5 h-5" />
+              <Mail className="w-5 h-5" />
             </a>
           </div>
         </div>

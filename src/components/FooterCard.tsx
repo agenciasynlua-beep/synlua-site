@@ -4,12 +4,6 @@ import { Instagram, Linkedin, Mail, MapPin, ArrowRight } from "lucide-react";
 import synluaLogo from "@/assets/synlua-logo-white.webp";
 import GlowButton from "@/components/ui/glow-button";
 
-const WhatsAppIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.387 3.125h-.003a6.499 6.499 0 01-6.5-6.5c0-3.59 2.91-6.5 6.5-6.5a6.507 6.507 0 016.5 6.5c0 3.59-2.91 6.5-6.5 6.5m11.7-7.5a11.5 11.5 0 00-11.7-11.5c-6.348 0-11.5 5.152-11.5 11.5 0 2.023.525 3.922 1.44 5.577L.5 23.5l5.57-1.46a11.474 11.474 0 005.93 1.642h.003a11.5 11.5 0 0011.5-11.5 11.48 11.48 0 00-1.46-5.675 11.48 11.48 0 00-5.676-1.458" />
-  </svg>
-);
-
 const scrollTo = (id: string) => {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
@@ -44,7 +38,6 @@ const footerColumns = [
 
 const socials = [
   { Icon: Instagram, href: "https://instagram.com/synlua", label: "Instagram" },
-  { Icon: WhatsAppIcon, href: "https://wa.me/5511932267758", label: "WhatsApp" },
   { Icon: Linkedin, href: "https://www.linkedin.com/company/synlua", label: "LinkedIn" },
 ];
 
@@ -109,15 +102,6 @@ const FooterCard = () => {
                     <MapPin className="w-4 h-4 mt-0.5 text-[#7c5ad6] flex-shrink-0" />
                     <span>Barueri, São Paulo — Brasil</span>
                   </div>
-                  <a
-                    href="https://wa.me/5511932267758?text=Ol%C3%A1!%20Quero%20falar%20com%20a%20Synlua."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3 text-sm text-[#808080] hover:text-[#EDEDED] transition-colors duration-300 font-light"
-                  >
-                    <WhatsAppIcon className="w-4 h-4 text-[#7c5ad6] flex-shrink-0" />
-                    <span>(11) 93226-7758</span>
-                  </a>
                   <a
                     href="mailto:mkt@synlua.com.br"
                     className="flex items-center gap-3 text-sm text-[#808080] hover:text-[#EDEDED] transition-colors duration-300 font-light"

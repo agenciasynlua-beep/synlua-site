@@ -561,14 +561,6 @@ const QuizModal = ({ open, onClose, formType = "quiz" }: QuizModalProps) => {
                 </ol>
 
                 <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-                  <a
-                    href="https://wa.me/5511932267758?text=Ol%C3%A1!%20Acabei%20de%20preencher%20o%20diagn%C3%B3stico%20no%20site."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3 rounded-xl bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] text-white text-sm font-medium"
-                  >
-                    Prefere falar agora? Chamar no WhatsApp
-                  </a>
                   <button
                     type="button"
                     onClick={onCloseReset}

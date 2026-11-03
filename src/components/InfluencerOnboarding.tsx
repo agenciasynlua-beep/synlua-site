@@ -22,7 +22,6 @@ const staggerContainer = {
 
 const nicheOptions = ["Moda", "Beleza", "Fitness", "Lifestyle", "Tech", "Gastronomia", "Saúde", "Educação", "Outro"];
 const followerRanges = ["Até 10k", "10k – 50k", "50k – 100k", "100k – 500k", "500k+"];
-const whatsappRedirectUrl = "https://wa.me/5511932267758?text=Ol%C3%A1!%20Acabei%20de%20preencher%20o%20formul%C3%A1rio%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es.";
 
 const timelineSteps = [
   { icon: User, title: "Cadastro e Análise", desc: "Analisamos seu perfil, nicho, engajamento e audiência para entender o melhor posicionamento." },
@@ -392,9 +391,7 @@ const InfluencerOnboarding = () => {
                 </div>
 
                 <a
-                  href="https://wa.me/5500000000000?text=Olá!%20Tenho%20interesse%20no%20Plano%20Acelerado%20para%20influenciadoras."
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:mkt@synlua.com.br?subject=Plano%20Acelerado%20para%20influenciadoras"
                   className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-[#7c5ad6] to-[#bd86f5] text-white font-light text-sm tracking-wide uppercase rounded-md transition-all duration-500 hover:from-[#6a47c4] hover:to-[#9168e6] hover:shadow-[0_0_30px_rgba(124,90,214,0.4)]"
                 >
                   <Rocket className="w-4 h-4" />

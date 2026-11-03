@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, MapPin, Mail, Phone, Instagram, MessageCircle } from "lucide-react";
+import { ArrowRight, MapPin, Mail, Instagram } from "lucide-react";
 import PageLayout from "@/components/PageLayout";
 import SectionLabel from "@/components/SectionLabel";
 import SEOHead from "@/components/SEOHead";
@@ -85,8 +85,7 @@ const ContactPage = () => {
               {/* Contact Info */}
               <div className="space-y-4">
                 {[
-                  { icon: Phone, label: "+55 (11) 94559-2596", href: "tel:+5511945592596" },
-                  { icon: Mail, label: "contato@synlua.com", href: "mailto:contato@synlua.com" },
+                  { icon: Mail, label: "mkt@synlua.com.br", href: "mailto:mkt@synlua.com.br" },
                   { icon: MapPin, label: "São Paulo, Brasil", href: undefined },
                 ].map((item) => {
                   const Icon = item.icon;
@@ -115,14 +114,6 @@ const ContactPage = () => {
                   className="flex items-center gap-2 px-4 py-3 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#7c5ad6]/20 transition-all duration-300 text-sm text-[#808080] hover:text-[#EDEDED]"
                 >
                   <Instagram className="w-4 h-4" /> Instagram
-                </a>
-                <a
-                  href="https://wa.me/5511945592596?text=Olá!%20Quero%20mais%20informações."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-3 border border-[#1a1a1a] rounded-xl bg-[#0a0a0a]/50 hover:border-[#7c5ad6]/20 transition-all duration-300 text-sm text-[#808080] hover:text-[#EDEDED]"
-                >
-                  <MessageCircle className="w-4 h-4" /> WhatsApp
                 </a>
               </div>
             </motion.div>
