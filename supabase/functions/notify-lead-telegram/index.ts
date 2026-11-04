@@ -168,5 +168,36 @@ Deno.serve(async (req) => {
       }
     }
   }
+  // 3) Portal de influenciadoras do Hub — o pré-cadastro vira (ou completa) o cadastro da influenciadora, sem duplicar
+  if (row.form_type === "influencer") {
+    const url = await secret("HUB_INTAKE_URL");
+    const secretKey = await secret("HUB_INFLUENCER_SECRET");
+    if (!url || !secretKey) result.influencer = "not_configured";
+    else {
+      try {
+        const portal = url.replace(/\/functions\/v1\/[^/?#]+.*$/, "/functions/v1/influencer-portal");
+        const notes = String(row.notes ?? "");
+        const res = await fetch(portal, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-intake-secret": secretKey },
+          body: JSON.stringify({
+            action: "intake", submission_id: row.id, name: row.name, email: row.email, phone: row.phone,
+            instagram: row.social_media_handle, niche: row.segment,
+            followers: /Seguidores:\s*([^|]+?)\s*(\||$)/.exec(notes)?.[1] ?? "",
+            did_publi: /Já fez publi:\s*(.+)$/.exec(notes)?.[1]?.trim() ?? "",
+          }),
+        });
+        const out = await res.json().catch(() => ({}));
+        if (res.ok && out?.ok) result.influencer = out.created ? "created" : "merged";
+        else {
+          console.error("influencer portal error", res.status, out?.error);
+          result.influencer = "error";
+        }
+      } catch (e) {
+        console.error("influencer portal exception", String(e));
+        result.influencer = "error";
+      }
+    }
+  }
   return json(result);
 });

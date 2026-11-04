@@ -41,11 +41,12 @@ const whyCards = [
 ];
 
 const InfluencerOnboarding = () => {
-  const [phase, setPhase] = useState<"form" | "loading" | "landing">("form");
+  const [phase, setPhase] = useState<"gate" | "form" | "loading" | "landing">("gate");
   const [step, setStep] = useState(0);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [form, setForm] = useState({
     name: "",
+    email: "",
     phone: "",
     instagram: "",
     niche: "",
@@ -72,9 +73,18 @@ const InfluencerOnboarding = () => {
               />
             </div>
           </div>
+          <div>
+            <label className="block text-xs uppercase tracking-[0.2em] text-white/30 mb-2 font-light">E-mail</label>
+            <input
+              type="email" value={form.email} onChange={(e) => updateField("email", e.target.value)} autoComplete="email"
+              className="w-full bg-white/[0.04] border border-white/[0.08] rounded-md px-4 py-3 text-white/80 text-sm font-light placeholder:text-white/20 focus:outline-none focus:border-[#7c5ad6]/40 transition-colors"
+              placeholder="seu@email.com"
+            />
+            <p className="mt-2 text-xs text-white/25 font-light">É com ele que você entra no portal de propostas.</p>
+          </div>
         </div>
       ),
-      valid: form.name.trim() !== "",
+      valid: form.name.trim() !== "" && /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(form.email.trim()),
     },
     // Step 1: Phone + Instagram
     {
@@ -169,7 +179,7 @@ const InfluencerOnboarding = () => {
       (async () => {
         try {
           await supabase.from("form_submissions").insert({
-            name: form.name, phone: form.phone, email: "",
+            name: form.name, phone: form.phone, email: form.email.trim().toLowerCase(),
             social_media_handle: form.instagram, segment: form.niche,
             form_type: "influencer",
             notes: `Seguidores: ${form.followers} | Já fez publi: ${form.didPubli}`,
@@ -178,7 +188,7 @@ const InfluencerOnboarding = () => {
         try {
           await supabase.functions.invoke('notify-lead-telegram', {
             body: {
-              name: form.name, phone: form.phone,
+              name: form.name, phone: form.phone, email: form.email.trim().toLowerCase(),
               social_media_handle: form.instagram, niche: form.niche,
               followers: form.followers, did_publi: form.didPubli,
               form_type: "influencer",
@@ -191,6 +201,46 @@ const InfluencerOnboarding = () => {
       })();
     }
   };
+
+  // ─── GATE: quem já tem cadastro entra no portal; quem não tem faz o pré-cadastro ───
+  if (phase === "gate") {
+    return (
+      <main className="min-h-screen bg-[#050508] flex items-center justify-center selection:bg-[#7c5ad6]/30">
+        <SEOHead title="Influenciadora | Synlua — Braço de Marketing Completo" description="Portal de influenciadoras da Synlua: acesse suas propostas de publicidade ou faça seu pré-cadastro." />
+        <div className="w-full max-w-md px-6">
+          <div className="text-center mb-10">
+            <img src={synluaLogoHorizontal} alt="Synlua" className="h-12 sm:h-14 mx-auto mb-8" />
+          </div>
+          <div className="border border-white/[0.08] rounded-lg p-8 bg-white/[0.02]">
+            <h1 className="text-xl font-light text-white/80 text-center mb-2">Portal de influenciadoras</h1>
+            <p className="text-sm text-white/30 font-light text-center mb-8">Acompanhe suas propostas de publi ou entre para o nosso ecossistema de marcas.</p>
+            <div className="space-y-3">
+              <a
+                href="https://hub.synlua.com.br/portal/entrar"
+                className="w-full flex items-center justify-between gap-4 p-5 rounded-lg border border-[#7c5ad6]/40 bg-[#7c5ad6]/[0.08] hover:bg-[#7c5ad6]/[0.14] transition-all duration-300 text-left"
+              >
+                <span>
+                  <span className="block text-base text-white/90 font-light">Já tenho cadastro</span>
+                  <span className="block text-sm text-white/40 font-light">Acessar minha conta com o e-mail</span>
+                </span>
+                <ArrowRight className="w-4 h-4 text-[#7c5ad6]" />
+              </a>
+              <button
+                onClick={() => setPhase("form")}
+                className="w-full flex items-center justify-between gap-4 p-5 rounded-lg border border-white/[0.08] bg-white/[0.02] hover:border-white/20 transition-all duration-300 text-left"
+              >
+                <span>
+                  <span className="block text-base text-white/80 font-light">Quero me cadastrar</span>
+                  <span className="block text-sm text-white/30 font-light">Fazer o pré-cadastro (2 minutos)</span>
+                </span>
+                <ArrowRight className="w-4 h-4 text-white/30" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+    );
+  }
 
   // ─── LOADING ───
   if (phase === "loading") {
