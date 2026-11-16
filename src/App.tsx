@@ -6,6 +6,7 @@ import LandingPage from "./pages/LandingPage";
 
 
 const OnboardingPage = lazy(() => import("./pages/OnboardingPage"));
+const LinksPage = lazy(() => import("./pages/LinksPage"));
 
 
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -57,6 +58,7 @@ const App = () => {
 
             {/* Other */}
             <Route path="/onboarding" element={<OnboardingPage />} />
+            <Route path="/links" element={<LinksPage />} />
             
 
 
