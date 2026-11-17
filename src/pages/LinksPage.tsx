@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Lock } from "lucide-react";
 
 const IMGS = ["wiseup", "parnassah", "maxime", "augusto", "inatto", "gisele", "wiserempreende", "darocha", "jeniffer", "graziella", "wiser", "maxime2"];
 const utm = "utm_source=instagram&utm_medium=bio&utm_campaign=links";
@@ -25,6 +25,10 @@ const css = `
 .is-main .lk-dot{background:linear-gradient(140deg,#bd86f5,#7c5ad6);box-shadow:0 0 28px -4px rgba(189,134,245,.8),inset 0 0 0 1px rgba(255,255,255,.25)}
 .is-alt .lk-dot{border:1px solid rgba(199,178,247,.3);color:#c7b2f7}
 .lk-ring:hover .lk-dot{transform:translate(2px,-2px)}
+.lk-ring.is-off{background:linear-gradient(140deg,rgba(224,200,255,.22),rgba(255,255,255,.03) 50%,rgba(224,200,255,.12));cursor:default}
+.lk-ring.is-off:active{transform:none}
+.is-off .lk-in{background:repeating-linear-gradient(135deg,rgba(255,255,255,.018) 0 1px,transparent 1px 9px),linear-gradient(160deg,rgba(16,14,28,.94),rgba(9,8,18,.94))}
+.is-off .lk-dot{border:1px dashed rgba(199,178,247,.28);color:rgba(199,178,247,.6)}
 @keyframes lkSpin{to{transform:rotate(360deg)}}
 @keyframes lkShine{0%,60%{left:-60%}100%{left:130%}}
 @keyframes lkLeft{from{transform:translateX(0)}to{transform:translateX(-33.333%)}}
@@ -76,6 +80,18 @@ const LinksPage = () => {
               </span>
             </a>
           ))}
+          <div className="lk-ring is-off" aria-disabled="true">
+            <span className="lk-in">
+              <span className="min-w-0 flex-1">
+                <span className="lk-title block text-[1.15rem] text-[#EDEDED]/85">Acompanhamento individual</span>
+                <span className="mt-2 block text-[13px] font-light text-[#EDEDED]/50">A partir de <span className="text-[#e0c8ff]/90">R$ 20 mil</span></span>
+                <span className="mt-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#c7b2f7]/70">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#c7b2f7]/60" />Sem vagas no momento
+                </span>
+              </span>
+              <span className="lk-dot"><Lock className="h-[18px] w-[18px]" strokeWidth={1.5} /></span>
+            </span>
+          </div>
         </nav>
         <footer className="mt-auto pt-12 pb-8 text-center text-xs font-light text-[#6d6d88]">Marketing + tecnologia · Barueri/SP</footer>
       </div>
